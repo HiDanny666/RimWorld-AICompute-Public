@@ -1,0 +1,107 @@
+name: 🐛 錯誤回報 · Bug report
+description: 遊戲噴紅字、東西不動、數字不對 · Red errors, things not working, wrong numbers
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        謝謝你回報。**最重要的一件事是 `Player.log`** —— 沒有它幾乎不可能定位問題。
+
+        最簡單的方式：裝 [HugsLib](https://steamcommunity.com/sharedfiles/filedetails/?id=818773962)，
+        在遊戲中按 **Ctrl+F12**，它會把 log 上傳並給你一個連結，貼過來就好。
+
+        *The single most useful thing you can attach is your `Player.log`.
+        HugsLib's Ctrl+F12 uploads it and gives you a link.*
+
+  - type: input
+    id: modversion
+    attributes:
+      label: 模組版本 · Mod version
+      description: Release 頁面上的版本號，例如 v21.0
+      placeholder: v21.0
+    validations:
+      required: true
+
+  - type: input
+    id: rwversion
+    attributes:
+      label: RimWorld 版本 · RimWorld version
+      description: 主選單左下角，例如 1.6.4871 rev591
+      placeholder: 1.6.4871 rev591
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: 發生了什麼 · What happened
+      description: 你看到的實際狀況
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 你預期會怎樣 · What you expected
+      description: |
+        如果是數值問題，請寫出面板上顯示的數字與你認為應該是多少。
+    validations:
+      required: false
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: 怎麼重現 · Steps to reproduce
+      description: |
+        越具體越好。例如：
+        1. 蓋一座運算機櫃，插滿 H100
+        2. 接上冷卻管線與液冷機組
+        3. 切到訓練模式
+        4. 面板顯示的算力是 0
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: false
+
+  - type: textarea
+    id: log
+    attributes:
+      label: Player.log
+      description: |
+        HugsLib 的連結，或把紅字那一段連同下面的堆疊一起貼上來。
+        整份 log 太大的話請用檔案上傳（把檔案拖進這個輸入框）。
+      placeholder: https://gist.github.com/... 或直接貼上錯誤內容
+    validations:
+      required: false
+
+  - type: dropdown
+    id: isolated
+    attributes:
+      label: 只開這個模組還會發生嗎 · Does it happen with only this mod?
+      description: |
+        只啟用 Harmony + 本模組測一次。這一步能省掉最多來回。
+      options:
+        - 還沒測 · Not tested yet
+        - 會 —— 只開這個模組也一樣 · Yes, happens with only this mod
+        - 不會 —— 應該是跟別的模組衝突 · No, looks like a conflict
+    validations:
+      required: true
+
+  - type: textarea
+    id: mods
+    attributes:
+      label: 模組清單 · Mod list
+      description: |
+        如果上一題答「不會」，請把你的模組清單貼上來（RimPy 可以一鍵複製）。
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checked
+    attributes:
+      label: 送出前
+      options:
+        - label: 我看過 [已開的 issue](../../issues)，沒有重複的
+          required: false

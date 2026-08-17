@@ -1,0 +1,33 @@
+name: ⚖️ 平衡回報 · Balance feedback
+description: 某個東西太強、太弱、或成本不合理
+labels: ["balance"]
+body:
+  - type: input
+    id: what
+    attributes:
+      label: 哪一個東西 · Which thing
+      placeholder: 例如：蜂群發射器 / HGX B300 模組 / 算力合約報酬
+    validations:
+      required: true
+
+  - type: dropdown
+    id: direction
+    attributes:
+      label: 方向 · Direction
+      options:
+        - 太強 · Too strong
+        - 太弱 · Too weak
+        - 成本不合理 · Cost is wrong
+        - 節奏不對 · Pacing feels off
+    validations:
+      required: true
+
+  - type: textarea
+    id: detail
+    attributes:
+      label: 說明 · Details
+      description: |
+        請附上你實際看到的數字（檢視面板上的算力、耗電、產出、價格），
+        以及你的遊戲進度大概在哪個階段。數字比感覺有用得多。
+    validations:
+      required: true

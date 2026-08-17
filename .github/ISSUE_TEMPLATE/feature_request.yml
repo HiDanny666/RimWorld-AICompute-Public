@@ -1,0 +1,34 @@
+name: 💡 建議 · Suggestion
+description: 想要的新機制、平衡調整、或現實中該有但沒做的東西
+labels: ["suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        這個模組的設計原則是**寫實**：機制要對得上現實中資料中心與 AI 產業真的在發生的事。
+        如果你的建議有現實對照（真實的硬體、真實的營運問題、真實的產業做法），請一併寫出來 ——
+        那通常就是它會不會被做的關鍵。
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: 你想要什麼 · What you want
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: 現實對照 · Real-world basis
+      description: |
+        這在現實中對應到什麼？例如「真實機房用蒸發冷卻塔，但要臨水而建」。
+    validations:
+      required: false
+
+  - type: textarea
+    id: how
+    attributes:
+      label: 你覺得該怎麼運作 · How you think it should work
+      description: 具體的數字、觸發條件、代價
+    validations:
+      required: false
