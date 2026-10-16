@@ -677,39 +677,61 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </ol>
 <h3 id="step-8-組叢集規模加成">▶︎ Step 8 — 組叢集（規模加成）</h3>
 <p>研究資料中心工程後：<strong>網路線</strong>（2 鋼/格）從機櫃底下鋪到<strong>叢集交換器</strong>。</p>
-<pre><code>叢集係數 = 1 + 0.06 × (機櫃數 − 1)，上限 +50%
+<pre><code>叢集係數 = min(1 + 0.06 × (機櫃數 − 1), 1.5) ÷ (1 + 通訊成本 × (機櫃數 − 1))
+通訊成本 = 每櫃 2%（只有叢集交換器）→ 0.7%（脊交換器容量蓋滿；一台撐 8 座）
 </code></pre>
 <table>
 <thead>
 <tr>
 <th>機櫃數</th>
-<th>加成</th>
+<th>只有叢集交換器</th>
+<th>研究產出/日</th>
+<th>加脊交換器</th>
 <th>研究產出/日</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1（孤島）</td>
-<td>+0%</td>
+<td>×1.00</td>
+<td>1,440</td>
+<td>×1.00</td>
 <td>1,440</td>
 </tr>
 <tr>
 <td>2</td>
-<td>+6%</td>
-<td>3,053</td>
+<td>×1.04</td>
+<td>2,993</td>
+<td>×1.05</td>
+<td>3,032</td>
 </tr>
 <tr>
 <td>4</td>
-<td>+18%</td>
-<td>6,797</td>
+<td>×1.11</td>
+<td>6,412</td>
+<td>×1.16</td>
+<td>6,657</td>
 </tr>
 <tr>
 <td>8</td>
-<td>+42%</td>
-<td>16,358</td>
+<td>×1.25</td>
+<td>14,349</td>
+<td>×1.35</td>
+<td>15,594</td>
+</tr>
+<tr>
+<td>16</td>
+<td>×1.15</td>
+<td>26,585</td>
+<td>×1.36</td>
+<td>31,276</td>
 </tr>
 </tbody>
 </table>
+<div class="alert alert-tip">
+<p class="alert-head"><span class="alert-icon">💡</span><span>Tip</span></p>
+<p>💡 機櫃超過八座左右，<strong>先蓋脊交換器再加機櫃</strong> —— 只靠叢集交換器時，通訊成本會把加成吃回去。</p>
+</div>
 <h3 id="step-9-訓練第一個模型">▶︎ Step 9 — 訓練第一個模型</h3>
 <p>研究 <strong>機器學習（6,000，需多重分析儀）</strong>，然後蓋：</p>
 <table>
@@ -2489,7 +2511,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td>叢集加成</td>
-<td>+6%/櫃，上限 +50%</td>
+<td>+6%/櫃（上限 +50%），再扣通訊成本 2%/櫃（脊交換器降到 0.7%）</td>
 </tr>
 <tr>
 <td>機櫃湧浪</td>
@@ -2974,39 +2996,61 @@ industrial era and start on refurbished cards.</p>
 </ol>
 <h3 id="step-8-cluster-it-the-scale-bonus">▶︎ Step 8 — Cluster it (the scale bonus)</h3>
 <p>Run <strong>network cable</strong> (2 steel/tile) from under each rack to a <strong>cluster switch</strong>.</p>
-<pre><code>Cluster factor = 1 + 0.06 × (racks − 1), capped at +50%
+<pre><code>Cluster factor = min(1 + 0.06 × (racks − 1), 1.5) ÷ (1 + comm cost × (racks − 1))
+Comm cost = 2% per rack (cluster switches only) → 0.7% (spine capacity covers every rack; one spine carries 8)
 </code></pre>
 <table>
 <thead>
 <tr>
 <th>Racks</th>
-<th>Bonus</th>
+<th>Cluster switch only</th>
+<th>Research/day</th>
+<th>With spine switches</th>
 <th>Research/day</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1 (standalone)</td>
-<td>+0%</td>
+<td>×1.00</td>
+<td>1,440</td>
+<td>×1.00</td>
 <td>1,440</td>
 </tr>
 <tr>
 <td>2</td>
-<td>+6%</td>
-<td>3,053</td>
+<td>×1.04</td>
+<td>2,993</td>
+<td>×1.05</td>
+<td>3,032</td>
 </tr>
 <tr>
 <td>4</td>
-<td>+18%</td>
-<td>6,797</td>
+<td>×1.11</td>
+<td>6,412</td>
+<td>×1.16</td>
+<td>6,657</td>
 </tr>
 <tr>
 <td>8</td>
-<td>+42%</td>
-<td>16,358</td>
+<td>×1.25</td>
+<td>14,349</td>
+<td>×1.35</td>
+<td>15,594</td>
+</tr>
+<tr>
+<td>16</td>
+<td>×1.15</td>
+<td>26,585</td>
+<td>×1.36</td>
+<td>31,276</td>
 </tr>
 </tbody>
 </table>
+<div class="alert alert-tip">
+<p class="alert-head"><span class="alert-icon">💡</span><span>Tip</span></p>
+<p>💡 Past about eight racks, <strong>build spine switches before adding racks</strong> — with cluster switches alone, communication cost eats the bonus back.</p>
+</div>
 <h3 id="step-9-train-your-first-model">▶︎ Step 9 — Train your first model</h3>
 <p>Research <strong>Machine learning (6,000, needs a multi-analyzer)</strong>, then build:</p>
 <table>
@@ -4809,7 +4853,7 @@ enough → stop drawing → enough" loop.</p>
 </tr>
 <tr>
 <td>Cluster bonus</td>
-<td>+6% per rack, capped at +50%</td>
+<td>+6% per rack (capped at +50%), minus 2% comm cost per rack (0.7% with spine switches)</td>
 </tr>
 <tr>
 <td>Rack inrush</td>
