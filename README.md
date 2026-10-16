@@ -13,6 +13,21 @@ autonomous drones. Every card draws watts and dumps heat: run hot and it throttl
 
 ---
 
+## 📖 完整攻略手冊 · Full guide
+
+從第一張二手礦卡到 Tier IV 機房：開局 10 步、研究樹、建築成本、散熱三層、模型訓練與未對齊、
+合約談判、機器人、無人機與反無人機 —— 附 **25 張建築圖鑑**與 **10 張物品圖鑑**，中英雙語、深／淺主題。
+
+**➡️ [開啟攻略手冊](https://hidanny666.github.io/RimWorld-AICompute-Public/)**
+
+可離線使用：下載 [`index.html`](index.html)，雙擊就能在任何瀏覽器開啟（所有圖片已內嵌，不需要其他檔案）。
+
+*A complete illustrated guide in Chinese and English: the 10-step start, research tree, building
+costs, cooling, model training, contracts, robots, drones and counter-drone. It works offline too —
+download [`index.html`](index.html) and open it in any browser.*
+
+---
+
 ## 內容 · Features
 
 | | |
