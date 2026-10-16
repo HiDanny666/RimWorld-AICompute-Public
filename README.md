@@ -60,13 +60,30 @@ and drop the `AICompute` folder into your RimWorld `Mods\` directory.*
 
 **載入順序**：排在 Harmony 與 Multiplayer（如果有裝）**之後**。
 
+**多人連線／複製到另一台電腦**：請複製**整個** `AICompute` 資料夾（About、Assemblies、Biotech、Defs、
+Languages、Patches、Sounds、Textures 與 LoadFolders.xml）。只複製一部分時，開遊戲會看到一長串
+「Failed to find … AIC_…」，後面會有一條說明列出缺了哪些資料夾。
+
+*For Multiplayer or another PC, copy the **whole** `AICompute` folder. A partial copy shows a long list
+of "Failed to find … AIC_…" followed by one message naming the missing folders.*
+
 ---
 
 ## 回報問題 · Bug reports
 
 **[開一個 Issue](../../issues/new/choose)** —— 回報前請先看看 [已知問題](../../issues)。
 
-有紅字錯誤時請務必附上 log，最簡單的方式是用 [HugsLib](https://steamcommunity.com/sharedfiles/filedetails/?id=818773962)
+**最簡單的方式（v41 起）**：遊戲中本模組噴紅字時會跳出回報視窗，按「**回報到 GitHub**」——
+完整報告（版本、模組清單、錯誤內容；路徑裡的電腦使用者名稱已移除）會複製到剪貼簿，
+並開啟已經預先填好的回報表單，把報告貼到「Player.log」欄位再送出即可。沒按就不會送出任何東西。
+沒有錯誤也能從「選項 → 模組設定 → AI Compute Infrastructure → 回報問題…」開啟；不想被提示可以在同一頁關掉。
+
+*Since v41: when this mod logs an error, a window offers **Report on GitHub** — it copies a full report
+(versions, mod list, error text; your user name is stripped from paths) and opens the bug form already
+filled in. Paste the report into the "Player.log" field and submit. Nothing is sent unless you click it.
+You can also open it from Mod settings → "Report a problem…", or turn the pop-up off there.*
+
+也可以手動附 log：用 [HugsLib](https://steamcommunity.com/sharedfiles/filedetails/?id=818773962)
 按 **Ctrl+F12** 上傳並貼連結；或直接附上 `Player.log`：
 
 ```
