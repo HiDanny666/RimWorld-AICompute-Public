@@ -1,92 +1,71 @@
 # AI Compute Infrastructure
 
-**RimWorld 1.6 模組｜Mod for RimWorld 1.6**
+**RimWorld 1.6 模組｜不需 DLC｜支援 Multiplayer｜完整繁體中文**
 
-在邊緣世界蓋一座真的資料中心：製作 AI 加速卡、插進運算機櫃，讓算力自己把研究做完，
-或者訓練你自己的模型 —— 不需要任何殖民者，但要面對電力與散熱的真實約束。
+在邊緣世界蓋一座真正的資料中心。
 
-*Build a real datacenter on the rim. Craft accelerator cards, rack them, and let raw
-compute grind through your research queue while your colonists sleep — no researcher
-required, but the machines answer to physics instead.*
+製作或收購 AI 運算卡、插進機櫃、拉區網、鋪液冷迴路 —— 讓算力替你做研究、訓練自己的模型，
+最後把模型變成機器人勞動力與自主無人機。每張卡都吃電、都發熱，機房一過熱就降頻，再不管就燒卡。
 
-**無 DLC 需求。相容 RimWorld Multiplayer。**
-*No DLC required. Compatible with RimWorld Multiplayer.*
-
----
-
-## 下載 · Download
-
-到 **[Releases](../../releases)** 頁面下載最新的 `AICompute.zip`，解壓縮之後把
-`AICompute` 資料夾整個放進：
-
-```
-<RimWorld 安裝路徑>\Mods\
-```
-
-然後在遊戲的模組清單裡啟用「AI Compute Infrastructure」。
-
-*Download the latest `AICompute.zip` from [Releases](../../releases), extract it, and
-drop the `AICompute` folder into your RimWorld `Mods\` directory.*
-
-### 載入順序 · Load order
-
-如果你有裝 RimWorld Multiplayer 或 Harmony，把本模組排在它們**之後**。
+*Build a real datacenter on the rim. Rack AI accelerators, wire a LAN, plumb liquid cooling —
+then let compute run your research, train your own models, and power robot workers and
+autonomous drones. Every card draws watts and dumps heat: run hot and it throttles, then burns.*
 
 ---
 
-## 內容 · What's in it
+## 內容 · Features
 
 | | |
 |---|---|
-| **算力** | 27 款真實 GPU 型號（V100 到 B300、MI 系列、Gaudi、TPU），規格取自官方稠密 FP16 數字 |
-| **熱** | 冷熱雙管實體管網、液冷／浸沒式、乾式冷卻器、蒸發冷卻塔、真實 PUE |
-| **電** | 不斷電系統、備援發電機、功率封頂、啟動湧浪、Tier I～IV 分級 |
-| **模型** | 18 種可訓練模型、權重是實體儲存匣、過時衰退、蒸餾／量化 |
-| **對齊** | 超大型模型有失控風險。未對齊的更強 —— 那正是問題所在 |
-| **合約** | 算力合約、談判桌、SLA 稽核、違約金 |
-| **機器人** | 把訓練好的策略裝進會走路的機器裡。它不會在工作中學習 |
-| **無人機** | 偵察／攻擊／干擾／遊蕩彈藥，由穿戴式控制器或蜂群發射器指揮 |
-| **蜂群發射器** | 48 管、自主目標辨識 —— 而它會標錯人 |
-
-完整的機制說明、平衡數值與設計理由在 **[Releases](../../releases)** 的每一版說明裡。
+| **機房** | 運算機櫃、NVL16 機櫃、浸沒式運算槽。機櫃只是鐵殼，耗電來自插進去的卡 |
+| **運算卡** | 27 款真實型號（NVIDIA、AMD Instinct、Intel Gaudi、Google TPU、HGX B300），真實 FP16 規格、功耗與記憶體；千瓦級的卡需要液冷 |
+| **散熱** | 冷熱分管液冷、冷卻液分配單元、空調箱、乾式冷卻器、冷卻塔、餘熱回收 |
+| **網路** | 16 色網路線、叢集與骨幹交換器。每個區網是一座獨立機房，有自己的訓練佇列 |
+| **電力** | UPS、備援發電機、即時 PUE。達成 Uptime Tier I～IV，換取不掉檢查點、自動切換、降低故障率 |
+| **監控** | NOC 監控牆、營運控制台，以及機房熱度／負載／故障風險總覽地圖層 |
+| **研究** | 殖民者睡覺時，算力自動推進研究 |
+| **模型** | 約 30 種可訓練模型。權重是實體儲存匣 —— 會被搶 |
+| **推論** | 推論伺服器提供全殖民地加成，以及戰場預測、AI 議價、健康掃描、深層礦脈探勘、作物檢查等主動任務 |
+| **合約** | 出租算力、談判桌、SLA 稽核與違約金 |
+| **機器人** | 組裝台打造人形機器人（五種外觀），插上策略匣就會那項技能 —— 它不會在工作中學習。附充電站與六種改裝模組 |
+| **無人機** | 七款遊蕩彈藥（FPV、Switchblade 300/600、Kargu-2、Lancet-3、Shahed-136、電戰干擾機），操作員控制器、蜂群發射器、終端俯衝 |
+| **反無人機** | 反無人機砲塔與干擾塔 —— 後期敵人也會派無人機操作員來 |
 
 ---
 
-## 回報問題 · Reporting issues
+## 安裝 · Install
 
-**[開一個 Issue](../../issues/new/choose)**
+**Steam 創意工坊**：訂閱即可（連結待補）。
 
-回報前請先看一眼 [已知問題](../../issues)，可能已經有人回報過了。
+**手動安裝**：到 **[Releases](../../releases)** 下載最新的 `AICompute-vX.Y.zip`，
+解壓縮後把 `AICompute` 資料夾放進 `<RimWorld 安裝路徑>\Mods\`，再到遊戲模組清單啟用。
 
-**紅字錯誤請務必附上 `Player.log`** —— 沒有它幾乎不可能定位問題。檔案在：
+*Subscribe on the Steam Workshop, or download the latest zip from [Releases](../../releases)
+and drop the `AICompute` folder into your RimWorld `Mods\` directory.*
+
+**載入順序**：排在 Harmony 與 Multiplayer（如果有裝）**之後**。
+
+---
+
+## 回報問題 · Bug reports
+
+**[開一個 Issue](../../issues/new/choose)** —— 回報前請先看看 [已知問題](../../issues)。
+
+有紅字錯誤時請務必附上 log，最簡單的方式是用 [HugsLib](https://steamcommunity.com/sharedfiles/filedetails/?id=818773962)
+按 **Ctrl+F12** 上傳並貼連結；或直接附上 `Player.log`：
 
 ```
 %USERPROFILE%\AppData\LocalLow\Ludeon Studios\RimWorld by Ludeon Studios\Player.log
 ```
 
-（Mac：`~/Library/Logs/Ludeon Studios/RimWorld by Ludeon Studios/Player.log`）
-
-推薦用 [HugsLib](https://steamcommunity.com/sharedfiles/filedetails/?id=818773962) 的
-**Ctrl+F12** 一鍵上傳 log，貼連結給我就好。
-
-*Please attach your `Player.log` for any error report — HugsLib's Ctrl+F12 uploads it
-and gives you a link.*
+*Please include your mod list and a log (HugsLib Ctrl+F12 link, or `Player.log`).*
 
 ---
 
 ## 授權 · License
 
-本模組的**原始碼未公開**。發布的內容可以自由下載遊玩。
+這個 repo 只放發布檔與問題回報，**原始碼不公開**。發布內容可以自由下載遊玩；
+如果要轉載、重新打包或製作衍生模組，請先開 Issue 詢問。
 
-轉載、重新打包上傳到其他平台、或以本模組為基礎發布衍生模組，請先開 Issue 詢問。
-
-*Source code is not public. Released builds are free to download and play.
-Please open an issue before redistributing or publishing derivative mods.*
-
----
-
-## 這個倉庫沒有原始碼
-
-這裡只放**發布內容**與**問題回報**。原始碼在另一個私有倉庫。
-
-如果你在找某個機制到底怎麼運作的、或想討論設計，開 Issue 問就好 —— 我很樂意講。
+*Source is not public. Builds are free to play. Please ask via an issue before
+redistributing or publishing derivative mods.*
