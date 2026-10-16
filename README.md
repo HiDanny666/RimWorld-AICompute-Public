@@ -1,6 +1,6 @@
 # AI Compute Infrastructure
 
-**RimWorld 1.6 模組｜不需 DLC｜支援 Multiplayer｜完整繁體中文**
+**RimWorld 1.6／1.7 模組｜不需 DLC｜支援 Multiplayer｜完整繁體中文**
 
 在邊緣世界蓋一座真正的資料中心。
 
@@ -35,7 +35,7 @@ autonomous drones. Every card draws watts and dumps heat: run hot and it throttl
 
 ## 安裝 · Install
 
-**Steam 創意工坊**：[訂閱即可](https://steamcommunity.com/sharedfiles/filedetails/?id=3820700383)。
+**Steam 創意工坊**：[訂閱即可](https://steamcommunity.com/sharedfiles/filedetails/?id=3820710553)。
 
 **手動安裝**：到 **[Releases](../../releases)** 下載最新的 `AICompute-vX.Y.zip`，
 解壓縮後把 `AICompute` 資料夾放進 `<RimWorld 安裝路徑>\Mods\`，再到遊戲模組清單啟用。
