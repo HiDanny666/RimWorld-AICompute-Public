@@ -5,7 +5,7 @@
 對外介紹文案看 `宣傳介紹文.md`；Steam 工作坊描述看 `Steam工作坊說明.md`；玩家手冊看 `教學手冊.md`。
      這段是 HTML 註解，GitHub 上看不到，整份複製過去也不會露出來。 -->
 
-**RimWorld 1.6／1.7 模組｜不需 DLC｜支援 Multiplayer｜完整繁體中文**
+**RimWorld 1.6／1.7 模組｜不需 DLC｜支援 Multiplayer｜相容 Combat Extended｜完整繁體中文**
 
 在邊緣世界蓋一座真正的資料中心。
 
@@ -21,7 +21,7 @@ autonomous drones. Every card draws watts and dumps heat: run hot and it throttl
 ## 📖 完整攻略手冊 · Full guide
 
 從第一張二手礦卡到 Tier IV 機房：開局 10 步、研究樹、建築成本、散熱三層、模型訓練與未對齊、
-合約談判、機器人、無人機與反無人機 —— 附 **25 張建築圖鑑**與 **10 張物品圖鑑**，中英雙語、深／淺主題。
+合約談判、機器人、無人機與反無人機 —— 附 **27 張建築圖鑑**與 **14 張物品圖鑑**，中英雙語、深／淺主題。
 
 **➡️ [開啟攻略手冊](https://hidanny666.github.io/RimWorld-AICompute-Public/)**
 
@@ -41,15 +41,19 @@ download [`index.html`](index.html) and open it in any browser.*
 | **運算卡** | 27 款真實型號（NVIDIA、AMD Instinct、Intel Gaudi、Google TPU、HGX B300），真實 FP16 規格、功耗與記憶體；千瓦級的卡需要液冷 |
 | **散熱** | 冷熱分管液冷、冷卻液分配單元、空調箱、乾式冷卻器、冷卻塔、餘熱回收 |
 | **網路** | 16 色網路線、叢集與骨幹交換器。每個區網是一座獨立機房，有自己的訓練佇列 |
-| **電力** | UPS、備援發電機、即時 PUE。達成 Uptime Tier I～IV，換取不掉檢查點、自動切換、降低故障率 |
-| **監控** | NOC 監控牆、營運控制台，以及機房熱度／負載／故障風險總覽地圖層 |
+| **電力** | UPS、備援發電機、即時 PUE。達成 Uptime Tier I～IV，換取不掉檢查點、自動切換、降低故障率；能接哪一級的合約還要看過去 30 天的實測可用性 |
+| **消防** | 機房氣體滅火系統：極早期偵煙、一起火就放氣撲滅整個房間；過熱燒卡可能起火，Tier III 以上要求自動滅火 |
+| **監控** | NOC 監控牆、營運控制台（含可排序比較所有權重匣的「模型庫」分頁），以及機房熱度／負載／故障風險總覽地圖層 |
+| **音效** | 每台設備都有自己的運轉聲（風扇、泵浦、落水、靜電……待機小聲、滿載轉上去），加上出膛、放氣、燒卡、警報等事件音；模組設定可調音量 |
 | **研究** | 殖民者睡覺時，算力自動推進研究 |
-| **模型** | 約 40 種可訓練模型（殖民地增益模型＋機器人與無人機策略）。權重是實體儲存匣 —— 會被搶 |
-| **推論** | 推論伺服器提供全殖民地加成，以及戰場預測、AI 議價、健康掃描、深層礦脈探勘、作物檢查等主動任務 |
+| **模型** | 約 40 種可訓練模型（殖民地增益模型＋機器人與無人機策略）。權重是實體儲存匣 —— 會被搶。資料分七個領域、四種來源（標註、授權、從襲擊者身上拿的原始資料、自己生成的合成資料）；新練的模型要評估（或服務夠久）才知道有沒有對齊；訓練從同機房區網的資料語料庫取用資料；可加長訓練、繼續預訓練刷新舊權重，或用基礎模型便宜地微調出機器人策略 |
+| **推論** | 權重匣插進模型匣讀取機，機櫃切到推論模式就自動把模型提供給殖民者（一顆匣可以供整個區網） —— 服務人數看算力、塞不塞得下看記憶體，可量化、蒸餾或開深度推理；另有戰場預測、AI 議價、健康掃描、深層礦脈探勘、作物檢查等主動任務 |
 | **合約** | 出租算力、談判桌、SLA 稽核與違約金 |
+| **模型經濟** | 模型授權收租（匣鎖在讀取機裡）、推論合約（MaaS：預留推論容量給客戶）、開放權重換全世界好感（可能收到社群微調版） |
 | **機器人** | 組裝台打造人形機器人（五種外觀），插上策略匣就會那項技能 —— 它不會在工作中學習。附充電站與六種改裝模組 |
 | **無人機** | 七款遊蕩彈藥（FPV、Switchblade 300/600、Kargu-2、Lancet-3、Shahed-136、電戰干擾機），操作員控制器、蜂群發射器、終端俯衝 |
 | **反無人機** | 反無人機砲塔與干擾塔 —— 研究完自主彈藥後，工業等級以上的敵人會派無人機操作員來；無人機看不穿屋頂，屋頂會擋下爆炸 |
+| **Combat Extended** | 有裝 CE 時自動換成 CE 尺度的寫實數值：每款無人機對應真實彈頭（RPG-7、標槍、155mm 級……）並噴出 CE 破片，機器人與無人機用 CE 護甲，反無人機砲塔改打 35mm 高爆彈、要裝填彈藥。沒裝 CE 時完全不變 *(With CE active: real warheads with CE fragments, CE-scale armour, a 35mm counter-drone gun that needs ammo. Nothing changes without CE.)* |
 
 ---
 
@@ -63,9 +67,9 @@ download [`index.html`](index.html) and open it in any browser.*
 *Subscribe on the Steam Workshop, or download the latest zip from [Releases](../../releases)
 and drop the `AICompute` folder into your RimWorld `Mods\` directory.*
 
-**載入順序**：排在 Harmony 與 Multiplayer（如果有裝）**之後**。
+**載入順序**：排在 Harmony、Multiplayer 與 Combat Extended（如果有裝）**之後**。
 
-**多人連線／複製到另一台電腦**：請複製**整個** `AICompute` 資料夾（About、Assemblies、Biotech、Defs、
+**多人連線／複製到另一台電腦**：請複製**整個** `AICompute` 資料夾（About、Assemblies、Biotech、CombatExtended、Defs、
 Languages、Patches、Sounds、Textures 與 LoadFolders.xml）。只複製一部分時，開遊戲會看到一長串
 「Failed to find … AIC_…」，後面會有一條說明列出缺了哪些資料夾。
 
