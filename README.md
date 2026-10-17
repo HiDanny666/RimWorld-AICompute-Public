@@ -1,5 +1,10 @@
 # AI Compute Infrastructure
 
+<!-- 📌 本檔是公開 repo（`RimWorld-AICompute-Public`）`README.md` 的唯一來源。
+改完之後把整份內容複製到 `AICompute-Public/README.md`，兩邊內容要一致。
+對外介紹文案看 `宣傳介紹文.md`；Steam 工作坊描述看 `Steam工作坊說明.md`；玩家手冊看 `教學手冊.md`。
+     這段是 HTML 註解，GitHub 上看不到，整份複製過去也不會露出來。 -->
+
 **RimWorld 1.6／1.7 模組｜不需 DLC｜支援 Multiplayer｜完整繁體中文**
 
 在邊緣世界蓋一座真正的資料中心。
