@@ -3174,10 +3174,10 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <li>匣過時掉兩階以上，買家自動解約（不扣好感）。</li>
 </ul>
 <p><strong>推論合約</strong>：每 4 天刷新 2 張，只開<strong>你讀取機上有的模型</strong>。每張寫模型、最低規模、<strong>要保留幾位</strong>、期限 5～15 天。區網上已經有推論池在提供這個模型時，位數照那一池能給的開（一半到全滿）；還沒有時照規模（小型 4～16、中型 3～10、大型 2～6、超大 1～3）。報酬＝位數 × 價值倍數（小 1、中 2.5、大 6、超大 16）× 天數 × 25 銀，大模型每一位比較值錢，算下來每份算力的報酬跟出租差不多。</p>
-<pre><code>報酬 = 服務人數 × 模型規模倍數（小 1／中 2／大 4／超大 8）× 天數 × 25 銀 × Tier 倍率（這個模型開放過權重再 ×0.5）
+<pre><code>報酬 = 保留位數 × 模型規模倍數（小 1／中 2.5／大 6／超大 16）× 天數 × 25 銀 × Tier 倍率（這個模型開放過權重再 ×0.5）
 </code></pre>
 <ul>
-<li>一座標準機櫃服務小型模型約 8 人（8 個容量）→ 約 <strong>200 銀／天</strong>，比算力合約好、推論只吃 40% 電；代價是殖民者少拿增益。</li>
+<li>一座標準機櫃服務小型模型約 8 位 → 約 <strong>200 銀／天</strong>，比算力合約好、推論只吃 40% 電；代價是殖民者少拿增益。</li>
 <li>期滿時服務上線 ≥ <strong>90%</strong> 才算完成；不到就違約（跟算力合約一樣扣違約金、好感、聲譽）。</li>
 <li>每個區網同時一份推論合約（跟算力合約各算各的）。談判桌照用；<strong>延期</strong>會把要上線的天數一起拉長。</li>
 <li>營運控制台「推論」分頁與機櫃面板會寫「推論合約預留 N 個容量」。</li>
@@ -7572,10 +7572,10 @@ distilled ×0.8, quantised ×0.7. Roughly a cartridge's market value every 30 da
 </ul>
 <p><strong>Inference contracts</strong>: 2 offers every 4 days, only for <strong>models you have in a reader</strong>. Each names a model, a minimum
 size, <strong>how many seats to reserve</strong> and 5–15 days. Once a pool on your LAN serves that model, the seats follow what that pool can give (half to all of it); before that they follow the size (small 4–16, medium 3–10, large 2–6, colossal 1–3). Pay = seats × value factor (small 1, medium 2.5, large 6, colossal 16) × days × 25 silver, so a seat of a big model is worth more and the pay per unit of compute stays close to rental.</p>
-<pre><code>Pay = people served × model-size factor (small 1 / medium 2 / large 4 / colossal 8) × days × 25 silver × tier multiplier (×0.5 if this model's weights were released)
+<pre><code>Pay = seats reserved × model-size factor (small 1 / medium 2.5 / large 6 / colossal 16) × days × 25 silver × tier multiplier (×0.5 if this model's weights were released)
 </code></pre>
 <ul>
-<li>A standard rack serves about 8 people with a small model (8 capacity) → about <strong>200 silver/day</strong>, better than compute contracts, and inference draws only
+<li>A standard rack serves about 8 seats with a small model → about <strong>200 silver/day</strong>, better than compute contracts, and inference draws only
   40% power; the price is that colonists get less of the buff.</li>
 <li>At the end the service must have been up <strong>≥ 90%</strong> of the time, otherwise it is a default (penalty, goodwill and
   reputation, as with compute contracts).</li>
