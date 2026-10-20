@@ -427,7 +427,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td><strong>對應版本</strong></td>
-<td>v43.0</td>
+<td>v44.0</td>
 </tr>
 </tbody>
 </table>
@@ -1800,7 +1800,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <tbody>
 <tr>
 <td><strong>UPS</strong></td>
-<td>平時是普通電池；機櫃啟動那 2.5 倍湧浪由它吃掉，電網完全無感。放電上限 <strong>9,000 W</strong></td>
+<td>平時是普通電池；機櫃啟動那 2.5 倍湧浪由同一張電網上的 UPS <strong>一起吸收</strong>，每台放電上限 <strong>9,000 W</strong>，吸不完的才打到電網（插滿的 NVL16 要 4 台才全吸）</td>
 </tr>
 <tr>
 <td><strong>備援發電機</strong></td>
@@ -3838,7 +3838,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td>電力</td>
-<td>發射瞬間 350 W → <strong>2,750 W</strong>（跟機櫃湧浪一樣需要 UPS）</td>
+<td>還有彈要射時 350 W → <strong>2,750 W</strong>（直接向電網拿；電網不夠時由電池補 —— UPS 平時也算電池。不走機櫃那種 UPS 湧浪吸收）</td>
 </tr>
 <tr>
 <td>最小射程</td>
@@ -3944,6 +3944,10 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <tr>
 <td>敵人進屋</td>
 <td>躲進屋頂底下看不到之後 <strong>10 秒內</strong>仍算目標：蜂群在頭頂盤旋，不會立刻飛回來</td>
+</tr>
+<tr>
+<td>敵人清光</td>
+<td>回得來的機型飛回發射器旁降落、變回彈體；<strong>單程</strong>的（柳葉刀-3、彈簧刀 600、見證者-136）沒有目標就<strong>解除戰鬥部自毀</strong>（不爆炸，不會炸到自己的發射器），不在天上一直盤旋</td>
 </tr>
 <tr>
 <td>新敵人</td>
@@ -4155,8 +4159,8 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <td>任何子彈或破片都能打下來</td>
 </tr>
 <tr>
-<td><strong>FPV</strong></td>
-<td>RPG-7 破片彈頭：爆炸 58、半徑 1.5、80 片小破片</td>
+<td><strong>FPV／光纖 FPV</strong></td>
+<td>RPG-7 破片彈頭：爆炸 58、半徑 1.5、80 片小破片（兩款同一顆彈頭）</td>
 <td></td>
 </tr>
 <tr>
@@ -4198,6 +4202,11 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <td><strong>感測模組</strong></td>
 <td>瞄準精度 +0.20、夜視效率 +0.40</td>
 <td>雷射測距＋熱像</td>
+</tr>
+<tr>
+<td><strong>體積（Bulk）</strong></td>
+<td>無人機控制器 8（穿著 5）、手持干擾器 4（穿著 2）；彈體：FPV 4、光纖 FPV 5、Switchblade 300 3、Kargu-2 5、Lancet-3 12、Switchblade 600 10、Shahed-136 <strong>40</strong>、EW 四軸 4、補給四軸 6</td>
+<td>搬運、背包、商隊照 CE 規則算；控制器機庫裡的機體不佔背包</td>
 </tr>
 </tbody>
 </table>
@@ -4395,7 +4404,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <li><strong>訓練不動</strong> → 那個<strong>領域</strong>的資料不夠（看面板每個領域那一行）。訓練只用<strong>同區網資料語料庫裡</strong>的資料：確認語料庫接在這個區網、開著補充、倉庫有那個領域的資料；沒有就去標註台加對應領域的工作單。
    只有合成資料也會停：合成最多補到一半，其餘要真實資料。</li>
 <li><strong>叢集加成沒出現</strong> → 網路線要鋪到機櫃<strong>底下</strong>，而且只有交換器能橋接。</li>
-<li><strong>啟動瞬間跳電</strong> → 機櫃湧浪 ×2.5，蓋 UPS；備援發電機只救「持續缺電」。</li>
+<li><strong>啟動瞬間跳電</strong> → 機櫃湧浪 ×2.5，蓋 UPS（多台會一起吸，每台 9,000 W）或分批開機；備援發電機只救「持續缺電」。</li>
 <li><strong>設備開關機沒反應</strong> → 原版 flickable 切的是電源，本模組的開關機是獨立一組；
    機櫃面板第一行寫「在做什麼／為什麼沒在做」，第二行寫「目前有電 － 狀態：運轉中/待機/關機/停擺/故障」。</li>
 <li><strong>卡一直壞</strong> → 新卡頭 5 天 ×3、跑滿 120 天 ×1.5、240 天 ×2（看機櫃面板的「卡齡」，用「退出滿 120／240 天的卡」汰換）；派人做機房維運（故障率減半五天）；Tier IV 再減半。
@@ -4441,7 +4450,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td>機櫃湧浪</td>
-<td>×2.5（UPS 放電上限 9,000 W）</td>
+<td>×2.5（同電網 UPS 合吸，每台 9,000 W；停電後恢復不湧浪）</td>
 </tr>
 <tr>
 <td>CDU／乾冷器／冷卻塔</td>
@@ -4682,7 +4691,8 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </table>
 <h3 id="電力湧浪">⚡ 電力湧浪</h3>
 <p>機櫃從閒置轉入運算的那一瞬間，功耗變成 <strong>2.5 倍</strong>、持續約 <strong>8 秒</strong>（標準機櫃 2,600 → 6,500 W；NVL16 23,000 → 57,500 W）。
-電網撐不住就跳電 —— 履行合約時等於違約。用電池、UPS、備援發電吸收突波，或分批開機。</p>
+電網撐不住就跳電 —— 履行合約時等於違約。同一張電網上的 UPS 會一起吸收（每台最多 9,000 W），吸不完的那一份才打到電網；不然就要發電餘裕夠大，或分批開機。
+因為<strong>停電</strong>而停下的機櫃，電回來時直接恢復運算、不會再湧浪一次（不會一斷電就連鎖震盪）；沒任務、被關機後再開的照常湧浪。</p>
 <h3 id="模型過時">🧠 模型過時</h3>
 <p>模型每 <strong>30 天</strong>退化一階（加長訓練練出來的 60 天），最低停在小型。重訓同規模、或跑「繼續預訓練」（從頭練的一半算力、四分之一資料）就重新計時。
 匣的面板會寫「當代水準 · X 後退化一階」或「已過時」。</p>
@@ -4752,7 +4762,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </ul>
 <div class="alert alert-note">
 <p class="alert-head"><span class="alert-icon">📘</span><span>Note</span></p>
-<p>本手冊的數字取自模組 Defs 與 README，對應 v43.0。遊戲數值若因版本調整而變動，以遊戲內面板為準。</p>
+<p>本手冊的數字取自模組 Defs 與 README，對應 v44.0。遊戲數值若因版本調整而變動，以遊戲內面板為準。</p>
 </div>
 </article>
     <article data-lang="en" hidden>
@@ -4788,7 +4798,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td><strong>Documented version</strong></td>
-<td>v43.0</td>
+<td>v44.0</td>
 </tr>
 </tbody>
 </table>
@@ -6167,7 +6177,7 @@ Build next
 <tbody>
 <tr>
 <td><strong>UPS</strong></td>
-<td>An ordinary battery at rest, except it absorbs the 2.5× rack inrush so the grid never sees it. Discharge ceiling <strong>9,000 W</strong></td>
+<td>An ordinary battery at rest, except that every UPS on the same grid <strong>absorbs the 2.5× rack inrush together</strong>, <strong>9,000 W</strong> each; only the rest reaches the grid (a full NVL16 needs 4 to absorb it all)</td>
 </tr>
 <tr>
 <td><strong>Backup generator</strong></td>
@@ -8246,7 +8256,7 @@ own people.</p>
 </tr>
 <tr>
 <td>Power</td>
-<td>Spikes from 350 W to <strong>2,750 W</strong> at launch (needs a UPS like rack inrush does)</td>
+<td>350 W rises to <strong>2,750 W</strong> while launches are queued (drawn straight from the grid; batteries cover a shortfall, and a UPS counts as a battery. It does not use the UPS inrush absorption racks get)</td>
 </tr>
 <tr>
 <td>Minimum range</td>
@@ -8352,6 +8362,10 @@ own people.</p>
 <tr>
 <td>Enemy goes indoors</td>
 <td>Someone who ducks under a roof stays on the plot for <strong>10 seconds</strong>: the swarm circles overhead instead of flying home</td>
+</tr>
+<tr>
+<td>Enemies cleared</td>
+<td>Recoverable airframes fly back, land beside the launcher and become airframe items again; <strong>one-way</strong> ones (Lancet-3, Switchblade 600, Shahed-136) with no target <strong>disarm and scuttle</strong> (no explosion, so they never hit your own launcher) instead of circling forever</td>
 </tr>
 <tr>
 <td>New contact</td>
@@ -8563,8 +8577,8 @@ The wearer gets a shield-style charge gizmo; <strong>while drafted</strong>, "Ac
 <td>Any bullet or fragment brings one down</td>
 </tr>
 <tr>
-<td><strong>FPV</strong></td>
-<td>RPG-7 fragmentation warhead: blast 58, radius 1.5, 80 small fragments</td>
+<td><strong>FPV / fibre-optic FPV</strong></td>
+<td>RPG-7 fragmentation warhead: blast 58, radius 1.5, 80 small fragments (both carry the same warhead)</td>
 <td></td>
 </tr>
 <tr>
@@ -8606,6 +8620,11 @@ The wearer gets a shield-style charge gizmo; <strong>while drafted</strong>, "Ac
 <td><strong>Sensor suite</strong></td>
 <td>Aiming accuracy +0.20, night vision +0.40</td>
 <td>Laser rangefinder + thermal</td>
+</tr>
+<tr>
+<td><strong>Bulk</strong></td>
+<td>Drone controller 8 (worn 5), handheld jammer 4 (worn 2); airframes: FPV 4, fibre-optic FPV 5, Switchblade 300 3, Kargu-2 5, Lancet-3 12, Switchblade 600 10, Shahed-136 <strong>40</strong>, EW quad 4, supply quad 6</td>
+<td>Hauling, inventory and caravans follow CE's rules; airframes in a controller's hangar don't take inventory space</td>
 </tr>
 </tbody>
 </table>
@@ -8809,7 +8828,7 @@ then multiplied by the colony's <strong>carbon grade</strong> (A ×0.5 to E ×1.
    domain's data in stock; if not, add bills for it at the annotation bench. Synthetic data alone also stalls: it only covers
    up to half, the rest must be real.</li>
 <li><strong>No cluster bonus</strong> → cable must run <strong>under</strong> the racks, and only switches bridge runs.</li>
-<li><strong>The grid browns out on startup</strong> → rack inrush is 2.5×. Build a UPS; a backup generator only saves
+<li><strong>The grid browns out on startup</strong> → rack inrush is 2.5×. Build UPS units (they absorb together, 9,000 W each) or start racks in batches; a backup generator only saves
    you from sustained deficit.</li>
 <li><strong>Device switches seem dead</strong> → the vanilla flickable switch cuts power; this mod's on/off switch is
    a separate control. The rack panel's first line says what it is doing or why it is not; the second reads "has power — state: running / standby / off /
@@ -8867,7 +8886,7 @@ then multiplied by the colony's <strong>carbon grade</strong> (A ×0.5 to E ×1.
 </tr>
 <tr>
 <td>Rack inrush</td>
-<td>×2.5 (UPS discharge ceiling 9,000 W)</td>
+<td>×2.5 (UPS on the grid absorb together, 9,000 W each; no surge when power comes back)</td>
 </tr>
 <tr>
 <td>CDU / dry cooler / cooling tower</td>
@@ -9108,7 +9127,8 @@ then multiplied by the colony's <strong>carbon grade</strong> (A ×0.5 to E ×1.
 </table>
 <h3 id="power-surges">⚡ Power surges</h3>
 <p>The moment a rack goes from idle to computing, it draws <strong>2.5×</strong> power for about <strong>8 seconds</strong> (standard rack 2,600 → 6,500 W; NVL16 23,000 → 57,500 W).
-If the grid cannot take it, it trips — a breach when you are fulfilling a contract. Absorb surges with batteries, UPS and backup generation, or start racks in batches.</p>
+If the grid cannot take it, it trips — a breach when you are fulfilling a contract. Every UPS on the same grid absorbs part of the surge (up to 9,000 W each) and only the rest reaches the grid; otherwise you need enough spare generation, or start racks in batches.
+A rack that stopped because the <strong>power failed</strong> resumes without a second surge when power returns (so one brownout does not cascade); racks restarted after having no job or being switched off surge as usual.</p>
 <h3 id="model-obsolescence">🧠 Model obsolescence</h3>
 <p>A model drops one tier every <strong>30 days</strong> (60 for extended-training cartridges) and stops at small. Retraining at the same scale or running "continue pre-training" (half the compute, a quarter of the data) resets the clock.
 The cartridge panel says "state of the art · drops a tier in X" or "obsolete".</p>
@@ -9178,7 +9198,7 @@ In multiplayer, notifications always use their default mode (settings are per co
 </ul>
 <div class="alert alert-note">
 <p class="alert-head"><span class="alert-icon">📘</span><span>Note</span></p>
-<p>All numbers in this guide come from the mod's Defs and README, matching v43.0. If a later version
+<p>All numbers in this guide come from the mod's Defs and README, matching v44.0. If a later version
 changes a value, the in-game panel wins.</p>
 </div>
 </article>
