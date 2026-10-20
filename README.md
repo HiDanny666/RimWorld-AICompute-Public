@@ -34,6 +34,19 @@ download [`index.html`](index.html) and open it in any browser.*
 
 ---
 
+## v44.0 更新內容 · What's new in v44.0
+
+| | |
+|---|---|
+| **電力湧浪** | 同一張電網上的 UPS 會一起吸收機櫃啟動湧浪（每台最多 9,000 W），吸不完的才打到電網；因停電而停下的機櫃恢復時不再湧浪一次，不會連鎖斷電 |
+| **無人機** | 單程彈（柳葉刀-3、彈簧刀 600、見證者-136）敵人清光又沒目標時解除戰鬥部墜毀（不爆炸），不再盤旋在自家發射器上 |
+| **Combat Extended** | 光纖 FPV（OG-7V 彈頭與破片）、手持干擾器與所有彈體物品改用 CE 數值與體積；修正 CE 下反無人機砲塔彈藥標籤的繁中翻譯 |
+| **效能** | 後期殖民地（4 區網、40 座 NVL72 滿載）本模組模擬耗時約少六成；NOC 監控牆預警改為每遊戲小時檢查一次 |
+
+*UPS units on a grid now share rack inrush and racks no longer re-surge after a blackout; one-way munitions scuttle when no target is left; Combat Extended values for the fibre-optic FPV, handheld jammer and airframe bulk; about 60% less simulation time in a late-game colony. Full notes are on the [Releases](../../releases) page.*
+
+---
+
 ## v43.0 更新內容 · What's new in v43.0
 
 | | |
