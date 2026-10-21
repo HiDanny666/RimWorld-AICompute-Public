@@ -34,6 +34,19 @@ download [`index.html`](index.html) and open it in any browser.*
 
 ---
 
+## v44.2 更新內容 · What's new in v44.2
+
+| | |
+|---|---|
+| **敵方無人機照財富** | 威脅點數**不到 300** 的襲擊不帶無人機；一般襲擊的無人機從**預算**裡買（最多占襲擊點數的 **15%**），不再額外疊上去 |
+| **每人帶幾具** | 照襲擊點數：500 點以下 1 具、1,000 點以下 2 具、以上 3 具 |
+| **型號** | 越貴的型號要越大的襲擊才出現（市價上限 150 ＋ 點數 ÷ 6）：Kargu-2 660 點、柳葉刀-3 1,620 點、見證者-136 **4,500** 點起 |
+| **保證的無人機襲擊** | 研究「自主彈藥」後必來的那一場，改成照**抵達時**的威脅點數算、**不再保底 500 點**；殖民地還太窮（不到 300 點）就延後一天 |
+
+*Enemy drones now scale with your colony's wealth: no drones under 300 threat points, drones in ordinary raids come out of a 15% budget instead of being stacked on top, drones per operator and the models on offer grow with raid size, and the guaranteed drone raid uses your threat points when it arrives (no 500-point floor). Full notes are on the [Releases](../../releases) page.*
+
+---
+
 ## v44.1 更新內容 · What's new in v44.1
 
 | | |
@@ -101,7 +114,7 @@ download [`index.html`](index.html) and open it in any browser.*
 | **模型經濟** | 模型授權收租（匣鎖在讀取機裡）、推論合約（MaaS：預留推論容量給客戶）、開放權重換全世界好感（可能收到社群微調版） |
 | **機器人** | 組裝台打造人形機器人（五種外觀），插上策略匣就會那項技能 —— 它不會在工作中學習。附充電站與六種改裝模組；每 30 天要保養一次（零件 1），逾期會變慢。機器人維修站一站包辦充電、修傷、補回被打掉的肢體與保養（吃鋼材） |
 | **無人機** | 七款遊蕩彈藥（FPV、光纖 FPV（只能由操作員放）、Switchblade 300/600、Kargu-2、Lancet-3（反裝甲射流）、Shahed-136），操作員控制器（部署時可以直接選型號）、蜂群發射器、終端俯衝；補給四軸從倉庫取藥品、食物等，空投到地圖上任何地方；手持無人機干擾器（腰帶，徵召時啟動 30 秒，不分敵我） |
-| **反無人機** | 反無人機砲塔、干擾塔與手持干擾器。工業等級以上的敵人：研究「自主彈藥」前只會零星帶 1～2 架（用槍打得下來），之後一般襲擊 10% 的人當操作員、專屬無人機襲擊依戰術 15～50%；敵人也會帶手持干擾器，圍攻時在營地蓋干擾塔（自帶電池），而且不會在自己的干擾範圍裡飛無人機。無人機看不穿屋頂，屋頂會擋下爆炸 |
+| **反無人機** | 反無人機砲塔、干擾塔與手持干擾器。工業等級以上的敵人：研究「自主彈藥」前只會零星帶 1～2 架（用槍打得下來），之後一般襲擊 10% 的人當操作員、專屬無人機襲擊依戰術 15～50%；敵人也會帶手持干擾器，圍攻時在營地蓋干擾塔（自帶電池），而且不會在自己的干擾範圍裡飛無人機。帶多少、帶什麼型號都照殖民地財富（威脅點數）：點數不到 300 的襲擊不帶，無人機戰力最多占襲擊的 15%。無人機看不穿屋頂，屋頂會擋下爆炸 |
 | **Combat Extended** | 有裝 CE 時自動換成 CE 尺度的寫實數值：每款無人機對應真實彈頭（RPG-7、標槍、155mm 級……）並噴出 CE 破片，機器人與無人機用 CE 護甲，反無人機砲塔改打 35mm 高爆彈、要裝填彈藥。沒裝 CE 時完全不變 *(With CE active: real warheads with CE fragments, CE-scale armour, a 35mm counter-drone gun that needs ammo. Nothing changes without CE.)* |
 
 ---
