@@ -427,7 +427,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td><strong>對應版本</strong></td>
-<td>v44.1</td>
+<td>v44.2</td>
 </tr>
 </tbody>
 </table>
@@ -4087,19 +4087,23 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <tbody>
 <tr>
 <td><strong>研究前</strong></td>
-<td>玩家研究完「<strong>自主彈藥</strong>」之前，工業以上的一般襲擊只有 <strong>1 人</strong>（1,500 點以上 2 人）背控制器、<strong>各帶 1 架</strong> FPV 或彈簧刀 300、小型策略 —— 用槍打得下來，讓你知道該研究什麼。專屬的無人機襲擊事件不會來</td>
+<td>玩家研究完「<strong>自主彈藥</strong>」之前，工業以上、點數 ≥ <strong>300</strong> 的一般襲擊只有 <strong>1 人</strong>（1,500 點以上 2 人）背控制器、<strong>各帶 1 架</strong> FPV 或彈簧刀 300、小型策略 —— 用槍打得下來，讓你知道該研究什麼。專屬的無人機襲擊事件不會來</td>
 </tr>
 <tr>
 <td><strong>專屬事件「無人機襲擊」</strong></td>
-<td>研究完成後 <strong>1.5～3 天</strong>內必定來一場；之後點數 ≥ <strong>500</strong>、家園地圖、<strong>工業以上</strong>派系（部落不會）。機率 1.2、再觸發 10 天</td>
+<td>研究完成後 <strong>1.5～3 天</strong>內必定來一場 —— 規模照<strong>抵達那一刻</strong>殖民地的威脅點數（財富、人數、難度）算，不保底：財富低、或剛被打掉一大塊，來的就小；到點時威脅點數不到 <strong>300</strong> 就<strong>延後一天</strong>再看；之後說書人自己抽到要點數 ≥ <strong>500</strong>、家園地圖、<strong>工業以上</strong>派系（部落不會）。機率 1.2、再觸發 10 天</td>
 </tr>
 <tr>
 <td><strong>一般襲擊</strong></td>
-<td><strong>工業以上</strong>的敵對<strong>人形</strong>陣營登陸約 <strong>90 tick</strong> 後武裝 <strong>10%</strong> 的人（至少 1 人；無人機襲擊事件照戰術是 15～50%）。部落、新石器、中世紀、機械族、蟲族不會</td>
+<td><strong>工業以上</strong>的敵對<strong>人形</strong>陣營登陸約 <strong>90 tick</strong> 後武裝 <strong>10%</strong> 的人（至少 1 人；無人機襲擊事件照戰術是 15～50%）。這一隊點數（＝說書人照財富給的威脅點數）<strong>不到 300 不帶</strong>；無人機從<strong>預算</strong>裡買 —— 全隊無人機的戰力評分加起來不超過這一隊點數的 <strong>15%</strong>，不會額外疊在襲擊上面。部落、新石器、中世紀、機械族、蟲族不會</td>
 </tr>
 <tr>
 <td><strong>每人帶幾具</strong></td>
-<td>依戰術 1～3 具（機庫 3 格）</td>
+<td>依戰術 1～3 具（機庫 3 格），再照襲擊點數封頂：<strong>&lt; 500 點 1 具、&lt; 1,000 點 2 具、以上 3 具</strong></td>
+</tr>
+<tr>
+<td><strong>帶得起哪些型號</strong></td>
+<td>型號市價上限 ＝ <strong>150 ＋ 點數 ÷ 6</strong>，指定型號的戰術也一樣（買不起就不會選那個戰術）：FPV 不限、彈簧刀 300 <strong>360 點</strong>、Kargu-2 <strong>660 點</strong>、光纖 FPV <strong>1,000 點</strong>、柳葉刀-3 <strong>1,620 點</strong>、彈簧刀 600 <strong>2,940 點</strong>、見證者-136 <strong>4,500 點</strong></td>
 </tr>
 <tr>
 <td><strong>敵人的干擾手段</strong>（研究後）</td>
@@ -4204,7 +4208,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <div class="alert alert-warning">
 <p class="alert-head"><span class="alert-icon">⚠️</span><span>Warning</span></p>
 <p>💥 <strong>CE 下無人機非常致命，也有幾件事跟原版不同：</strong>
-- <strong>敵方無人機突襲點數 ×0.6</strong>（每波小一點），<strong>Shahed 只在 3,500 點以上的突襲出現</strong>。即使如此，一架 Lancet 或 Switchblade 600 就能殺掉任何殖民者 —— 干擾塔、反無人機砲塔、加蓋屋頂是必需品。
+- <strong>敵方無人機突襲點數 ×0.6</strong>（每波小一點），<strong>Shahed 只在 4,500 點以上的突襲出現</strong>（跟沒裝 CE 一樣，照型號價格上限）。即使如此，一架 Lancet 或 Switchblade 600 就能殺掉任何殖民者 —— 干擾塔、反無人機砲塔、加蓋屋頂是必需品。
 - 帶彈頭的無人機<strong>被打下來有 25% 會殉爆</strong>（爆炸＋破片）。在自家頭上擊落要有心理準備。
 - 破片飛得比爆炸範圍遠，所以我方無人機挑目標時，會要求自己人離得更遠（爆炸半徑 × 2）。
 - 屋頂照樣擋下爆炸本身，但 CE 的「牆體破片」會讓炸到牆的爆炸往屋裡噴碎片，屋裡的人可能受輕傷（CE 設定裡可以關掉「Fragments from walls」）。
@@ -4753,7 +4757,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </ul>
 <div class="alert alert-note">
 <p class="alert-head"><span class="alert-icon">📘</span><span>Note</span></p>
-<p>本手冊的數字取自模組 Defs 與 README，對應 v44.1。遊戲數值若因版本調整而變動，以遊戲內面板為準。</p>
+<p>本手冊的數字取自模組 Defs 與 README，對應 v44.2。遊戲數值若因版本調整而變動，以遊戲內面板為準。</p>
 </div>
 </article>
     <article data-lang="en" hidden>
@@ -4789,7 +4793,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td><strong>Documented version</strong></td>
-<td>v44.1</td>
+<td>v44.2</td>
 </tr>
 </tbody>
 </table>
@@ -8496,19 +8500,23 @@ The wearer gets a shield-style charge gizmo; <strong>while drafted</strong>, "Ac
 <tbody>
 <tr>
 <td><strong>Before the research</strong></td>
-<td>Until you research <strong>Autonomous munitions</strong>, an industrial-or-above raid arms only <strong>1 raider</strong> (2 at 1,500+ points) with <strong>a single</strong> FPV or Switchblade 300 and a small policy — guns can shoot it down, and it tells you what to research. The dedicated drone raid event does not happen yet</td>
+<td>Until you research <strong>Autonomous munitions</strong>, an industrial-or-above raid of <strong>300+</strong> points arms only <strong>1 raider</strong> (2 at 1,500+ points) with <strong>a single</strong> FPV or Switchblade 300 and a small policy — guns can shoot it down, and it tells you what to research. The dedicated drone raid event does not happen yet</td>
 </tr>
 <tr>
 <td><strong>Dedicated event</strong></td>
-<td>One is guaranteed <strong>1.5–3 days</strong> after the research finishes; after that at <strong>500+</strong> threat points, player home map, <strong>industrial or above</strong> factions (tribals never). Chance 1.2, 10-day refire</td>
+<td>One is guaranteed <strong>1.5–3 days</strong> after the research finishes — sized by your colony's threat points <strong>at the moment it arrives</strong> (wealth, colonists, difficulty), with no minimum: a poor colony, or one that just lost a lot of wealth, gets a small one; if your threat points are under <strong>300</strong> when it is due, it is <strong>put off by a day</strong>; after that the storyteller picks it on its own at <strong>500+</strong> threat points, player home map, <strong>industrial or above</strong> factions (tribals never). Chance 1.2, 10-day refire</td>
 </tr>
 <tr>
 <td><strong>Any raid</strong></td>
-<td>Hostile <strong>humanlike</strong> factions of <strong>industrial tech or above</strong> arm <strong>10%</strong> of their people (at least 1) about <strong>90 ticks</strong> after landing; the dedicated drone raid uses 15–50% by doctrine. Tribal, neolithic, medieval, mechanoids and insects never</td>
+<td>Hostile <strong>humanlike</strong> factions of <strong>industrial tech or above</strong> arm <strong>10%</strong> of their people (at least 1) about <strong>90 ticks</strong> after landing; the dedicated drone raid uses 15–50% by doctrine. A raid worth <strong>under 300 points</strong> (the storyteller's wealth-based threat points) carries none, and drones come out of a <strong>budget</strong> — the combined combat power of all its drones is at most <strong>15%</strong> of the raid's points, instead of being stacked on top. Tribal, neolithic, medieval, mechanoids and insects never</td>
 </tr>
 <tr>
 <td><strong>Drones each</strong></td>
-<td>1–3 by doctrine (3-slot back rack)</td>
+<td>1–3 by doctrine (3-slot back rack), capped by raid points: <strong>1 under 500, 2 under 1,000, 3 above</strong></td>
+</tr>
+<tr>
+<td><strong>Which models</strong></td>
+<td>Market-value cap = <strong>150 + points ÷ 6</strong>, fixed-model doctrines included (a doctrine nobody can afford is not picked): FPV always, Switchblade 300 at <strong>360</strong>, Kargu-2 at <strong>660</strong>, fibre-optic FPV at <strong>1,000</strong>, Lancet-3 at <strong>1,620</strong>, Switchblade 600 at <strong>2,940</strong>, Shahed-136 at <strong>4,500</strong> points</td>
 </tr>
 <tr>
 <td><strong>Enemy jamming</strong> (after the research)</td>
@@ -8613,7 +8621,7 @@ The wearer gets a shield-style charge gizmo; <strong>while drafted</strong>, "Ac
 <div class="alert alert-warning">
 <p class="alert-head"><span class="alert-icon">⚠️</span><span>Warning</span></p>
 <p>💥 <strong>Drones are extremely lethal under CE, and a few things work differently:</strong>
-- <strong>Enemy drone raids get ×0.6 points</strong> (smaller waves), and <strong>Shahed only shows up in raids of 3,500+ points</strong>. Even so, a single Lancet or Switchblade 600 kills any colonist — jammers, counter-drone turrets and roofs are not optional.
+- <strong>Enemy drone raids get ×0.6 points</strong> (smaller waves), and <strong>Shahed only shows up in raids of 4,500+ points</strong> (same as without CE, from the model price cap). Even so, a single Lancet or Switchblade 600 kills any colonist — jammers, counter-drone turrets and roofs are not optional.
 - A drone with a warhead that gets <strong>shot down cooks off 25% of the time</strong> (blast + fragments). Mind what is underneath it.
 - Fragments fly further than the blast, so your drones want friendlies further away before they commit (blast radius × 2).
 - Roofs still stop the blast itself, but CE's wall spall means a blast against a wall can throw fragments into the room and lightly wound people inside (turn off "Fragments from walls" in CE's settings if you don't want that).
@@ -9180,7 +9188,7 @@ In multiplayer, notifications always use their default mode (settings are per co
 </ul>
 <div class="alert alert-note">
 <p class="alert-head"><span class="alert-icon">📘</span><span>Note</span></p>
-<p>All numbers in this guide come from the mod's Defs and README, matching v44.1. If a later version
+<p>All numbers in this guide come from the mod's Defs and README, matching v44.2. If a later version
 changes a value, the in-game panel wins.</p>
 </div>
 </article>
