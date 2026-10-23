@@ -34,6 +34,18 @@ download [`index.html`](index.html) and open it in any browser.*
 
 ---
 
+## v44.3 更新內容 · What's new in v44.3
+
+| | |
+|---|---|
+| **反無人機系統（新研究）** | 前期就能做：**1,000 點、只要電力**、任何研究台。干擾塔、手持干擾器、反無人機砲塔改由它解鎖，不必等「自主彈藥」；敵人帶干擾器、圍攻蓋干擾塔仍要等你研究完自主彈藥 |
+| **管線與設備同格** | 網路線與冷、熱冷卻管可以直接鋪到**已經蓋好**的機器底下，不用先拆 |
+| **多人連線** | 紅隊演練進行中重新加入不再不同步；非同步時間下合約、市場、晶片短缺、AGI 等世界層級計時改用世界時間；模擬用的靜態快取在存讀檔時清空、畫面不寫入；點別的玩家陣營的機器，面板顯示的是他們自己的工作 |
+
+*Counter-drone systems is a new early research (1,000 points, Electricity only) that unlocks jammer towers, handheld jammers and counter-drone turrets; network cable and coolant pipes can go under machines that are already built; and several multiplayer fixes (red-team rejoin desync, world time for world-level timers under async time, static caches, viewing other player factions' machines). Full notes are on the [Releases](../../releases) page.*
+
+---
+
 ## v44.2 更新內容 · What's new in v44.2
 
 | | |
@@ -114,7 +126,7 @@ download [`index.html`](index.html) and open it in any browser.*
 | **模型經濟** | 模型授權收租（匣鎖在讀取機裡）、推論合約（MaaS：預留推論容量給客戶）、開放權重換全世界好感（可能收到社群微調版） |
 | **機器人** | 組裝台打造人形機器人（五種外觀），插上策略匣就會那項技能 —— 它不會在工作中學習。附充電站與六種改裝模組；每 30 天要保養一次（零件 1），逾期會變慢。機器人維修站一站包辦充電、修傷、補回被打掉的肢體與保養（吃鋼材） |
 | **無人機** | 七款遊蕩彈藥（FPV、光纖 FPV（只能由操作員放）、Switchblade 300/600、Kargu-2、Lancet-3（反裝甲射流）、Shahed-136），操作員控制器（部署時可以直接選型號）、蜂群發射器、終端俯衝；補給四軸從倉庫取藥品、食物等，空投到地圖上任何地方；手持無人機干擾器（腰帶，徵召時啟動 30 秒，不分敵我） |
-| **反無人機** | 反無人機砲塔、干擾塔與手持干擾器。工業等級以上的敵人：研究「自主彈藥」前只會零星帶 1～2 架（用槍打得下來），之後一般襲擊 10% 的人當操作員、專屬無人機襲擊依戰術 15～50%；敵人也會帶手持干擾器，圍攻時在營地蓋干擾塔（自帶電池），而且不會在自己的干擾範圍裡飛無人機。帶多少、帶什麼型號都照殖民地財富（威脅點數）：點數不到 300 的襲擊不帶，無人機戰力最多占襲擊的 15%。無人機看不穿屋頂，屋頂會擋下爆炸 |
+| **反無人機** | 反無人機砲塔、干擾塔與手持干擾器，前期研究「反無人機系統」（只要電力）就能做。工業等級以上的敵人：研究「自主彈藥」前只會零星帶 1～2 架（用槍打得下來），之後一般襲擊 10% 的人當操作員、專屬無人機襲擊依戰術 15～50%；敵人也會帶手持干擾器，圍攻時在營地蓋干擾塔（自帶電池），而且不會在自己的干擾範圍裡飛無人機。帶多少、帶什麼型號都照殖民地財富（威脅點數）：點數不到 300 的襲擊不帶，無人機戰力最多占襲擊的 15%。無人機看不穿屋頂，屋頂會擋下爆炸 |
 | **Combat Extended** | 有裝 CE 時自動換成 CE 尺度的寫實數值：每款無人機對應真實彈頭（RPG-7、標槍、155mm 級……）並噴出 CE 破片，機器人與無人機用 CE 護甲，反無人機砲塔改打 35mm 高爆彈、要裝填彈藥。沒裝 CE 時完全不變 *(With CE active: real warheads with CE fragments, CE-scale armour, a 35mm counter-drone gun that needs ammo. Nothing changes without CE.)* |
 
 ---
