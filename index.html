@@ -427,7 +427,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td><strong>對應版本</strong></td>
-<td>v44.2</td>
+<td>v44.3</td>
 </tr>
 </tbody>
 </table>
@@ -808,13 +808,13 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <h3 id="step-7-散熱這是這個模組真正的遊戲">▶︎ Step 7 — 散熱（這是這個模組真正的遊戲）</h3>
 <ol>
 <li>研究 <strong>資料中心工程（4,000）</strong> → 解鎖冷卻管線、CDU、乾式冷卻器、交換器、NOC</li>
-<li>鋪 <strong>冷熱兩條管</strong>（各 3 鋼/格）從機櫃底下走到 CDU，CDU 再接到<strong>室外的乾式冷卻器</strong></li>
+<li>鋪 <strong>冷熱兩條管</strong>（各 3 鋼/格）從機櫃底下走到 CDU，CDU 再接到<strong>室外的乾式冷卻器</strong>（機櫃已經蓋好也能直接在底下補鋪，不用拆）</li>
 <li>機器要<strong>同時碰到冷側與熱側</strong>才算在迴路上 —— 只接一邊＝沒流量</li>
 <li>房間還是熱 → 補原版冷氣，或蓋 <strong>冷熱交換器</strong>（把房間熱抽進迴路）</li>
 <li>選機櫃或 CDU → 按「<strong>散熱規劃</strong>」，它會告訴你缺幾台什麼</li>
 </ol>
 <h3 id="step-8-組叢集規模加成">▶︎ Step 8 — 組叢集（規模加成）</h3>
-<p>研究資料中心工程後：<strong>網路線</strong>（2 鋼/格）從機櫃底下鋪到<strong>叢集交換器</strong>。</p>
+<p>研究資料中心工程後：<strong>網路線</strong>（2 鋼/格）從機櫃底下鋪到<strong>叢集交換器</strong>。線和設備可以放在同一格：先鋪線再蓋設備，或在已經蓋好的機櫃底下補鋪線都行，不用拆。</p>
 <pre><code>叢集係數 = min(1 + 0.06 × (機櫃數 − 1), 1.5) ÷ (1 + 通訊成本 × (機櫃數 − 1))
 通訊成本 = 每櫃 2%（只有叢集交換器）→ 0.7%（脊交換器容量蓋滿；一台撐 8 座）
 </code></pre>
@@ -1094,10 +1094,16 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <td>機器人維修站</td>
 </tr>
 <tr>
+<td><strong>反無人機系統</strong></td>
+<td>1,000</td>
+<td>電力</td>
+<td>干擾塔、手持干擾器（製造台）、反無人機砲塔 —— 前期就能做，任何研究台</td>
+</tr>
+<tr>
 <td><strong>自主彈藥</strong></td>
 <td>7,000</td>
 <td>模型對齊 ⁽ᵃ⁾</td>
-<td>蜂群發射器、遊蕩彈藥、干擾塔、反無人機砲塔 ⚠️</td>
+<td>蜂群發射器、遊蕩彈藥 ⚠️</td>
 </tr>
 <tr>
 <td><strong>無人機補給</strong></td>
@@ -1148,7 +1154,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <p>研究完 <strong>自主彈藥</strong> 之後：
 - 工業以上派系的一般襲擊會開始帶<strong>無人機操作員</strong>
 - 幾天內會來一波<strong>專門的無人機襲擊</strong></p>
-<p>這是設計，不是 bug。<strong>先把干擾塔與反無人機砲塔蓋好再研究它。</strong></p>
+<p>這是設計，不是 bug。<strong>先研究「反無人機系統」（只要電力），把干擾塔與反無人機砲塔蓋好再研究它。</strong></p>
 </div>
 <p align="right"><a href="#toc">↑ 回到目錄</a></p>
 
@@ -1538,13 +1544,13 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <td>干擾塔</td>
 <td>1×1</td>
 <td>鋼 80・工業零件 6</td>
-<td>自主彈藥</td>
+<td>反無人機系統</td>
 </tr>
 <tr>
 <td>反無人機砲塔</td>
 <td>2×2</td>
 <td>鋼 150・塑鋼 30・工業零件 8・高階零件 1</td>
-<td>自主彈藥</td>
+<td>反無人機系統</td>
 </tr>
 <tr>
 <td>蜂群指揮中心</td>
@@ -4051,7 +4057,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <h3 id="反無人機">🛡️ 反無人機</h3>
 <div class="alert alert-tip">
 <p class="alert-head"><span class="alert-icon">💡</span><span>Tip</span></p>
-<p>🎒 <strong>手持無人機干擾器</strong>（研究「自主彈藥」，製造台：鋼 40、工業零件 5、高階零件 1）：腰帶欄位，<strong>不能跟護盾腰帶或無人機控制器一起穿</strong>。
+<p>🎒 <strong>手持無人機干擾器</strong>（研究「反無人機系統」，製造台：鋼 40、工業零件 5、高階零件 1）：腰帶欄位，<strong>不能跟護盾腰帶或無人機控制器一起穿</strong>。
 選穿戴者看得到像護盾那樣的電量格；<strong>徵召中</strong>按「啟動干擾」：<strong>30 秒</strong>內，半徑 <strong>9 格</strong>的無線無人機<strong>不分敵我</strong>斷線墜毀（光纖 FPV 例外；<strong>自己的也會掉</strong>，開之前先召回或飛離），之後<strong>冷卻 2 小時</strong>、電量自己充回來。</p>
 </div>
 <table>
@@ -4614,7 +4620,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <tr>
 <td>10</td>
 <td><strong>模型對齊 → 自主彈藥</strong></td>
-<td>⚠️ 研究前工業派系的襲擊就會帶 1～2 架零星無人機（用槍打得下來）；研究後敵人帶更多，也會帶手持干擾器 —— 先蓋干擾塔與反無人機砲塔</td>
+<td>⚠️ 研究前工業派系的襲擊就會帶 1～2 架零星無人機（用槍打得下來）；研究後敵人帶更多，也會帶手持干擾器 —— 先研究「反無人機系統」（只要電力）、蓋干擾塔與反無人機砲塔</td>
 </tr>
 </tbody>
 </table>
@@ -4757,7 +4763,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </ul>
 <div class="alert alert-note">
 <p class="alert-head"><span class="alert-icon">📘</span><span>Note</span></p>
-<p>本手冊的數字取自模組 Defs 與 README，對應 v44.2。遊戲數值若因版本調整而變動，以遊戲內面板為準。</p>
+<p>本手冊的數字取自模組 Defs 與 README，對應 v44.3。遊戲數值若因版本調整而變動，以遊戲內面板為準。</p>
 </div>
 </article>
     <article data-lang="en" hidden>
@@ -4793,7 +4799,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td><strong>Documented version</strong></td>
-<td>v44.2</td>
+<td>v44.3</td>
 </tr>
 </tbody>
 </table>
@@ -5178,13 +5184,13 @@ Overheating, card failures, network outages, training, contracts, robots, drones
 <ol>
 <li>Research <strong>Datacenter engineering (4,000)</strong> → coolant pipes, CDUs, dry coolers, switches, NOC wall</li>
 <li>Lay <strong>both coolant pipes</strong> (3 steel/tile each) from under the rack to a CDU, and run the CDU out to
-   an <strong>outdoor dry cooler</strong></li>
+   an <strong>outdoor dry cooler</strong> (you can lay the pipes under racks that are already built — nothing needs to be deconstructed)</li>
 <li>A machine must <strong>touch both the cold and the hot side</strong> to be on the loop — one side only means no flow</li>
 <li>Still hot? Add vanilla air conditioners, or build a <strong>coolant air handler</strong> to pull room heat into the loop</li>
 <li>Select the rack or CDU and hit <strong>"Cooling plan"</strong> — it tells you exactly how many of what to build</li>
 </ol>
 <h3 id="step-8-cluster-it-the-scale-bonus">▶︎ Step 8 — Cluster it (the scale bonus)</h3>
-<p>Run <strong>network cable</strong> (2 steel/tile) from under each rack to a <strong>cluster switch</strong>.</p>
+<p>Run <strong>network cable</strong> (2 steel/tile) from under each rack to a <strong>cluster switch</strong>. Cable and devices share cells: lay the cable first and build on top, or run new cable under racks that are already built — nothing needs to be deconstructed.</p>
 <pre><code>Cluster factor = min(1 + 0.06 × (racks − 1), 1.5) ÷ (1 + comm cost × (racks − 1))
 Comm cost = 2% per rack (cluster switches only) → 0.7% (spine capacity covers every rack; one spine carries 8)
 </code></pre>
@@ -5464,10 +5470,16 @@ Comm cost = 2% per rack (cluster switches only) → 0.7% (spine capacity covers 
 <td>Robot repair station</td>
 </tr>
 <tr>
+<td><strong>Counter-drone systems</strong></td>
+<td>1,000</td>
+<td>Electricity</td>
+<td>Drone jammer, handheld drone jammer (fabrication bench), counter-drone turret — available early, at any research bench</td>
+</tr>
+<tr>
 <td><strong>Autonomous munitions</strong></td>
 <td>7,000</td>
 <td>Model alignment ᴹ</td>
-<td>Swarm launcher, loitering munitions, jammer, counter-drone turret ⚠️</td>
+<td>Swarm launcher, loitering munitions ⚠️</td>
 </tr>
 <tr>
 <td><strong>Drone resupply</strong></td>
@@ -5519,7 +5531,7 @@ extra card.</p>
 <p>Once <strong>Autonomous munitions</strong> is finished:
 - Industrial-and-above factions start bringing <strong>drone operators</strong> on ordinary raids
 - A dedicated <strong>drone raid</strong> arrives within a few days</p>
-<p>That is by design, not a bug. <strong>Build jammers and counter-drone turrets before you research it.</strong></p>
+<p>That is by design, not a bug. <strong>Research "counter-drone systems" (it only needs electricity) and build jammers and counter-drone turrets before you research it.</strong></p>
 </div>
 <p align="right"><a href="#toc">↑ Back to contents</a></p>
 
@@ -5909,13 +5921,13 @@ extra card.</p>
 <td>Drone jammer</td>
 <td>1×1</td>
 <td>80 steel · 6 comp.</td>
-<td>Autonomous munitions</td>
+<td>Counter-drone systems</td>
 </tr>
 <tr>
 <td>Counter-drone turret</td>
 <td>2×2</td>
 <td>150 steel · 30 plasteel · 8 comp. · 1 adv. comp.</td>
-<td>Autonomous munitions</td>
+<td>Counter-drone systems</td>
 </tr>
 <tr>
 <td>Swarm command centre</td>
@@ -8464,7 +8476,7 @@ own people.</p>
 <h3 id="counter-drone">🛡️ Counter-drone</h3>
 <div class="alert alert-tip">
 <p class="alert-head"><span class="alert-icon">💡</span><span>Tip</span></p>
-<p>🎒 <strong>Handheld drone jammer</strong> (autonomous munitions; fabrication bench: 40 steel, 5 components, 1 advanced component): belt slot, <strong>cannot be worn with a shield belt or a drone controller</strong>.
+<p>🎒 <strong>Handheld drone jammer</strong> (counter-drone systems; fabrication bench: 40 steel, 5 components, 1 advanced component): belt slot, <strong>cannot be worn with a shield belt or a drone controller</strong>.
 The wearer gets a shield-style charge gizmo; <strong>while drafted</strong>, "Activate jammer" downs every radio-linked drone within <strong>9 cells</strong> for <strong>30 seconds</strong>, <strong>friend or foe</strong> (fibre-optic FPVs excepted; <strong>yours go down too</strong>, so recall them or fly them clear first), then it <strong>recharges for 2 hours</strong>.</p>
 </div>
 <table>
@@ -9045,7 +9057,7 @@ then multiplied by the colony's <strong>carbon grade</strong> (A ×0.5 to E ×1.
 <tr>
 <td>10</td>
 <td><strong>Model alignment → Autonomous munitions</strong></td>
-<td>⚠️ Before this research, industrial raids already bring 1–2 stray drones (guns can shoot them down); after it, enemies bring more, plus handheld jammers — build jammers and counter-drone turrets first</td>
+<td>⚠️ Before this research, industrial raids already bring 1–2 stray drones (guns can shoot them down); after it, enemies bring more, plus handheld jammers — research "counter-drone systems" (electricity only) and build jammers and counter-drone turrets first</td>
 </tr>
 </tbody>
 </table>
@@ -9188,7 +9200,7 @@ In multiplayer, notifications always use their default mode (settings are per co
 </ul>
 <div class="alert alert-note">
 <p class="alert-head"><span class="alert-icon">📘</span><span>Note</span></p>
-<p>All numbers in this guide come from the mod's Defs and README, matching v44.2. If a later version
+<p>All numbers in this guide come from the mod's Defs and README, matching v44.3. If a later version
 changes a value, the in-game panel wins.</p>
 </div>
 </article>
