@@ -34,6 +34,18 @@ download [`index.html`](index.html) and open it in any browser.*
 
 ---
 
+## v44.5 更新內容 · What's new in v44.5
+
+| | |
+|---|---|
+| **多人連線：出租接單** | 在營運控制台按出租接單不再不同步：保證金在各端扣到同一堆白銀，而且只扣接單陣營自己倉庫裡的（以前可能算到別的玩家的地圖） |
+| **多陣營：合約歸屬** | 合約屬於接單的陣營：在你的終端接的單不會出現在別的陣營的終端、不會由他們的機櫃履約、也不會被轉交給他們的區網；報酬、保證金、違約金、欠款與好感都算接單陣營的 |
+| **多陣營：區網** | 每個陣營只看得到、只管得到自己的區網：線接到別人的監控牆不會被他管；營運控制台只列自己的區網、合約與模型匣 |
+
+*Multiplayer fixes for games with several player factions, no single-player changes: accepting a compute rental from the operations console no longer desyncs (the deposit comes out of the same silver stacks on every side, and only from the accepting faction's own storage); contracts belong to the faction that accepted them, along with their rewards, deposits, penalties, debts and goodwill; and each faction only sees and controls its own networks. Full notes are on the [Releases](../../releases) page.*
+
+---
+
 ## v44.4 更新內容 · What's new in v44.4
 
 | | |
