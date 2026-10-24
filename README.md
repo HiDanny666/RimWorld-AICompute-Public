@@ -34,6 +34,18 @@ download [`index.html`](index.html) and open it in any browser.*
 
 ---
 
+## v44.7 更新內容 · What's new in v44.7
+
+| | |
+|---|---|
+| **多人連線：訓練任務消失** | 訓練任務排好後不會再消失。原因是世界層級的檢查看不到你的監控牆，以為牆拆了，把任務移到未受管區網 |
+| **多陣營：全部分開** | 屬於殖民地的東西全部各陣營分開：AGI 專案、韌體更新（套用時只有自己的叢集離線）、入侵與網路封鎖、被監視、機房優化模型、碳排等級與社區回饋、鄰避、保證的無人機襲擊、失竊模型的奪回、授權與開放權重、挖角、黑市稽查，以及洩漏、稽查、資料追討的抉擇。市場行情、對手公司與晶片短缺仍然共用 |
+| **多人連線：推論與物品** | 推論服務（模型增益、機器人與無人機策略、機房優化）在多人連線每個陣營都正常運作；扣冷卻液、零件、白銀時各端讀到同一個倉庫，不會不同步 |
+
+*Multiplayer fixes, no single-player changes: training jobs no longer vanish after scheduling; with several player factions everything that belongs to a colony (AGI project, firmware, intrusions, surveillance, carbon grade and community fund, backlash, guaranteed drone raid, stolen models, licensing, poaching, black-market audit and event decisions) is kept per faction while market prices, rivals and chip shortages stay shared; inference serving works for every faction; and colony item use reads the same storage on every machine. Full notes are on the [Releases](../../releases) page.*
+
+---
+
 ## v44.6 更新內容 · What's new in v44.6
 
 | | |
