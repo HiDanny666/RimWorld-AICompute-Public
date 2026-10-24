@@ -34,6 +34,18 @@ download [`index.html`](index.html) and open it in any browser.*
 
 ---
 
+## v44.4 更新內容 · What's new in v44.4
+
+| | |
+|---|---|
+| **多人連線：電網** | 彩色電纜交叉接頭不再在兩個 tick 之間（畫面更新時）重建電網，避免兩端電網順序不同而不同步 |
+| **多人連線：加入時** | 舊存檔的清理（舊 def 物品換新、舊肉品）不再對加入的玩家多跑一次；多人連線改成兩端在同一個世界時間每天一起掃，物品編號不會分岔 |
+| **多人連線：失竊紀錄** | 被偷模型的監視名單讀檔後不會再把竊賊配錯模型匣 |
+
+*Multiplayer fixes only, no gameplay changes: colored power-cable crossings no longer rebuild power grids between ticks; the old-save cleanup no longer runs again for a joining player (in multiplayer both sides now sweep together once a day of world time); and the stolen-model watch list stays paired correctly after loading. Full notes are on the [Releases](../../releases) page.*
+
+---
+
 ## v44.3 更新內容 · What's new in v44.3
 
 | | |
