@@ -248,7 +248,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <li><a href="#17-建議的第一次遊玩路線">17. 建議的第一次遊玩路線</a></li>
 <li><a href="#18-其他機制與規則">18. 其他機制與規則</a><ul>
 <li><a href="#訓練任務視窗">🗂️ 訓練任務視窗</a></li>
-<li><a href="#硬體故障與韌體">🧯 硬體故障與韌體</a></li>
+<li><a href="#韌體與資安入侵">🧯 韌體與資安入侵</a></li>
 <li><a href="#電力湧浪">⚡ 電力湧浪</a></li>
 <li><a href="#模型過時">🧠 模型過時</a></li>
 <li><a href="#晶片從哪來">🏭 晶片從哪來</a></li>
@@ -379,7 +379,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <li><a href="#17-a-suggested-first-playthrough">17. A suggested first playthrough</a></li>
 <li><a href="#18-other-mechanics-and-rules">18. Other mechanics and rules</a><ul>
 <li><a href="#training-jobs-window">🗂️ Training jobs window</a></li>
-<li><a href="#hardware-failures-and-firmware">🧯 Hardware failures and firmware</a></li>
+<li><a href="#firmware-and-cyber-intrusions">🧯 Firmware and cyber intrusions</a></li>
 <li><a href="#power-surges">⚡ Power surges</a></li>
 <li><a href="#model-obsolescence">🧠 Model obsolescence</a></li>
 <li><a href="#where-chips-come-from">🏭 Where chips come from</a></li>
@@ -427,7 +427,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td><strong>對應版本</strong></td>
-<td>v44.7</td>
+<td>v45.0</td>
 </tr>
 </tbody>
 </table>
@@ -452,6 +452,9 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <li>[ ] 研究 <strong>機器學習</strong> → 訓練模型 → 權重匣插進 <strong>模型匣讀取機</strong>（區網要有監控牆）→ 機櫃切 <strong>推論</strong> 模式（會自動接上）</li>
 <li>[ ] 想賺白銀就蓋 <strong>承攬終端</strong>；想省人力就蓋 <strong>機器人組裝台</strong></li>
 </ul>
+<blockquote class="quote">
+<p>🎓 <strong>遊戲裡也有教學</strong>：下方工具列的「<strong>AI 機房教學</strong>」打開教學視窗（「快速上手」與「詳細介紹」兩個分頁，詳細介紹就是這份手冊的內容）；本模組每個建築與物品都有「<strong>教學</strong>」按鈕，直接跳到講它的那一頁。</p>
+</blockquote>
 <hr>
 <p><a id="toc"></a></p>
 <h2 id="目錄">📑 目錄</h2>
@@ -537,7 +540,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td><a href="#18-其他機制與規則">18</a></td>
-<td>其他機制與規則（訓練視窗、故障與韌體、湧浪、過時、晶片來源、設定、多人連線）</td>
+<td>其他機制與規則（訓練視窗、韌體與入侵、湧浪、過時、晶片來源、設定、多人連線）</td>
 </tr>
 </tbody>
 </table>
@@ -580,12 +583,12 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 </tbody>
 </table>
-<p>所有東西都是<strong>實體</strong>的：卡會壞、匣會被搶、模型要搬、無人機要有人背。</p>
+<p>所有東西都是<strong>實體</strong>的：卡會發熱也會磨耗、匣會被搶、模型要搬、無人機要有人背。</p>
 <div class="alert alert-important">
 <p class="alert-head"><span class="alert-icon">❗</span><span>Important</span></p>
 <p>🔥 <strong>這個模組只有三條物理定律</strong>
 1. <strong>電</strong> —— 每一瓦都會變成熱。
-2. <strong>熱</strong> —— 過熱先降頻，再放著就燒卡。
+2. <strong>熱</strong> —— 過熱就降頻，越熱越慢；熱太久就燒卡。
 3. <strong>密度</strong> —— 一座 NVL16 抵二十五座標準機櫃，也只佔 1.5 倍面積。</p>
 </div>
 <p align="right"><a href="#toc">↑ 回到目錄</a></p>
@@ -748,7 +751,8 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 營運控制台「機櫃」分頁點一座機櫃的卡片欄，也能開槽位配置、退出指定的卡。</p>
 <div class="alert alert-warning">
 <p class="alert-head"><span class="alert-icon">⚠️</span><span>Warning</span></p>
-<p>⏳ 每張卡運轉未滿 <strong>5 天</strong>故障率 ×3（bathtub 曲線）。這段時間派人做<strong>機房維運</strong>最划算；卡跑滿 120 天後又會開始老化（見「卡齡與汰換」）。</p>
+<p>⏳ 卡會隨<strong>運轉時間</strong>磨耗：頭 120 天整段只有約 <strong>2%</strong> 會壞，之後每 30 天一段 5%／10%／15%／25%，240 天以後每 30 天 <strong>35%</strong>（基準倍率；見「卡齡與汰換」）。
+派人做<strong>機房維運</strong>（故障率減半 5 天）、接液冷、有人值班都會再降；倉庫留幾張備品，空槽搬運工會自己補。</p>
 </div>
 <h3 id="step-5-通電-選模式">▶︎ Step 5 — 通電 + 選模式</h3>
 <table>
@@ -778,7 +782,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <p>🧭 <strong>看不懂機櫃在幹嘛時，先看面板第一行</strong>：「▶ 正在研究：X（每天 N 點）」「▶ 正在出租給 Y（今天已記帳 2 / 4 機櫃日）」，
 或「■ 沒在運算 —— 沒插卡／沒電／在室外／沒選研究項目／區網沒接合約……」，原因後面就寫怎麼處理；過熱降頻也寫在這一行。
 營運控制台「本區網」分頁最上面的「<strong>下一步</strong>」會把整個區網最該處理的 1～3 件事列出來（同一個原因的機櫃合併成一條；都在跑時寫下一個分級還缺什麼）。
-過熱、卡壞、斷網、訓練、合約、機器人、無人機、機房警報、碳排、市場這十類事件<strong>第一次發生時會寄一封說明信</strong>（每個存檔一次；<strong>選項 → 模組設定 → AI Compute Infrastructure</strong> 可以關，多人連線時不寄）。</p>
+過熱、卡故障、斷網、訓練、合約、機器人、無人機、機房警報、碳排、市場這十類事件<strong>第一次發生時會寄一封說明信</strong>（每個存檔一次；<strong>選項 → 模組設定 → AI Compute Infrastructure</strong> 可以關，多人連線時不寄）。</p>
 <p>研究模式的面板會寫「目前在幫：X 研究（每天 N 點）」；能開始的研究全部做完時改寫「<strong>沒有研究可做</strong>」—— 這時把機櫃（或在營運控制台把整個區網）改成出租、訓練或推論。模式一律由你指定，機櫃不會自己換。</p>
 </blockquote>
 <h3 id="step-6-拉電">▶︎ Step 6 — 拉電</h3>
@@ -2020,46 +2024,73 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </table>
 <h3 id="卡齡與汰換">🕰️ 卡齡與汰換</h3>
 <p>每張加速卡都記著自己的<strong>運轉時間</strong>：機櫃在運算時（任何模式）才累加，待機、關機不算；退出、拆下、搬走都<strong>跟著卡走</strong>（二手卡也是老的）。</p>
+<p><strong>故障只看運轉時間</strong>（2026-10-26 起取代舊的「每張卡每天 1/60」與早夭期）：每個階段給「整段跑完會壞掉的機率」，換成每天的風險率平均攤在整段裡。下表是<strong>基準倍率</strong>（風冷、沒維運、房間乾淨、溫度不超過最佳值）：</p>
 <table>
 <thead>
 <tr>
 <th>運轉時間</th>
-<th>故障率</th>
+<th>這一段整段會壞的機率</th>
+<th>每張每 30 天約</th>
 <th>市價</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>未滿 5 天（早夭期）</td>
-<td><strong>×3</strong></td>
+<td>0～120 天（穩定期）</td>
+<td><strong>2%</strong></td>
+<td>0.5%</td>
 <td>×1</td>
 </tr>
 <tr>
-<td>5～120 天（穩定期）</td>
-<td>×1</td>
-<td>×1</td>
-</tr>
-<tr>
-<td>滿 120 天（老化）</td>
-<td><strong>×1.5</strong></td>
+<td>120～150 天（老化）</td>
+<td><strong>5%</strong></td>
+<td>5%</td>
 <td>×0.75</td>
 </tr>
 <tr>
-<td>滿 240 天（嚴重老化）</td>
-<td><strong>×2</strong></td>
+<td>150～180 天</td>
+<td><strong>10%</strong></td>
+<td>10%</td>
+<td>×0.75</td>
+</tr>
+<tr>
+<td>180～210 天</td>
+<td><strong>15%</strong></td>
+<td>15%</td>
+<td>×0.75</td>
+</tr>
+<tr>
+<td>210～240 天</td>
+<td><strong>25%</strong></td>
+<td>25%</td>
+<td>×0.75</td>
+</tr>
+<tr>
+<td>240 天以後（嚴重老化）</td>
+<td>每 30 天 <strong>35%</strong></td>
+<td>35%</td>
 <td>×0.5</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li><strong>基準故障率</strong>：每張卡每天 1/60 —— 插滿 4 張的標準機櫃，風冷約 <strong>15 天</strong>壞一張、冷板液冷 <strong>25 天</strong>、浸沒 <strong>50 天</strong>（新卡過了早夭期、不計溫度與維運；值班 ×0.7、維運與 Tier IV 再降）。</li>
-<li>機櫃故障率看<strong>槽裡每張卡倍率的平均</strong>；一般故障照倍率加權抽哪一張壞，過熱燒卡挑「卡齡倍率 ÷ MTBF」最大的那張（最弱、最老的先燒）。</li>
-<li><strong>維運的燒機測試</strong>：早夭期內的卡運轉時間往前推到剩一半。</li>
+<li>一張新卡一直跑：撐到 120 天 98%、撐到 240 天約 <strong>53%</strong>（基準）；液冷＋維運（×0.3）撐到 240 天約 <strong>83%</strong>。</li>
+<li><strong>環境倍率</strong>乘在風險率上：冷板液冷 <strong>×0.6</strong>、浸沒 <strong>×0.3</strong>、<strong>機房維運 ×0.5</strong>（5 天）、<strong>值班 ×0.7</strong>、<strong>Tier IV ×0.5</strong>；溫度超過最佳值每度 +4%、房間髒（清潔度低於 0）最多 ×3、韌體拖太久 <strong>×1.25</strong>。</li>
+<li>整座機櫃每 250 tick 依所有卡的風險加總擲一次骰，中了再依風險高低挑出壞的那一張（老卡比較容易被挑中；多人連線兩端一樣），一次最多壞一張；壞掉的卡直接消失，開著自動補卡的話搬運工會補。</li>
+<li><strong>過熱燒卡</strong>另外算：超過臨界溫度（風冷 70 °C）連續 <strong>2 小時</strong>就燒掉一張（Tier IV 4 小時）—— 挑「卡齡風險率 ÷ MTBF」最大的那張（最弱、最老的先燒）；研究「機房消防」之後，沒有自動滅火的房間燒卡有 10% 起火。</li>
 <li><strong>翻新卡</strong>（3 二手 → 2 好卡）從 <strong>120 天</strong>起算：便宜，但比較早要換。</li>
 <li>倉庫裡全新卡照常疊；用過的卡只跟同一個 10 天區間的疊（取平均）。機櫃裡不合併，每份的時間都是準的。</li>
 <li>機櫃按鈕「<strong>退出滿 120 天的卡</strong>」「<strong>退出滿 240 天的卡</strong>」只退出老卡（還沒有夠老的卡時按鈕是灰的），開著自動補卡的話搬運工會補新卡。</li>
-<li>機櫃面板寫「卡齡：早夭 1／穩定 5／老化 2／嚴重老化 0（最老 251 天）」；營運控制台「設施與設備」頁有<strong>整個區網</strong>的卡齡分佈（老化卡超過兩成時黃字「建議汰換」）和同樣兩顆按鈕，一次退出整個區網的老卡。</li>
+<li>機櫃面板寫「卡齡：穩定 6／老化 2／嚴重老化 0（最老 251 天）」與「故障風險：每 30 天約壞 X 張（環境倍率 ×Y）」；每張卡的資訊寫它在哪一段、那一段整段的機率；機房總覽地圖層的「故障風險」顯示每座機櫃每張卡 30 天內壞掉的機率；營運控制台「設施與設備」頁有<strong>整個區網</strong>的卡齡分佈（老化卡超過兩成時黃字「建議汰換」）和同樣兩顆按鈕，一次退出整個區網的老卡。</li>
 <li>舊存檔：機櫃裡原有的卡當作已經跑過 5 天。</li>
+</ul>
+<h4 id="機房維運">🧰 機房維運</h4>
+<ul>
+<li>工作分頁裡獨立的一欄「<strong>機房維運</strong>」（在「建造」右邊，用建造技能）。勾了的殖民者會在機櫃維運<strong>剩不到 1 天</strong>（或已過期）時自己去做，每次約 15 秒，做完那座機櫃 <strong>5 天內故障率 ×0.5</strong>。</li>
+<li><strong>右鍵指定</strong>：選殖民者、對機櫃按右鍵可以叫他馬上去做（提早做也行，剛做完 1 小時內不用；做不了時選單會寫原因）。</li>
+<li>舊存檔第一次讀檔時，會替「建造」有勾、還沒勾機房維運的殖民者照建造的優先度勾上（每個存檔只做一次，之後你取消就不再動）。</li>
+<li>機櫃面板寫「已維運 —— 還剩 X」或「沒有維運」；營運控制台的告警與「下一步」只在維運<strong>已過期</strong>時才提醒。</li>
+<li>純加成：沒人做，機房照常運作，只是故障率是原值。</li>
 </ul>
 <h3 id="超大規模冷卻與電力後期">🏭 超大規模冷卻與電力（後期）</h3>
 <p>到了好幾座 NVL16、甚至 AGI 的規模，一般設備要蓋幾十台。這批設備容量大 5～10 倍，研究一層接一層、越高級越後面：</p>
@@ -2407,6 +2438,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <ul>
 <li><strong>訓練只用同區網語料庫裡的資料</strong>，而且會<strong>用掉</strong>：放在倉庫、地上，或別的區網語料庫裡的資料都不算（不能隔空用）。</li>
 <li>搬運工會把倉庫的資料搬進來補滿（標註、授權、合成、舊通用都收，<strong>原始資料不收</strong>），每座合計最多 <strong>40 份</strong>；按鈕可以停止補充、或把資料全部倒出來。</li>
+<li><strong>「儲存」分頁</strong>（原版儲存區的設定）勾選搬運工要搬哪些種類進來，也有原版的「複製／貼上儲存設定」按鈕；<strong>「內容」分頁</strong>列出裡面放了哪些資料、各幾份，每一種都能單獨取出（同時在「儲存」取消勾選，搬運工不會馬上搬回來）。</li>
 <li>超大型（120 份）要好幾座，或在訓練途中讓搬運工一直補；區網語料庫裡資料不夠，訓練就停著等。</li>
 <li>資料增廣讀的（不消耗）也是同區網語料庫裡的真實資料。</li>
 <li>語料庫離線（沒電、關機、故障、露天、沒接到有監控牆的區網）時裡面的資料不能用。被打爛、拆掉或搬走時資料會掉在旁邊。</li>
@@ -2449,7 +2481,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <tr>
 <td><strong>策略匣</strong></td>
 <td>14 種</td>
-<td>插進機器人或無人機控制器；有基礎模型後可以用「策略微調」便宜量產</td>
+<td>插進機器人或蜂群發射器（無人機控制器不用匣）；有基礎模型後可以用「策略微調」便宜量產</td>
 </tr>
 <tr>
 <td><strong>機械族</strong>（Biotech）</td>
@@ -2644,7 +2676,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <li>未評估的匣照常能用。如果它其實未對齊，<strong>症狀照樣發生</strong>（效果強一階、整個叢集被抽 15% 算力），但**「被監視」心情要等揭露才出現**，重新對齊／降階回滾／報廢也要等揭露才看得到。</li>
 <li>揭露有兩條路：
   1. 插進讀取機跑<strong>評估</strong>任務。
-  2. <strong>服務滿期</strong>自動揭露：被推論機櫃提供、或插在機器人／無人機控制器／蜂群發射器上，累計滿 <strong>小 6／中 9／大 12／超大 18 天</strong>。</li>
+  2. <strong>服務滿期</strong>自動揭露：被推論機櫃提供、或插在機器人／蜂群發射器上，累計滿 <strong>小 6／中 9／大 12／超大 18 天</strong>。</li>
 <li><strong>同一次訓練寫出來的匣一起揭露</strong>（匯出、蒸餾、量化、推理版、繼續預訓練都算同一批）。</li>
 <li>商人賣的、任務獎勵、舊存檔裡的匣都當作已評估。</li>
 </ul>
@@ -2915,7 +2947,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <li>指定的匣讀不到（讀取機斷電、關機、故障、斷線，或匣被拔掉）→ 機櫃<strong>暫停提供</strong>，插回去自動恢復；沒有指定（自動挑選）的就改提供其他讀得到的匣。舊存檔插在機櫃上的匣，讀檔時會退到機櫃旁並寄一封說明信。</li>
 <li>推論不用另外蓋建築，用的就是機櫃上的卡。舊版的「推論伺服器」已退役：讀檔時匣會退出來，伺服器拆掉全額退料。</li>
 <li><strong>邊緣推論中繼</strong>把增益延伸到其他地圖與遠征隊。</li>
-<li><strong>值班操作台</strong>：有人值班時全叢集 <strong>故障率 ×0.7、算力 +3%</strong>（純加成）。</li>
+<li><strong>值班操作台</strong>：有人值班時全叢集 <strong>故障率 ×0.7、算力 +3%</strong>（純加成），而且值班人員會<strong>自動套用新推出的韌體</strong>（一次一個區網、一座一座刷；按鈕「值班自動更新韌體」可關）。</li>
 </ul>
 <h3 id="服務池記憶體與容量">🧮 服務池：記憶體與容量</h3>
 <p>同一座機房（同一面監控牆的區網）裡，推論模式、提供<strong>同一個模型</strong>的機櫃會合成一個<strong>服務池</strong>，記憶體與容量相加。想多服務人就加卡、加機櫃，每座都選同一顆匣即可；推論模式但沒選到讀得到的匣的機櫃不貢獻容量。</p>
@@ -3488,6 +3520,8 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <li>鋼材不夠某一項時，那一項就不做（機器人不會為了它走過去）；電量見底照樣會來充電。</li>
 <li>有待改裝的模組時，保養仍照舊在組裝台做（改裝要人裝）。</li>
 <li>維修站面板寫「待命」或「正在維修 〈名字〉」。</li>
+<li><strong>機器人的傷只能在這裡修</strong>：醫生不能包紮機器人（右鍵也不行），機器人不會自然癒合、不會流血，也不會去躺病床。</li>
+<li><strong>倒地的機器人</strong>：搬運工會把它抬到有鋼材、操作位空著的維修站，維修站替躺在操作位上的它修到能站起來，之後它自己接著修完。沒有能用的維修站時照原版抬上床，但不會好 —— 等你蓋站。</li>
 </ul>
 <h3 id="六種改裝模組">🔧 六種改裝模組</h3>
 <table>
@@ -3605,15 +3639,15 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <tbody>
 <tr>
 <td>裝備</td>
-<td><strong>無人機控制器</strong>（腰帶欄位），插一顆 <strong>飛行自主策略匣</strong></td>
+<td><strong>無人機控制器</strong>（腰帶欄位）—— <strong>不用插匣</strong>，穿上、徵召就能放</td>
 </tr>
 <tr>
 <td>帶機數</td>
-<td>依策略規模成長：小 1／中 1／大 2／<strong>超大 3（蜂群，整個機庫同時升空）</strong>；未對齊 <strong>+4 級</strong></td>
+<td>一律 <strong>自主等級 16、同時 3 台</strong>（蜂群，整個機庫同時升空）</td>
 </tr>
 <tr>
-<td>機體成本</td>
-<td>偵察 35 鋼 + 2 零件／干擾 40 + 3／攻擊 45 + 3／遊蕩彈藥 30 + 2</td>
+<td>機體成本（製造台，一批）</td>
+<td>FPV ×8：鋼 30・零件 2・化學燃料 10／光纖 FPV ×6：鋼 35・零件 3・化學燃料 10／彈簧刀 300 ×6：鋼 45・零件 3・化學燃料 15／Kargu-2 ×6：鋼 50・零件 4・化學燃料 15／柳葉刀-3 ×4：鋼 55・零件 4・化學燃料 20／彈簧刀 600 ×4：鋼 60・零件 5・化學燃料 23・塑鋼 4／見證者-136 ×3：鋼 65・零件 6・化學燃料 38／電戰四軸 ×4：鋼 10・零件 2・化學燃料 4</td>
 </tr>
 <tr>
 <td>部署間隔</td>
@@ -3643,7 +3677,8 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </table>
 <div class="alert alert-warning">
 <p class="alert-head"><span class="alert-icon">⚠️</span><span>Warning</span></p>
-<p>操作員死亡／離開地圖／控制器被拆／策略匣被拔 → 天上的機體全部就地處置。</p>
+<p>操作員死亡／離開地圖／控制器被拆 → 天上的機體全部就地處置。</p>
+<p>舊存檔：控制器槽裡留著的舊策略匣按「<strong>退出舊策略匣</strong>」取回（可以插進蜂群發射器）。</p>
 </div>
 <div class="alert alert-tip">
 <p class="alert-head"><span class="alert-icon">💡</span><span>Tip</span></p>
@@ -3651,7 +3686,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <p>🎯 <strong>多位操作員一起下令</strong>：同時選取好幾位已徵召的操作員，再按 <strong>集中攻擊</strong>／<strong>分散攻擊</strong>，所有人的機體會合成一隊統一分配 —— 集中攻擊整隊排成一條波次鏈，分散攻擊一台對一個目標。<strong>自己人的操作員與機體永遠不會被當成目標</strong>，選取裡有也會自動排掉。</p>
 </div>
 <h3 id="補給四軸">📦 補給四軸</h3>
-<p>研究「<strong>無人機補給</strong>」（在「自主彈藥」之後）後，在製造台做（鋼 25、工業零件 4、化學燃料 5，一次一具）。它不是攻擊彈體：不進發射器、不出現在部署選單，只掛在<strong>無人機控制器的背架</strong>（佔一格機庫，跟攻擊彈體共用）。</p>
+<p>研究「<strong>無人機補給</strong>」（在「自主彈藥」之後）後，在製造台做（鋼 6、工業零件 1、化學燃料 1，一次一具）。它不是攻擊彈體：不進發射器、不出現在部署選單，只掛在<strong>無人機控制器的背架</strong>（佔一格機庫，跟攻擊彈體共用）。</p>
 <table>
 <thead>
 <tr>
@@ -3663,6 +3698,10 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <tr>
 <td>帶上身</td>
 <td>「<strong>機庫配置</strong>」把一格設成補給四軸：背架沒有時穿戴者會自己去拿一具（比攻擊彈體先拿）</td>
+</tr>
+<tr>
+<td>屋頂與門</td>
+<td>跟所有無人機一樣<strong>不能穿過屋頂、開不了門</strong>：露天的地方什麼都飛得過去（牆、水），進屋只能走<strong>開著的門</strong>或沒有屋頂的開口（門可以設「保持開啟」）。照<strong>飛行路徑</strong>找最近拿得到的那一堆；沒有路徑的貨在選單裡灰掉、寫原因；投放點也要飛得到。同一間房裡（操作員在屋內）照樣能拿。回航時操作員在門關著的室內 → 降落在最近飛得到的地方，搬運工會把它搬回控制器</td>
 </tr>
 <tr>
 <td>空投補給</td>
@@ -3700,7 +3739,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <tr>
 <td>攻擊</td>
 <td>15 c/s</td>
-<td>掛一把槍，命中吃控制器裡那份權重</td>
+<td>掛一把槍，命中看控制器的自主等級（玩家固定 16）</td>
 </tr>
 <tr>
 <td>電子干擾</td>
@@ -4093,7 +4132,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <tbody>
 <tr>
 <td><strong>研究前</strong></td>
-<td>玩家研究完「<strong>自主彈藥</strong>」之前，工業以上、點數 ≥ <strong>300</strong> 的一般襲擊只有 <strong>1 人</strong>（1,500 點以上 2 人）背控制器、<strong>各帶 1 架</strong> FPV 或彈簧刀 300、小型策略 —— 用槍打得下來，讓你知道該研究什麼。專屬的無人機襲擊事件不會來</td>
+<td>玩家研究完「<strong>自主彈藥</strong>」之前，工業以上、點數 ≥ <strong>300</strong> 的一般襲擊只有 <strong>1 人</strong>（1,500 點以上 2 人）背控制器、<strong>各帶 1 架</strong> FPV 或彈簧刀 300、等級最低 —— 用槍打得下來，讓你知道該研究什麼。專屬的無人機襲擊事件不會來</td>
 </tr>
 <tr>
 <td><strong>專屬事件「無人機襲擊」</strong></td>
@@ -4109,7 +4148,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td><strong>帶得起哪些型號</strong></td>
-<td>型號市價上限 ＝ <strong>150 ＋ 點數 ÷ 6</strong>，指定型號的戰術也一樣（買不起就不會選那個戰術）：FPV 不限、彈簧刀 300 <strong>360 點</strong>、Kargu-2 <strong>660 點</strong>、光纖 FPV <strong>1,000 點</strong>、柳葉刀-3 <strong>1,620 點</strong>、彈簧刀 600 <strong>2,940 點</strong>、見證者-136 <strong>4,500 點</strong></td>
+<td>型號市價上限 ＝ <strong>(150 ＋ 點數 ÷ 6) ÷ 4</strong>（彈體市價也是 ÷4 後的值），指定型號的戰術也一樣（買不起就不會選那個戰術）：FPV 不限、彈簧刀 300 <strong>360 點</strong>、Kargu-2 <strong>660 點</strong>、光纖 FPV <strong>1,000 點</strong>、柳葉刀-3 <strong>1,620 點</strong>、彈簧刀 600 <strong>2,940 點</strong>、見證者-136 <strong>4,500 點</strong></td>
 </tr>
 <tr>
 <td><strong>敵人的干擾手段</strong>（研究後）</td>
@@ -4238,8 +4277,8 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <td>只有算力夠大才會招來；目標是你的權重匣</td>
 </tr>
 <tr>
-<td>🔓 <strong>資安入侵</strong></td>
-<td>斷網止血（叢集散一天）／反向追蹤（五五賭注）／照常營運</td>
+<td>🔓 <strong>資安入侵</strong>（抽走 15% 算力 12 小時，有防火牆 6 小時）</td>
+<td>斷網止血（8 小時沒有叢集加成、合約模式的機櫃待機）／反向追蹤（五五賭注，失敗再被抽 8 小時）／照常營運</td>
 </tr>
 <tr>
 <td>💧 <strong>冷卻液洩漏</strong></td>
@@ -4408,14 +4447,14 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <li><strong>啟動瞬間跳電</strong> → 機櫃湧浪 ×2.5，蓋 UPS（多台會一起吸，每台 9,000 W）或分批開機；備援發電機只救「持續缺電」。</li>
 <li><strong>設備開關機沒反應</strong> → 原版 flickable 切的是電源，本模組的開關機是獨立一組；
    機櫃面板第一行寫「在做什麼／為什麼沒在做」，第二行寫「目前有電 － 狀態：運轉中/待機/關機/停擺/故障」。</li>
-<li><strong>卡一直壞</strong> → 新卡頭 5 天 ×3、跑滿 120 天 ×1.5、240 天 ×2（看機櫃面板的「卡齡」，用「退出滿 120／240 天的卡」汰換）；派人做機房維運（故障率減半五天）；Tier IV 再減半。
-   機房維運是<strong>工作分頁裡獨立的一欄</strong>（在「建造」右邊），要勾起來才會有人去做。沒有人勾、又有機櫃沒維運時，營運控制台的「下一步」與告警會提醒你。</li>
+<li><strong>卡一直壞</strong> → 卡會隨運轉時間磨耗：0～120 天整段只有 2%，之後每 30 天 5%／10%／15%／25%，240 天以後每 30 天 35%（看機櫃面板的「卡齡」與「故障風險」，用「退出滿 120／240 天的卡」汰換）。派人做機房維運（故障率減半五天）、接液冷、有人值班、Tier IV 都會再降。
+   機房維運是<strong>工作分頁裡獨立的一欄</strong>（在「建造」右邊），要勾起來才會有人去做；也可以選殖民者對機櫃按右鍵馬上做。沒有人勾、又有機櫃沒維運時，營運控制台的「下一步」與告警會提醒你。</li>
 <li><strong>睡在機房旁扣心情</strong> → 噪音半徑 12 格看的是<strong>床</strong>；浸沒槽完全無聲。</li>
 <li><strong>⚠️ 別讓單程機體在自家上空按召回／解除徵召</strong> → 柳葉刀與見證者會<strong>就地墜毀起爆</strong>
     （爆炸壓在 3×3、傷害是戰鬥部全當量）。可回收型號才是折疊回收。</li>
 <li><strong>未對齊模型在推論機櫃提供它之前零代價</strong>，開始提供才吃 15% 算力；揭露（評估或服務滿期）之後才多「被監視」心情。
     <strong>叢集算力莫名少了 15%</strong> → 多半是有一顆<strong>未評估</strong>的匣其實未對齊，去跑評估。</li>
-<li><strong>機房維運是純加成</strong> —— 沒人做，機房照常運作，只是故障率是原值。</li>
+<li><strong>入侵或韌體倒數好像停住了（多人連線）</strong> → 現在照<strong>你自己地圖的時間</strong>倒數：入侵 12 小時；韌體一座一座刷，每座＝它的卡數 × 0.2 小時，跟世界時間無關。</li>
 <li><strong>推論機櫃突然不提供某顆匣、讀取機的退出按鈕灰掉</strong> → 那顆匣正在<strong>授權</strong>（鎖在讀取機裡），到承攬終端的「模型授權與開放權重」下架。</li>
 <li><strong>接了推論合約之後殖民者少了增益</strong> → 合約預留的容量先扣，殖民者分剩下的；要兩邊都顧就多蓋一座推論機櫃。</li>
 <li><strong>分級突然掉到 Tier II</strong> → 有機櫃的房間沒有自動滅火（研究「機房消防」蓋氣體滅火系統，或放原版消防泡沫彈）。</li>
@@ -4483,7 +4522,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td>合約</td>
-<td>每 4 天 3 份、120 白銀/機櫃日、違約 25%；規模依最強區網的算力放大（×1～100）；加價看接單區網分級</td>
+<td>每 4 天 3 份、120 白銀/機櫃日、違約 25%；規模照各區網<strong>實際插的卡</strong>的算力輪流放大（×1～100）；加價看接單區網分級</td>
 </tr>
 <tr>
 <td>未對齊</td>
@@ -4491,11 +4530,15 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td>卡故障</td>
-<td>每張卡每天 1/60；滿載 4 卡櫃風冷 15 天、冷板 25 天、浸沒 50 天壞一張</td>
+<td>依運轉時間：0～120 天整段 2%、120～150 天 5%、150～180 天 10%、180～210 天 15%、210～240 天 25%、之後每 30 天 35%（基準）；液冷 ×0.6、浸沒 ×0.3、維運 ×0.5、值班 ×0.7、Tier IV ×0.5、韌體過期 ×1.25；過熱 2 小時燒一張</td>
 </tr>
 <tr>
 <td>卡齡</td>
-<td>未滿 5 天 ×3、滿 120 天 ×1.5（市價 ×0.75）、滿 240 天 ×2（市價 ×0.5）；翻新卡從 120 天起算</td>
+<td>市價：滿 120 天 ×0.75、滿 240 天 ×0.5；翻新卡從 120 天起算</td>
+</tr>
+<tr>
+<td>韌體</td>
+<td>每 8 天一版；一座一座刷，每座離線＝卡數 × 0.2 小時；刷完 +5%、過期 4 天 −5% 且故障 ×1.25；有人值班自動套用</td>
 </tr>
 <tr>
 <td>晶片短缺</td>
@@ -4659,7 +4702,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <p class="alert-head"><span class="alert-icon">📘</span><span>Note</span></p>
 <p>區網沒有 <strong>NOC 監控牆</strong>就不能排訓練（視窗會直接寫）。勾「加長訓練」：算力和資料加倍，練出來的匣 60 天才退化一階（一般 30 天）。</p>
 </div>
-<h3 id="硬體故障與韌體">🧯 硬體故障與韌體</h3>
+<h3 id="韌體與資安入侵">🧯 韌體與資安入侵</h3>
 <table>
 <thead>
 <tr>
@@ -4669,24 +4712,44 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </thead>
 <tbody>
 <tr>
-<td>基礎故障率</td>
-<td>每張運轉中的卡每天 <strong>1/60</strong>；滿載 4 卡機櫃風冷約 <strong>15 天</strong>掉一張，冷板液冷 ×0.6（約 25 天），浸沒 ×0.3（約 50 天）</td>
+<td>運算卡故障</td>
+<td>依運轉時間分階段（見「卡齡與汰換」）；過熱超過臨界溫度 2 小時燒掉一張（Tier IV 4 小時）</td>
 </tr>
 <tr>
-<td>卡齡（每張卡自己算運轉時間）</td>
-<td>未滿 5 天早夭期 <strong>×3</strong>、5～120 天 ×1、滿 120 天 <strong>×1.5</strong>（市價 ×0.75）、滿 240 天 <strong>×2</strong>（市價 ×0.5）</td>
+<td>韌體推出</td>
+<td>每個陣營約每 <strong>8 天</strong>推出一版（信件；有人值班且開著自動更新時不寄信，值班人員直接套用）</td>
 </tr>
 <tr>
-<td>其他倍率</td>
-<td>溫度越高越容易壞；<strong>機房維運</strong>（工作分頁「機房維運」，用建造技能）故障率減半 5 天並把早夭期砍半；Tier IV 減半；值班台、韌體也會影響</td>
+<td>韌體套用</td>
+<td><strong>每個區網各自更新，一座一座輪流刷</strong>：在那個區網的任一座機櫃或營運控制台按「套用韌體更新」；<strong>只有輪到的那一座離線</strong>，時間＝它的卡數 × <strong>0.2 小時</strong>（標準機櫃 4 張＝48 分鐘、NVL72 的 18 片托盤＝3.6 小時），其他機櫃照常運算；整個區網刷完＝區網卡數 × 0.2 小時（例：40 張卡＝8 小時）</td>
 </tr>
 <tr>
-<td>換卡</td>
-<td>機櫃選了「運算卡型號」又開著自動補卡時，搬運工會從倉庫拿備品換上 —— 所以要持續生產或購買卡</td>
+<td>值班自動更新</td>
+<td><strong>值班操作台</strong>有人值班、開著「值班自動更新韌體」（預設開）時，值班人員自己套用：一次一個區網，刷完一個再換下一個</td>
 </tr>
 <tr>
-<td>韌體更新</td>
-<td>約每 <strong>8 天</strong>推出一版（信件）。在任一座機櫃按「套用韌體更新」：全叢集離線約 <strong>2 小時</strong>，之後到下一版前 <strong>+5%</strong> 算力；推出後 <strong>4 天</strong>還沒裝，故障率 <strong>×1.25</strong></td>
+<td>韌體效果</td>
+<td>整個區網刷完後到下一版前 <strong>+5%</strong> 算力；推出後 <strong>4 天</strong>還沒裝（或落後兩版以上），那個區網 <strong>−5%</strong> 算力、卡的故障率 <strong>×1.25</strong></td>
+</tr>
+<tr>
+<td>為什麼輪流（間隔評估）</td>
+<td>間隔維持 8 天。以前整個區網一起離線「卡數 × 0.2 小時」：4 座 NVL72（72 片托盤）要整網停 14.4 小時，8 天裡停掉 7.5%，換來的 +5% 不夠本；改成輪流後每座只停自己的 3.6 小時（約 1.9%），標準機櫃 48 分鐘（0.4%），每一版都划算</td>
+</tr>
+<tr>
+<td>資安入侵</td>
+<td>抽走全叢集 <strong>15%</strong> 算力 <strong>12 小時</strong>（強化防火牆研究 6 小時）；<strong>斷網</strong>＝立刻結束，但 <strong>8 小時</strong>內沒有叢集加成、<strong>合約模式的機櫃待機</strong>（客戶連不進來，只吃閒置功耗；合約期限照算），研究、訓練、推論服務照常；反向追蹤五五開，失敗再被抽 <strong>8 小時</strong></td>
+</tr>
+<tr>
+<td>對研究的影響</td>
+<td>入侵抽走的是機櫃的算力：研究模式的機櫃（原版研究進度）、訓練、出租都少 15%；殖民者在研究台做的研究不受影響</td>
+</tr>
+<tr>
+<td>時間怎麼算</td>
+<td>照<strong>陣營自己家園地圖的時間</strong>倒數（多人連線非同步時間下也一樣）</td>
+</tr>
+<tr>
+<td>舊存檔</td>
+<td>待套用的韌體＝所有區網都還沒裝；套用中的直接算裝好；進行中的入侵／封鎖照剩下的時間算，但不超過 12／8 小時</td>
 </tr>
 </tbody>
 </table>
@@ -4732,7 +4795,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <tbody>
 <tr>
 <td>每一類通知的方式</td>
-<td>卡故障、過熱、湧浪、斷網、切換備援、設施、訓練、推論任務、合約、韌體、機器人、無人機、機房警報、碳排、市場 —— 各自選「預設／信件／訊息／關閉」</td>
+<td>運算卡故障、過熱、湧浪、斷網、切換備援、設施、訓練、推論任務、合約、韌體、機器人、無人機、機房警報、碳排、市場 —— 各自選「預設／信件／訊息／關閉」</td>
 </tr>
 <tr>
 <td>本模組音效音量</td>
@@ -4740,14 +4803,27 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td>第一次說明信</td>
-<td>十類事件第一次發生時寄一封說明（看過就不再寄）</td>
+<td>十類事件（含運算卡故障）第一次發生時寄一封說明（看過就不再寄）</td>
+</tr>
+<tr>
+<td>遊戲內教學</td>
+<td>下方工具列「AI 機房教學」，或任何本模組建築／物品的「教學」按鈕（打開那個東西自己的詳細介紹：描述、使用方式、取得方式，再連到相關教學頁與資訊卡）；分「快速上手」與「詳細介紹」，可搜尋；每頁上方列出這頁提到的設備與物品，點一下直達。字是一般介面的 1.5 倍，重點用金色標示（不用粗體，中文才不會糊）</td>
+</tr>
+<tr>
+<td>放藍圖看範圍</td>
+<td>干擾塔、反無人機砲塔、感測器中繼站、蜂群發射器（含現有中繼站的範圍）、運算機櫃的噪音半徑、氣體滅火系統的房間（綠＝罩得住、紅＝房間太大），放藍圖或重新安置時都會畫出來</td>
+</tr>
+<tr>
+<td>不能按的按鈕</td>
+<td>灰掉的按鈕、選單裡不能選的項目，滑鼠移上去（或選單文字）都會寫為什麼不行、缺什麼</td>
 </tr>
 </tbody>
 </table>
 <h3 id="多人連線">🌐 多人連線</h3>
 <p>支援 <strong>RimWorld Multiplayer</strong>（zetrith 版）：沒裝也完全正常；裝了的話本模組要排在它<strong>後面</strong>。所有按鈕、右鍵選單、對話框的動作都會同步給每位玩家。
 多人連線時通知方式一律照預設（設定只存在各自的電腦上，彈信與否不同會讓兩邊不同步）。
-開了<strong>多陣營</strong>時：每個陣營只看得到、只管得到<strong>自己的區網</strong>（線接到別人的監控牆也不歸他管）；算力與推論合約屬於<strong>接單的陣營</strong>，報酬、保證金、違約金、欠款與好感都算它的，保證金只扣它自己倉庫裡的白銀；<strong>每個陣營有自己的合約板</strong>：一般、長約、現貨與推論報價、刷新時間、完成數和客戶聲望都分開算，別的陣營接單不會影響你的報價（報價照你自己的機房規模與模型開）。其他也都各陣營分開：AGI 專案、韌體更新（套用時只有你自己的叢集離線）、入侵與網路封鎖、被監視、機房優化模型、碳排等級與社區回饋、鄰避注意程度、保證的無人機襲擊、失竊模型的奪回與報復襲擊、模型授權與開放權重、挖角、黑市稽查，以及冷卻液洩漏、管制稽查、資料追討的抉擇（誰的事件誰回答）；市場行情、對手公司與晶片短缺則是整個世界共用的。</p>
+開了<strong>多陣營</strong>時：每個陣營只看得到、只管得到<strong>自己的區網</strong>（線接到別人的監控牆也不歸他管）；算力與推論合約屬於<strong>接單的陣營</strong>，報酬、保證金、違約金、欠款與好感都算它的，保證金只扣它自己倉庫裡的白銀；<strong>每個陣營有自己的合約板</strong>：一般、長約、現貨與推論報價、刷新時間、完成數和客戶聲望都分開算，別的陣營接單不會影響你的報價（報價照你自己的機房規模與模型開）。其他也都各陣營分開：AGI 專案、韌體更新（套用時只有你自己那個區網離線）、入侵與網路封鎖、被監視、機房優化模型、碳排等級與社區回饋、鄰避注意程度、保證的無人機襲擊、失竊模型的奪回與報復襲擊、模型授權與開放權重、挖角、黑市稽查，以及冷卻液洩漏、管制稽查、資料追討的抉擇（誰的事件誰回答）；本模組的隨機事件（機房襲擊、資安入侵、冷卻液洩漏、稽核等）只會由<strong>地圖主人自己的說書人</strong>觸發，別的陣營不會在你的地圖上發生他的事件、你也不會因為多一個陣營就多遇到一倍（不裝 MP Desync Fixes 也一樣）；無人機控制器、手持干擾器在每個陣營的殖民者身上都照常運作（包括遠征攻打 NPC 據點時），AI 助理終端也照各自區網的語言模型佔座位；市場行情、對手公司與晶片短缺則是整個世界共用的。</p>
+<p><strong>時間怎麼算</strong>：開了<strong>非同步時間</strong>時，每張地圖有自己的時鐘、世界另有一個，常常差好幾天。屬於你陣營的計時 —— 合約期限、現貨鎖單、長約分期、推論合約、授權付款、AGI 暫停、社區回饋、保證的無人機襲擊、被監視天數、權重匣過時、韌體與入侵 —— 一律照<strong>你自己家園地圖的時間</strong>走：你暫停，它們也停；你快轉，它們也快。全員離開家園地圖（在商隊裡）時改照世界時間走。市場行情、對手公司與晶片短缺照世界時間。單人遊戲沒有這個差別。</p>
 <p align="right"><a href="#toc">↑ 回到目錄</a></p>
 
 <hr>
@@ -4760,7 +4836,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </ul>
 <div class="alert alert-note">
 <p class="alert-head"><span class="alert-icon">📘</span><span>Note</span></p>
-<p>本手冊的數字取自模組 Defs 與 README，對應 v44.7。遊戲數值若因版本調整而變動，以遊戲內面板為準。</p>
+<p>本手冊的數字取自模組 Defs 與 README，對應 v45.0。遊戲數值若因版本調整而變動，以遊戲內面板為準。</p>
 </div>
 </article>
     <article data-lang="en" hidden>
@@ -4796,7 +4872,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td><strong>Documented version</strong></td>
-<td>v44.7</td>
+<td>v45.0</td>
 </tr>
 </tbody>
 </table>
@@ -4821,6 +4897,9 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <li>[ ] Research <strong>Machine learning</strong> → train a model → put the cartridge in a <strong>model cartridge reader</strong> (on a LAN with a NOC wall) → switch a rack to <strong>Inference</strong> mode (it picks the cartridge up automatically)</li>
 <li>[ ] Want silver? Build a <strong>contract terminal</strong>. Want to skip labour? Build a <strong>robot assembly bay</strong></li>
 </ul>
+<blockquote class="quote">
+<p>🎓 <strong>There is a guide in the game too</strong>: "<strong>AI compute guide</strong>" on the bottom bar opens it (a "Quick start" tab and a "Detailed reference" tab, which is this handbook); every building and item from this mod has a "<strong>Guide</strong>" button that jumps to its page.</p>
+</blockquote>
 <hr>
 <p><a id="toc"></a></p>
 <h2 id="contents">📑 Contents</h2>
@@ -4906,7 +4985,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td><a href="#18-other-mechanics-and-rules">18</a></td>
-<td>Other mechanics and rules (training window, failures and firmware, surges, obsolescence, chip sources, settings, multiplayer)</td>
+<td>Other mechanics and rules (training window, firmware and intrusions, surges, obsolescence, chip sources, settings, multiplayer)</td>
 </tr>
 </tbody>
 </table>
@@ -4949,7 +5028,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 </tbody>
 </table>
-<p>Everything is <strong>physical</strong>: cards burn out, cartridges get stolen, models have to be carried around,
+<p>Everything is <strong>physical</strong>: cards burn out and wear out, cartridges get stolen, models have to be carried around,
 and drones need an operator wearing a controller.</p>
 <div class="alert alert-important">
 <p class="alert-head"><span class="alert-icon">❗</span><span>Important</span></p>
@@ -5119,8 +5198,9 @@ industrial era and start on refurbished cards.</p>
 In the operations console's racks tab, click a rack's cards cell to open its slot layout or eject specific cards.</p>
 <div class="alert alert-warning">
 <p class="alert-head"><span class="alert-icon">⚠️</span><span>Warning</span></p>
-<p>⏳ Each card runs at <strong>3× failure rate for its first 5 days of runtime</strong> (the bathtub curve). That is the window where
-<strong>rack servicing</strong> pays off most; after 120 days cards start to age again (see "Card age and replacement").</p>
+<p>⏳ Cards wear with <strong>runtime</strong>: only about <strong>2%</strong> fail over their first 120 days, then each 30-day stage brings 5% / 10% / 15% / 25%,
+and <strong>35%</strong> every 30 days after 240 days (base rate; see "Card age and replacement"). <strong>Rack servicing</strong> (half the failure rate for 5 days),
+liquid cooling and an operator on shift lower it; keep a few spares in storage and haulers refill empty slots.</p>
 </div>
 <h3 id="step-5-power-it-and-pick-a-mode">▶︎ Step 5 — Power it and pick a mode</h3>
 <table>
@@ -6397,46 +6477,73 @@ released at night was already counted that day; what storage buys you is a backu
 </table>
 <h3 id="card-age-and-replacement">🕰️ Card age and replacement</h3>
 <p>Every accelerator card records its own <strong>runtime</strong>: it only grows while its rack is computing (any mode), not when idle or switched off, and it <strong>stays with the card</strong> when it is ejected, pulled or hauled (used cards are old cards).</p>
+<p><strong>Failures depend only on runtime</strong> (since 2026-10-26, replacing the old flat 1/60 per card per day and the early-life ×3): each stage has a chance of failing over the whole stage, spread evenly over its days as a daily hazard. The table is the <strong>base rate</strong> (air cooling, no servicing, clean room, at or below the optimal temperature):</p>
 <table>
 <thead>
 <tr>
 <th>Runtime</th>
-<th>Failure rate</th>
+<th>Chance to fail over the stage</th>
+<th>Per card per 30 days</th>
 <th>Market value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Under 5 days (early life)</td>
-<td><strong>×3</strong></td>
+<td>0–120 days (stable)</td>
+<td><strong>2%</strong></td>
+<td>0.5%</td>
 <td>×1</td>
 </tr>
 <tr>
-<td>5–120 days (stable)</td>
-<td>×1</td>
-<td>×1</td>
-</tr>
-<tr>
-<td>120 days or more (aged)</td>
-<td><strong>×1.5</strong></td>
+<td>120–150 days (aged)</td>
+<td><strong>5%</strong></td>
+<td>5%</td>
 <td>×0.75</td>
 </tr>
 <tr>
-<td>240 days or more (badly aged)</td>
-<td><strong>×2</strong></td>
+<td>150–180 days</td>
+<td><strong>10%</strong></td>
+<td>10%</td>
+<td>×0.75</td>
+</tr>
+<tr>
+<td>180–210 days</td>
+<td><strong>15%</strong></td>
+<td>15%</td>
+<td>×0.75</td>
+</tr>
+<tr>
+<td>210–240 days</td>
+<td><strong>25%</strong></td>
+<td>25%</td>
+<td>×0.75</td>
+</tr>
+<tr>
+<td>240 days and up (badly aged)</td>
+<td><strong>35%</strong> every 30 days</td>
+<td>35%</td>
 <td>×0.5</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li><strong>Base failure rate</strong>: 1/60 per card per day — a full 4-card standard rack loses a card about every <strong>15 days</strong> on air cooling, <strong>25 days</strong> on cold-plate liquid cooling and <strong>50 days</strong> immersed (cards past early life, not counting temperature or servicing; an operator gives ×0.7, servicing and Tier IV lower it further).</li>
-<li>A rack's failure rate uses the <strong>average multiplier of its cards</strong>; a random failure picks the card weighted by that multiplier, and an overheat burnout takes the card with the highest "age multiplier ÷ MTBF" (weakest and oldest first).</li>
-<li><strong>Servicing burn-in</strong>: cards still in early life jump halfway to the end of it.</li>
+<li>A new card running nonstop: 98% reach 120 days and about <strong>53%</strong> reach 240 days at the base rate; with liquid cooling and servicing (×0.3) about <strong>83%</strong> reach 240 days.</li>
+<li><strong>Environment multipliers</strong> apply to the hazard: cold-plate liquid <strong>×0.6</strong>, immersion <strong>×0.3</strong>, <strong>rack servicing ×0.5</strong> (5 days), <strong>operator on shift ×0.7</strong>, <strong>Tier IV ×0.5</strong>; +4% per degree above the optimal temperature, a dirty room (cleanliness below 0) up to ×3, overdue firmware <strong>×1.25</strong>.</li>
+<li>Every 250 ticks the rack makes one roll against the combined risk of all its cards; on a hit, the failed card is picked by risk (older cards are more likely; identical on every multiplayer client). At most one card fails at a time. A failed card is gone; with auto-fill on, haulers replace it.</li>
+<li><strong>Overheat burnout</strong> is separate: above the critical temperature (70 °C on air) for <strong>2 hours</strong> in a row, one card burns out (4 hours at Tier IV) — the one with the highest "age hazard ÷ MTBF" (weakest and oldest first). After "datacenter fire safety" research, a burnout in a room without automatic suppression has a 10% chance to start a fire.</li>
 <li><strong>Refurbished cards</strong> (3 used → 2 good) start at <strong>120 days</strong>: cheap, but due for replacement sooner.</li>
 <li>In storage, new cards stack as usual; used cards only stack within the same 10-day band (runtime averaged). Racks never merge them, so every card's runtime stays exact.</li>
 <li>Rack buttons <strong>Eject ≥ 120-day cards</strong> and <strong>Eject ≥ 240-day cards</strong> pull only the old ones (greyed out until some card is old enough); with auto-fill on, haulers bring fresh cards.</li>
-<li>The rack panel shows "Card age: early life 1 / stable 5 / aged 2 / badly aged 0 (oldest 251 days)"; the operations console's Facilities tab shows the same breakdown for the <strong>whole LAN</strong> (yellow "consider replacing" once aged cards pass 20%) plus the same two buttons, which eject old cards across the whole LAN.</li>
+<li>The rack panel shows "Card age: stable 6 / aged 2 / badly aged 0 (oldest 251 days)" and "Failure risk: about X card(s) per 30 days (environment ×Y)"; each card's info shows its stage and that stage's chance; the data hall overlay's "failure risk" shows each rack's per-card chance over 30 days; the operations console's Facilities tab shows the same breakdown for the <strong>whole LAN</strong> (yellow "consider replacing" once aged cards pass 20%) plus the same two buttons, which eject old cards across the whole LAN.</li>
 <li>Older saves: cards already in racks count as having run 5 days.</li>
+</ul>
+<h4 id="rack-servicing">🧰 Rack servicing</h4>
+<ul>
+<li><strong>Datacenter ops</strong> is its own column in the Work tab (right of Construction, uses the Construction skill). Colonists with it ticked service a rack once its servicing has <strong>less than 1 day left</strong> (or has run out); a service takes about 15 seconds and makes that rack fail <strong>half as often for 5 days</strong>.</li>
+<li><strong>Right-click to order it</strong>: select a colonist and right-click a rack to service it now (early is fine; not within 1 hour of the last service — the menu says why when it cannot).</li>
+<li>The first time an older save loads, colonists with Construction ticked who do not have Datacenter ops ticked get it at their Construction priority (once per save; untick it afterwards and it stays off).</li>
+<li>The rack panel reads "Maintained — … left" or "Not maintained"; the operations console alerts and "Next steps" only warn once servicing has actually <strong>run out</strong>.</li>
+<li>A pure bonus: with nobody doing it the datacenter runs as usual, just at the normal failure rate.</li>
 </ul>
 <h3 id="hyperscale-cooling-and-power-late-game">🏭 Hyperscale cooling and power (late game)</h3>
 <p>At several NVL16s — let alone AGI — the standard equipment means building dozens of units. These have 5–10× the capacity, and the research goes deeper the more advanced the machine:</p>
@@ -6794,6 +6901,8 @@ monitoring wall</strong>.</p>
   floor, or in a corpus on another LAN are never used.</li>
 <li>Haulers keep it topped up from your stockpile (labelled, licensed, synthetic or old general, <strong>but not raw</strong>), up to
   <strong>40 per corpus</strong> in total; its buttons switch refilling off or empty it out.</li>
+<li>The <strong>Storage tab</strong> (the vanilla storage settings) chooses which kinds haulers bring in, with the vanilla copy / paste storage settings buttons; the <strong>Contents tab</strong> lists
+  what is inside and how many of each, with a "Take out" button per kind (it also unticks that kind, so haulers do not carry it straight back).</li>
 <li>A colossal run (120) needs several corpora, or haulers refilling them while it runs; with too little data in its LAN's
   corpora a run stalls until more is brought in.</li>
 <li>Augmentation reads (without using up) real data from the corpora on its LAN.</li>
@@ -6838,7 +6947,7 @@ monitoring wall</strong>.</p>
 <tr>
 <td><strong>Policies</strong></td>
 <td>14 of them</td>
-<td>Loaded into robots or drone controllers; once you have a foundation model, "fine-tune policy" mass-produces them cheaply</td>
+<td>Loaded into robots or swarm launchers (drone controllers need none); once you have a foundation model, "fine-tune policy" mass-produces them cheaply</td>
 </tr>
 <tr>
 <td><strong>Mechanoid</strong> (Biotech)</td>
@@ -7038,7 +7147,7 @@ monitoring wall</strong>.</p>
   revealed</strong>, and realignment / rollback / scrapping only see it after that.</li>
 <li>Two ways it gets revealed:
   1. Put it in a reader and run an <strong>evaluation</strong>.
-  2. <strong>Time in service</strong>: served by an inference rack, or installed in a robot / drone controller / swarm
+  2. <strong>Time in service</strong>: served by an inference rack, or installed in a robot / swarm
      launcher, for a total of <strong>6 / 9 / 12 / 18 days</strong> (small / medium / large / colossal).</li>
 <li><strong>Every cartridge from the same run is revealed together</strong> (exports, distilled, quantised, reasoning and
   continued versions all count as the same run).</li>
@@ -7316,7 +7425,7 @@ quality, is the bottleneck</strong>.</p>
 <li>Inference needs no extra building — it runs on the cards already in the rack. The old "inference server" is retired: on load its cartridge is ejected beside it, and deconstructing it refunds all of its materials.</li>
 <li>The <strong>edge inference relay</strong> extends that buff to other maps and caravans.</li>
 <li><strong>Operations console</strong>: while manned, the whole cluster runs at <strong>0.7× failure rate and +3% compute</strong>
-  (a pure bonus).</li>
+  (a pure bonus), and the operator <strong>applies new firmware releases automatically</strong> (one LAN at a time, rack by rack; the "Auto-update firmware on shift" switch turns it off).</li>
 </ul>
 <h3 id="serving-pools-memory-and-capacity">🧮 Serving pools: memory and capacity</h3>
 <p>Racks in the same datacenter (the same NOC wall's LAN) that are in inference mode and serve <strong>the same model</strong> form a <strong>serving pool</strong> — their memory and capacity add up. To serve more colonists, add cards or racks and have them all select the same cartridge; a rack in inference mode with no readable cartridge selected adds nothing.</p>
@@ -7898,6 +8007,8 @@ capacity; open weights turn an old model into diplomacy — license it until it 
 <li>If there is not enough steel for a job, that job is skipped (the robot will not walk over for it); a flat battery still brings it in to charge.</li>
 <li>A robot with a pending module refit still goes to the assembler (a crafter has to fit the module).</li>
 <li>The station reads "Ready" or "Repairing 〈name〉".</li>
+<li><strong>Robot wounds are only repaired here</strong>: doctors cannot tend robots (not even by right-click), and robots do not heal on their own, do not bleed and do not go to bed.</li>
+<li><strong>Downed robots</strong>: haulers carry them onto the pad of a station with steel and a free pad; the station repairs the robot lying there until it can stand, and it finishes the rest on its own. With no usable station they are rescued to a bed as usual, but they will not get better — build a station.</li>
 </ul>
 <h3 id="the-six-upgrade-modules">🔧 The six upgrade modules</h3>
 <table>
@@ -8015,15 +8126,15 @@ It is <strong>your own data</strong> (labelled "own"): cleaning it is <strong>no
 <tbody>
 <tr>
 <td>Gear</td>
-<td><strong>Drone controller</strong> (belt slot) holding one <strong>flight autonomy policy</strong> cartridge</td>
+<td><strong>Drone controller</strong> (belt slot) — <strong>no cartridge needed</strong>: put it on, draft the wearer, launch</td>
 </tr>
 <tr>
 <td>Drone limit</td>
-<td>Grows with the policy size: small 1 / medium 1 / large 2 / <strong>colossal 3 (swarm — the whole 3-slot hangar at once)</strong>; misaligned counts as <strong>+4 tiers</strong></td>
+<td>Always <strong>autonomy level 16, 3 drones at once</strong> (swarm — the whole 3-slot hangar at once)</td>
 </tr>
 <tr>
-<td>Airframe cost</td>
-<td>recon 35 steel + 2 comp. / EW 40 + 3 / strike 45 + 3 / loitering munition 30 + 2</td>
+<td>Airframe cost (fabrication bench, per batch)</td>
+<td>FPV ×8: 30 steel, 2 components, 10 chemfuel / fibre-optic FPV ×6: 35, 3, 10 / Switchblade 300 ×6: 45, 3, 15 / Kargu-2 ×6: 50, 4, 15 / Lancet-3 ×4: 55, 4, 20 / Switchblade 600 ×4: 60, 5, 23 + 4 plasteel / Shahed-136 ×3: 65, 6, 38 / EW quad ×4: 10, 2, 4</td>
 </tr>
 <tr>
 <td>Deployment gap</td>
@@ -8053,8 +8164,9 @@ It is <strong>your own data</strong> (labelled "own"): cleaning it is <strong>no
 </table>
 <div class="alert alert-warning">
 <p class="alert-head"><span class="alert-icon">⚠️</span><span>Warning</span></p>
-<p>Operator dies, leaves the map, loses the controller, or the cartridge is pulled → everything airborne
+<p>Operator dies, leaves the map or loses the controller → everything airborne
 is disposed of on the spot.</p>
+<p>Older saves: an old policy cartridge still in a controller's slot comes back out with "<strong>Remove old cartridge</strong>" (it can go into a swarm launcher).</p>
 </div>
 <div class="alert alert-tip">
 <p class="alert-head"><span class="alert-icon">💡</span><span>Tip</span></p>
@@ -8066,7 +8178,7 @@ all their drones act as one squad — a concentrated strike becomes a single wav
 target to each drone. <strong>Friendly operators and drones are never targets</strong>, even if they are in the selection.</p>
 </div>
 <h3 id="supply-quad">📦 Supply quad</h3>
-<p>After <strong>Drone resupply</strong> (after Autonomous munitions), fabricate it at a fabrication bench (25 steel, 4 components, 5 chemfuel, one at a time). It is not a strike airframe: it never goes into a launcher or the deploy menus, it only rides in a <strong>drone controller's back rack</strong> (one hangar slot, shared with strike airframes).</p>
+<p>After <strong>Drone resupply</strong> (after Autonomous munitions), fabricate it at a fabrication bench (6 steel, 1 component, 1 chemfuel, one at a time). It is not a strike airframe: it never goes into a launcher or the deploy menus, it only rides in a <strong>drone controller's back rack</strong> (one hangar slot, shared with strike airframes).</p>
 <table>
 <thead>
 <tr>
@@ -8078,6 +8190,10 @@ target to each drone. <strong>Friendly operators and drones are never targets</s
 <tr>
 <td>Carrying one</td>
 <td>Set a slot to the supply quad in "<strong>Hangar layout</strong>": when the rack has none, the wearer fetches one (before any strike airframes)</td>
+</tr>
+<tr>
+<td>Roofs and doors</td>
+<td>Like every drone it <strong>cannot fly through a roof or open a door</strong>: under open sky it flies over anything (walls, water); indoors it only gets in through an <strong>open door</strong> or an unroofed opening (doors can be set to "hold open"). It picks the nearest stack it has a <strong>flight path</strong> to; stacks without a path are greyed out in the menu with the reason, and the drop spot has to be reachable too. Inside the operator's own room it works as usual. If the operator is behind a shut door when it returns, it lands at the nearest reachable spot and haulers carry it back</td>
 </tr>
 <tr>
 <td>Air-drop</td>
@@ -8115,7 +8231,7 @@ target to each drone. <strong>Friendly operators and drones are never targets</s
 <tr>
 <td>Strike</td>
 <td>15 c/s</td>
-<td>Carries a gun; accuracy comes from the weights in the controller</td>
+<td>Carries a gun; accuracy follows the controller's autonomy level (always 16 for yours)</td>
 </tr>
 <tr>
 <td>EW</td>
@@ -8525,7 +8641,7 @@ The wearer gets a shield-style charge gizmo; <strong>while drafted</strong>, "Ac
 </tr>
 <tr>
 <td><strong>Which models</strong></td>
-<td>Market-value cap = <strong>150 + points ÷ 6</strong>, fixed-model doctrines included (a doctrine nobody can afford is not picked): FPV always, Switchblade 300 at <strong>360</strong>, Kargu-2 at <strong>660</strong>, fibre-optic FPV at <strong>1,000</strong>, Lancet-3 at <strong>1,620</strong>, Switchblade 600 at <strong>2,940</strong>, Shahed-136 at <strong>4,500</strong> points</td>
+<td>Market-value cap = <strong>(150 + points ÷ 6) ÷ 4</strong> (airframe values are quartered too), fixed-model doctrines included (a doctrine nobody can afford is not picked): FPV always, Switchblade 300 at <strong>360</strong>, Kargu-2 at <strong>660</strong>, fibre-optic FPV at <strong>1,000</strong>, Lancet-3 at <strong>1,620</strong>, Switchblade 600 at <strong>2,940</strong>, Shahed-136 at <strong>4,500</strong> points</td>
 </tr>
 <tr>
 <td><strong>Enemy jamming</strong> (after the research)</td>
@@ -8654,8 +8770,8 @@ The wearer gets a shield-style charge gizmo; <strong>while drafted</strong>, "Ac
 <td>Only large compute attracts one; they are after your weight cartridges</td>
 </tr>
 <tr>
-<td>🔓 <strong>Cyber intrusion</strong></td>
-<td>Cut the network (cluster down a day) / trace back (a coin flip) / keep operating</td>
+<td>🔓 <strong>Cyber intrusion</strong> (15% of compute siphoned for 12 hours, 6 with the firewall)</td>
+<td>Cut the network (no cluster bonus for 8 hours, contract racks idle) / trace back (a coin flip; failing adds 8 hours) / keep operating</td>
 </tr>
 <tr>
 <td>💧 <strong>Coolant leak</strong></td>
@@ -8748,7 +8864,7 @@ Racks, NVL16 cabinets and immersion tanks <strong>follow their actual load</stro
 </tr>
 <tr>
 <td><strong>Events</strong></td>
-<td>Generator start and stop, UPS switchover, contract completed, cartridge inserted, checkpoint write, NOC alert (a rack on the LAN overheating, broken down or without power), swarm launch, jammer kill, counter-drone burst, gas suppression discharge, datacenter alarm, card burnout, card failure, reactor scram</td>
+<td>Generator start and stop, UPS switchover, contract completed, cartridge inserted, checkpoint write, NOC alert (a rack on the LAN overheating, broken down or without power), swarm launch, jammer kill, counter-drone burst, gas suppression discharge, datacenter alarm, reactor scram</td>
 </tr>
 </tbody>
 </table>
@@ -8832,10 +8948,10 @@ then multiplied by the colony's <strong>carbon grade</strong> (A ×0.5 to E ×1.
 <li><strong>Device switches seem dead</strong> → the vanilla flickable switch cuts power; this mod's on/off switch is
    a separate control. The rack panel's first line says what it is doing or why it is not; the second reads "has power — state: running / standby / off /
    stalled / broken".</li>
-<li><strong>Cards keep dying</strong> → rack servicing is <strong>its own column in the Work tab</strong> ("datacenter ops", right of If nobody has it ticked while racks go unserviced, the operations console's "Next steps" and alerts remind you.
-   Construction) — tick it for someone. A card's first 5 days run at 3×, and it ages to ×1.5 at 120 days and ×2 at 240
-   (check "Card age" on the rack panel and use "Eject ≥ 120/240-day cards"); have someone do rack servicing (halves the rate
-   for five days); Tier IV halves it again.</li>
+<li><strong>Cards keep dying</strong> → cards wear with runtime: only 2% over the first 120 days, then 5% / 10% / 15% / 25% per 30-day stage and 35% every 30 days after 240 days
+   (check "Card age" and "Failure risk" on the rack panel and use "Eject ≥ 120/240-day cards"). Rack servicing (halves the rate for five days), liquid cooling,
+   an operator on shift and Tier IV all lower it. Rack servicing is <strong>its own column in the Work tab</strong> ("datacenter ops", right of Construction) — tick it for someone,
+   or select a colonist and right-click a rack. If nobody has it ticked while racks go unserviced, the operations console's "Next steps" and alerts remind you.</li>
 <li><strong>Sleeping next to the machine room hurts mood</strong> → the 12-tile radius is measured from <strong>beds</strong>.
     Immersion vats are silent.</li>
 <li><strong>⚠️ Never recall or undeploy a one-way airframe over your own base</strong> → Lancet-3 and Shahed-136
@@ -8845,7 +8961,7 @@ then multiplied by the colony's <strong>carbon grade</strong> (A ×0.5 to E ×1.
     the "watched" mood follows once it is revealed (by evaluation or time in service).
     <strong>15% of your cluster compute vanished for no visible reason</strong> → an <strong>unevaluated</strong> cartridge is probably
     misaligned. Evaluate it.</li>
-<li><strong>Rack servicing is a pure bonus</strong> — skip it and the racks run normally, just at the base failure rate.</li>
+<li><strong>An intrusion or firmware countdown seems stuck (multiplayer)</strong> → they now count down on <strong>your own map's time</strong>: intrusions 12 hours; firmware is flashed rack by rack, each rack = its cards × 0.2 hours, regardless of world time.</li>
 <li><strong>Racks stopped serving a cartridge and the reader's eject button is greyed out</strong> → that cartridge is <strong>licensed</strong>
     (locked in its reader). Unlist it under "Licensing &amp; open weights" at the contract terminal.</li>
 <li><strong>Colonists lost their buff after taking an inference contract</strong> → the contract's reserved capacity comes first and
@@ -8917,7 +9033,7 @@ then multiplied by the colony's <strong>carbon grade</strong> (A ×0.5 to E ×1.
 </tr>
 <tr>
 <td>Contracts</td>
-<td>3 offers every 4 days, 120 silver per rack-day, 25% default penalty; sized to each LAN's compute in turn (×1–100); asking for more uses the negotiating LAN's tier</td>
+<td>3 offers every 4 days, 120 silver per rack-day, 25% default penalty; sized to the cards actually slotted on each LAN, in turn (×1–100); asking for more uses the negotiating LAN's tier</td>
 </tr>
 <tr>
 <td>Misalignment</td>
@@ -8925,11 +9041,15 @@ then multiplied by the colony's <strong>carbon grade</strong> (A ×0.5 to E ×1.
 </tr>
 <tr>
 <td>Card failures</td>
-<td>1/60 per card per day; a full 4-card rack loses one every 15 days on air, 25 on cold plate, 50 immersed</td>
+<td>By runtime: 2% over 0–120 days, 5% over 120–150, 10% over 150–180, 15% over 180–210, 25% over 210–240, then 35% every 30 days (base); liquid ×0.6, immersion ×0.3, servicing ×0.5, operator ×0.7, Tier IV ×0.5, overdue firmware ×1.25; 2 hours overheated burns one out</td>
 </tr>
 <tr>
 <td>Card age</td>
-<td>Under 5 days ×3, 120 days ×1.5 (value ×0.75), 240 days ×2 (value ×0.5); refurbished cards start at 120 days</td>
+<td>Market value: 120 days ×0.75, 240 days ×0.5; refurbished cards start at 120 days</td>
+</tr>
+<tr>
+<td>Firmware</td>
+<td>A release every 8 days; flashed rack by rack, each rack offline its cards × 0.2 hours; done +5%, 4 days overdue −5% and ×1.25 failures; applied automatically while an operator is on shift</td>
 </tr>
 <tr>
 <td>Chip shortage</td>
@@ -9093,7 +9213,7 @@ then multiplied by the colony's <strong>carbon grade</strong> (A ×0.5 to E ×1.
 <p class="alert-head"><span class="alert-icon">📘</span><span>Note</span></p>
 <p>A LAN without a <strong>NOC wall</strong> cannot train (the window says so). "Extended training" doubles the compute and data; the cartridge then takes 60 days to drop a tier instead of 30.</p>
 </div>
-<h3 id="hardware-failures-and-firmware">🧯 Hardware failures and firmware</h3>
+<h3 id="firmware-and-cyber-intrusions">🧯 Firmware and cyber intrusions</h3>
 <table>
 <thead>
 <tr>
@@ -9103,24 +9223,44 @@ then multiplied by the colony's <strong>carbon grade</strong> (A ×0.5 to E ×1.
 </thead>
 <tbody>
 <tr>
-<td>Base failure rate</td>
-<td><strong>1/60</strong> per running card per day; a fully loaded 4-card rack loses a card about every <strong>15 days</strong> air-cooled, ×0.6 with cold plates (≈25 days), ×0.3 immersed (≈50 days)</td>
+<td>Card failures</td>
+<td>By runtime stage (see "Card age and replacement"); 2 hours above the critical temperature burns one out (4 hours at Tier IV)</td>
 </tr>
 <tr>
-<td>Card age (each card tracks its own runtime)</td>
-<td>Under 5 days infant mortality <strong>×3</strong>, 5–120 days ×1, 120+ days <strong>×1.5</strong> (value ×0.75), 240+ days <strong>×2</strong> (value ×0.5)</td>
+<td>Firmware releases</td>
+<td>A new version about every <strong>8 days</strong> per faction (letter; no letter while an operator on shift with auto-update on will handle it)</td>
 </tr>
 <tr>
-<td>Other factors</td>
-<td>Heat raises it; <strong>datacenter maintenance</strong> (its own work-tab column, uses Construction) halves failures for 5 days and halves the infant period; Tier IV halves it; duty desks and firmware also count</td>
+<td>Applying firmware</td>
+<td><strong>Each LAN updates on its own, one rack at a time</strong>: press "Apply firmware update" on any rack or the operations console of that LAN; <strong>only the rack being flashed goes offline</strong>, for its cards × <strong>0.2 hours</strong> (a standard 4-card rack = 48 minutes, an NVL72's 18 trays = 3.6 hours) while the rest keep computing; the whole LAN takes its cards × 0.2 hours (e.g. 40 cards = 8 hours)</td>
 </tr>
 <tr>
-<td>Replacing cards</td>
-<td>With a card model chosen on the rack and auto-fill on, haulers swap in spares from storage — so keep making or buying cards</td>
+<td>Auto-update on shift</td>
+<td>While someone is on shift at an <strong>operations console</strong> with "Auto-update firmware on shift" on (the default), the operator applies releases by themselves: one LAN at a time, then the next</td>
 </tr>
 <tr>
-<td>Firmware updates</td>
-<td>A new version about every <strong>8 days</strong> (letter). Press "Apply firmware update" on any rack: the whole cluster goes offline for about <strong>2 hours</strong>, then gets <strong>+5%</strong> until the next version; left uninstalled <strong>4 days</strong> after release, failures ×<strong>1.25</strong></td>
+<td>Firmware effect</td>
+<td>Once the whole LAN is done it gets <strong>+5%</strong> compute until the next version; left uninstalled <strong>4 days</strong> after release (or two versions behind), that LAN runs at <strong>−5%</strong> and its cards fail <strong>×1.25</strong></td>
+</tr>
+<tr>
+<td>Why rack by rack (interval review)</td>
+<td>The 8-day interval stays. Taking a whole LAN offline for "cards × 0.2 hours" meant 4 NVL72s (72 trays) went dark for 14.4 hours — 7.5% of every 8 days, more than the +5% is worth; rack by rack, each one is offline only its own 3.6 hours (about 1.9%), a standard rack 48 minutes (0.4%), so every release pays</td>
+</tr>
+<tr>
+<td>Cyber intrusion</td>
+<td>Siphons <strong>15%</strong> of the cluster's compute for <strong>12 hours</strong> (6 with the hardened firewall research); <strong>cutting the network</strong> ends it, but for <strong>8 hours</strong> there is no cluster bonus and <strong>contract racks idle</strong> (clients cannot reach you; idle power only; deadlines keep running) while research, training and inference serving carry on; tracing back is a coin flip, failing adds <strong>8 hours</strong></td>
+</tr>
+<tr>
+<td>Effect on research</td>
+<td>The intrusion takes rack compute, so research-mode racks (vanilla research progress), training and contracts all lose 15%; colonists researching at benches are not affected</td>
+</tr>
+<tr>
+<td>Timekeeping</td>
+<td>Counts down on <strong>the faction's own home map time</strong> (also under multiplayer async time)</td>
+</tr>
+<tr>
+<td>Older saves</td>
+<td>Pending firmware = no LAN has it yet; firmware being applied counts as installed; a running intrusion or lockdown keeps its remaining time, capped at 12 / 8 hours</td>
 </tr>
 </tbody>
 </table>
@@ -9174,14 +9314,27 @@ The cartridge panel says "state of the art · drops a tier in X" or "obsolete".<
 </tr>
 <tr>
 <td>First-time explanations</td>
-<td>A letter the first time each of ten event types happens (sent once)</td>
+<td>A letter the first time each of ten event types happens, card failures included (sent once)</td>
+</tr>
+<tr>
+<td>In-game guide</td>
+<td>"AI compute guide" on the bottom bar, or the "Guide" button on any building or item from this mod (opens that thing's own details — description, how to use, how to get — with links to the related guide page and the info card); a quick start and a detailed reference, searchable; each page lists the buildings and items it mentions as clickable links. Text is 1.5× the normal UI size, with highlights in gold instead of bold (bold blurs, especially in Chinese)</td>
+</tr>
+<tr>
+<td>Ranges on blueprints</td>
+<td>Jammer towers, counter-drone turrets, sensor relays, swarm launchers (plus existing relays), the noise radius of compute racks and the room a gas suppression system covers (green = enough, red = room too big) are drawn while placing a blueprint or reinstalling</td>
+</tr>
+<tr>
+<td>Buttons you cannot use</td>
+<td>Greyed-out buttons and unavailable menu entries say why (hover, or read the entry) and what is missing</td>
 </tr>
 </tbody>
 </table>
 <h3 id="multiplayer">🌐 Multiplayer</h3>
 <p>Supports <strong>RimWorld Multiplayer</strong> (zetrith's): works fine without it; with it, load this mod <strong>after</strong> Multiplayer. Every button, right-click option and dialog action is synced to all players.
 In multiplayer, notifications always use their default mode (settings are per computer, and showing a letter on one side only would desync).
-With <strong>multifaction</strong> on, each faction only sees and controls <strong>its own networks</strong> (cabling into someone else's NOC wall does not put your machines under it); compute and inference contracts belong to <strong>the faction that accepted them</strong> - rewards, deposits, penalties, debts and goodwill all go to it, and the deposit only comes out of its own storage; <strong>each faction has its own contract board</strong>: normal, long, spot and inference offers, refresh timers, completed count and client reputation are all kept apart, so another faction taking a contract never touches your offers (yours are sized by your own datacenter and models). Everything else is per faction too: the AGI project, firmware updates (applying one only takes your own cluster offline), intrusions and network lockdowns, surveillance, cluster-optimizer models, carbon grade and the community fund, local backlash, the guaranteed drone raid, stolen-model recovery and revenge raids, model licensing and open weights, poaching, the black-market audit, and the coolant-leak, export-audit and data-reclamation decisions (each event is answered by the faction it happened to); market prices, rival companies and chip shortages are shared by the whole world.</p>
+With <strong>multifaction</strong> on, each faction only sees and controls <strong>its own networks</strong> (cabling into someone else's NOC wall does not put your machines under it); compute and inference contracts belong to <strong>the faction that accepted them</strong> - rewards, deposits, penalties, debts and goodwill all go to it, and the deposit only comes out of its own storage; <strong>each faction has its own contract board</strong>: normal, long, spot and inference offers, refresh timers, completed count and client reputation are all kept apart, so another faction taking a contract never touches your offers (yours are sized by your own datacenter and models). Everything else is per faction too: the AGI project, firmware updates (applying one only takes that one LAN of yours offline), intrusions and network lockdowns, surveillance, cluster-optimizer models, carbon grade and the community fund, local backlash, the guaranteed drone raid, stolen-model recovery and revenge raids, model licensing and open weights, poaching, the black-market audit, and the coolant-leak, export-audit and data-reclamation decisions (each event is answered by the faction it happened to); this mod's random events (datacenter raids, intrusions, coolant leaks, audits and so on) are only fired by <strong>the map owner's own storyteller</strong>, so another faction's events never land on your map and adding a faction does not double how often you see them (also without MP Desync Fixes); drone controllers and handheld jammers work for every faction's colonists (including on caravan attacks against NPC bases), and AI assistant terminals take their seats in their own network's language-model pool; market prices, rival companies and chip shortages are shared by the whole world.</p>
+<p><strong>How time is kept</strong>: with <strong>async time</strong> on, every map has its own clock and the world has another, often days apart. Everything that belongs to your faction - contract deadlines, spot locks, long-contract instalments, inference contracts, licence payments, AGI pauses, the community fund, the guaranteed drone raid, surveillance days, cartridge obsolescence, firmware and intrusions - runs on <strong>your own home map's time</strong>: pause and they pause, speed up and they speed up. With nobody on a home map (everyone out in caravans) they fall back to world time. Market prices, rival companies and chip shortages run on world time. Single-player has no such difference.</p>
 <p align="right"><a href="#toc">↑ back to contents</a></p>
 
 <hr>
@@ -9194,7 +9347,7 @@ With <strong>multifaction</strong> on, each faction only sees and controls <stro
 </ul>
 <div class="alert alert-note">
 <p class="alert-head"><span class="alert-icon">📘</span><span>Note</span></p>
-<p>All numbers in this guide come from the mod's Defs and README, matching v44.7. If a later version
+<p>All numbers in this guide come from the mod's Defs and README, matching v45.0. If a later version
 changes a value, the in-game panel wins.</p>
 </div>
 </article>
