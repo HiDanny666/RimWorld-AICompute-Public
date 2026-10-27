@@ -254,6 +254,17 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <li><a href="#晶片從哪來">🏭 晶片從哪來</a></li>
 <li><a href="#通知與模組設定">🔔 通知與模組設定</a></li>
 <li><a href="#多人連線">🌐 多人連線</a></li>
+</ul>
+</li>
+<li><a href="#19-名詞解釋">19. 名詞解釋</a><ul>
+<li><a href="#算力與硬體">🧮 算力與硬體</a></li>
+<li><a href="#散熱與電力">❄️ 散熱與電力</a></li>
+<li><a href="#網路與機房管理">🌐 網路與機房管理</a></li>
+<li><a href="#模型與訓練">🧠 模型與訓練</a></li>
+<li><a href="#推論">🎯 推論</a></li>
+<li><a href="#合約與市場">💰 合約與市場</a></li>
+<li><a href="#機器人與無人機">🤖 機器人與無人機</a></li>
+<li><a href="#遊戲單位與通用詞">⏱️ 遊戲單位與通用詞</a></li>
 <li><a href="#相關文件">📎 相關文件</a></li>
 </ul>
 </li>
@@ -385,6 +396,17 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <li><a href="#where-chips-come-from">🏭 Where chips come from</a></li>
 <li><a href="#notifications-and-mod-settings">🔔 Notifications and mod settings</a></li>
 <li><a href="#multiplayer">🌐 Multiplayer</a></li>
+</ul>
+</li>
+<li><a href="#19-glossary">19. Glossary</a><ul>
+<li><a href="#compute-and-hardware">🧮 Compute and hardware</a></li>
+<li><a href="#cooling-and-power">❄️ Cooling and power</a></li>
+<li><a href="#network-and-datacenter-management">🌐 Network and datacenter management</a></li>
+<li><a href="#models-and-training">🧠 Models and training</a></li>
+<li><a href="#inference">🎯 Inference</a></li>
+<li><a href="#contracts-and-the-market">💰 Contracts and the market</a></li>
+<li><a href="#robots-and-drones">🤖 Robots and drones</a></li>
+<li><a href="#game-units-and-general-terms">⏱️ Game units and general terms</a></li>
 <li><a href="#related-documents">📎 Related documents</a></li>
 </ul>
 </li>
@@ -415,7 +437,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td><strong>多人連線</strong></td>
-<td>支援</td>
+<td>支援（RimWorld Together、Multiplayer）</td>
 </tr>
 <tr>
 <td><strong>Combat Extended</strong></td>
@@ -427,7 +449,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td><strong>對應版本</strong></td>
-<td>v45.0</td>
+<td>v46.0</td>
 </tr>
 </tbody>
 </table>
@@ -542,6 +564,10 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <td><a href="#18-其他機制與規則">18</a></td>
 <td>其他機制與規則（訓練視窗、韌體與入侵、湧浪、過時、晶片來源、設定、多人連線）</td>
 </tr>
+<tr>
+<td><a href="#19-名詞解釋">19</a></td>
+<td>名詞解釋（所有常用名詞的白話說明）</td>
+</tr>
 </tbody>
 </table>
 <p align="right"><a href="#toc">↑ 回到目錄</a></p>
@@ -633,6 +659,9 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 </tbody>
 </table>
+<blockquote class="quote">
+<p>📖 看到不懂的詞（CDU、PUE、蒸餾、量化、推論池、履約保證金……）→ <strong><a href="#19-名詞解釋">第 19 章 名詞解釋</a></strong> 有完整清單。</p>
+</blockquote>
 <p align="right"><a href="#toc">↑ 回到目錄</a></p>
 
 <hr>
@@ -2307,7 +2336,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 所以<strong>超大型要「一座 NVL16 + 兩座標準機櫃」才開得起來</strong>。</p>
 </div>
 <ul>
-<li><strong>全殖民地同時只能有一個訓練任務</strong>，所有切到訓練模式的機櫃共同貢獻（這才是分散式訓練）。</li>
+<li><strong>每個區網同時跑一個訓練任務</strong>，同區網所有切到訓練模式的機櫃共同貢獻（這才是分散式訓練）；不同區網各練各的。</li>
 <li><strong>任務可以排隊 8 筆</strong>，做完自動接下一筆。</li>
 </ul>
 <h3 id="資料集訓練的第二個輸入">📚 資料集（訓練的第二個輸入）</h3>
@@ -2942,7 +2971,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <h2 id="9-推論與推論任務">9. 推論與推論任務</h2>
 <ul>
 <li>先把權重匣插進 <strong>模型匣讀取機</strong>（讀取機按「插入權重匣」，搬運工搬來插上；讀取機要接到有 NOC 監控牆的區網）。</li>
-<li>運算機櫃切到 <strong>推論</strong> 模式（機櫃的模式按鈕，或營運控制台整個區網切）→ 機櫃<strong>自動</strong>提供這個區網讀取機上規模最大的匣 → <strong>殖民者被動加成</strong>。<strong>機櫃沒有匣槽</strong>，一顆匣可以供這個區網任意多座機櫃。</li>
+<li>運算機櫃切到 <strong>推論</strong> 模式（機櫃的模式按鈕，或營運控制台整個區網切）→ 機櫃<strong>自動</strong>提供這個區網讀取機上的匣 → <strong>殖民者被動加成</strong>。讀取機裡有好幾個模型時，<strong>區網規格夠就同時推論多個模型</strong>：匣依規模由大到小分機櫃，每個模型分到「權重放得下＋容量夠服務全部殖民者（含推論合約、助理終端）」就換下一個；剩下的機櫃放不下下一個模型就跳過，最後剩的全歸最大的模型。<strong>機櫃沒有匣槽</strong>，一顆匣可以供這個區網任意多座機櫃。</li>
 <li>想指定某一顆：營運控制台「<strong>推論</strong>」分頁的「<strong>提供的模型 ▾</strong>」整個區網一起選，或在單座機櫃按「<strong>選擇提供的模型</strong>」；選單裡的「自動」可以切回來。</li>
 <li>指定的匣讀不到（讀取機斷電、關機、故障、斷線，或匣被拔掉）→ 機櫃<strong>暫停提供</strong>，插回去自動恢復；沒有指定（自動挑選）的就改提供其他讀得到的匣。舊存檔插在機櫃上的匣，讀檔時會退到機櫃旁並寄一封說明信。</li>
 <li>推論不用另外蓋建築，用的就是機櫃上的卡。舊版的「推論伺服器」已退役：讀檔時匣會退出來，伺服器拆掉全額退料。</li>
@@ -3416,6 +3445,10 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <td><strong>不會在工作中學習</strong> —— 技能每個 rare tick 被重寫成權重決定的等級</td>
 </tr>
 <tr>
+<td>殘骸</td>
+<td>毀掉後留下的屍體是機器殘骸：<strong>不會腐爛、不能食用</strong></td>
+</tr>
+<tr>
 <td>電量</td>
 <td>約 <strong>2.5 天</strong>見底，會自己走到充電站</td>
 </tr>
@@ -3671,7 +3704,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td>被打下來</td>
-<td>留屍體，拆解回收 15 鋼 + 1 零件；引爆的不留屍體，只撒 2～5 鋼碎片</td>
+<td>留屍體（機器殘骸：<strong>不會腐爛、不能食用</strong>），拆解回收 15 鋼 + 1 零件；引爆的不留屍體，只撒 2～5 鋼碎片</td>
 </tr>
 </tbody>
 </table>
@@ -4820,10 +4853,699 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tbody>
 </table>
 <h3 id="多人連線">🌐 多人連線</h3>
-<p>支援 <strong>RimWorld Multiplayer</strong>（zetrith 版）：沒裝也完全正常；裝了的話本模組要排在它<strong>後面</strong>。所有按鈕、右鍵選單、對話框的動作都會同步給每位玩家。
+<p>支援 <strong>RimWorld Together</strong>：沒裝也完全正常，載入順序不限。每個玩家各玩各的殖民地，本模組的東西可以照常交易、上市集、援助、被襲擊：
+- <strong>權重匣送到別人那邊，年齡照樣接得上</strong>（兩邊遊戲時間不同也一樣）：練了 10 天的匣，對方收到也是 10 天，不會變成全新或一收到就過時。
+- <strong>別的玩家送來的本模組事件</strong>（機房襲擊、資安入侵、冷卻液洩漏、稽核等）照一般規則判斷：你沒有機房、條件不符就不會發生，會跳一則訊息說已略過；資料追討、部署模型襲擊這類只會因你自己的行為觸發的事件，別人送不過來。
+- 襲擊或拜訪別人時，對方的機房建築在那張臨時地圖上不會算進你的研究、合約或市場；對方的無人機控制器會出機防守。</p>
+<p>另外也支援 <strong>RimWorld Multiplayer</strong>（zetrith 版）：沒裝也完全正常；裝了的話本模組要排在它<strong>後面</strong>。所有按鈕、右鍵選單、對話框的動作都會同步給每位玩家。
 多人連線時通知方式一律照預設（設定只存在各自的電腦上，彈信與否不同會讓兩邊不同步）。
 開了<strong>多陣營</strong>時：每個陣營只看得到、只管得到<strong>自己的區網</strong>（線接到別人的監控牆也不歸他管）；算力與推論合約屬於<strong>接單的陣營</strong>，報酬、保證金、違約金、欠款與好感都算它的，保證金只扣它自己倉庫裡的白銀；<strong>每個陣營有自己的合約板</strong>：一般、長約、現貨與推論報價、刷新時間、完成數和客戶聲望都分開算，別的陣營接單不會影響你的報價（報價照你自己的機房規模與模型開）。其他也都各陣營分開：AGI 專案、韌體更新（套用時只有你自己那個區網離線）、入侵與網路封鎖、被監視、機房優化模型、碳排等級與社區回饋、鄰避注意程度、保證的無人機襲擊、失竊模型的奪回與報復襲擊、模型授權與開放權重、挖角、黑市稽查，以及冷卻液洩漏、管制稽查、資料追討的抉擇（誰的事件誰回答）；本模組的隨機事件（機房襲擊、資安入侵、冷卻液洩漏、稽核等）只會由<strong>地圖主人自己的說書人</strong>觸發，別的陣營不會在你的地圖上發生他的事件、你也不會因為多一個陣營就多遇到一倍（不裝 MP Desync Fixes 也一樣）；無人機控制器、手持干擾器在每個陣營的殖民者身上都照常運作（包括遠征攻打 NPC 據點時），AI 助理終端也照各自區網的語言模型佔座位；市場行情、對手公司與晶片短缺則是整個世界共用的。</p>
 <p><strong>時間怎麼算</strong>：開了<strong>非同步時間</strong>時，每張地圖有自己的時鐘、世界另有一個，常常差好幾天。屬於你陣營的計時 —— 合約期限、現貨鎖單、長約分期、推論合約、授權付款、AGI 暫停、社區回饋、保證的無人機襲擊、被監視天數、權重匣過時、韌體與入侵 —— 一律照<strong>你自己家園地圖的時間</strong>走：你暫停，它們也停；你快轉，它們也快。全員離開家園地圖（在商隊裡）時改照世界時間走。市場行情、對手公司與晶片短缺照世界時間。單人遊戲沒有這個差別。</p>
+<p align="right"><a href="#toc">↑ 回到目錄</a></p>
+
+<hr>
+<h2 id="19-名詞解釋">19. 名詞解釋</h2>
+<p>本模組用到很多真實資料中心與 AI 產業的名詞。這一章照主題整理成速查表：每個詞寫「它是什麼」與「在遊戲裡代表什麼」，詳細規則看括號裡的章節。遊戲內教學視窗（下方工具列「AI 機房教學」）可以直接搜尋這些詞。</p>
+<h3 id="算力與硬體">🧮 算力與硬體</h3>
+<table>
+<thead>
+<tr>
+<th>名詞</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>算力／TFLOPS</strong></td>
+<td>每秒能做幾兆次浮點運算。遊戲裡的算力全部來自插在機櫃裡的卡，機櫃本身沒有規格；一張通用運算卡 400 TFLOPS（第 1、16 章）</td>
+</tr>
+<tr>
+<td><strong>運算卡（加速卡）</strong></td>
+<td>機櫃裡真正做運算的零件（現實中的 GPU、TPU 等）。真實型號依規格分五級：舊卡／消費級／資料中心 PCIe／資料中心模組／管制旗艦；資訊視窗寫著每張的算力、記憶體、頻寬、精度、功耗與取得方式（第 2 章 Step 2）</td>
+</tr>
+<tr>
+<td><strong>二手卡／翻新卡</strong></td>
+<td>商隊賣的二手加速卡不能直接上機；3 張二手＋1 零件在機械加工台翻新成 2 張好卡，卡齡從 120 天起算（第 6、18 章）</td>
+</tr>
+<tr>
+<td><strong>管制品（管制級晶片）</strong></td>
+<td>資料中心模組與管制旗艦卡不能自己做，只有特定商人賣；手上管制卡太多會招來出口管制稽查（第 2、13 章）</td>
+</tr>
+<tr>
+<td><strong>HBM（記憶體）</strong></td>
+<td>卡上的高頻寬記憶體。訓練與推論都有記憶體硬門檻，只加總<strong>同一個區網</strong>的機櫃，不夠就選不了那個規模（第 8 章）</td>
+</tr>
+<tr>
+<td><strong>頻寬（TB/s）</strong></td>
+<td>卡每秒能讀多少記憶體。推論每產生一個字都要讀一次權重，頻寬不夠，服務人數就上不去（第 9 章）</td>
+</tr>
+<tr>
+<td><strong>精度（FP8／FP4）</strong></td>
+<td>卡支援的數值格式，位元越少算得越快。研究「八位元數值」後支援 FP8 的卡 +40%，「四位元微縮放」後支援 FP4 的卡 +80%（第 3 章）</td>
+</tr>
+<tr>
+<td><strong>運算機櫃（標準機櫃）</strong></td>
+<td>2×2、4 個卡槽的基本機器。插滿通用卡＝1,600 TFLOPS、320 GB、滿載 2,600 W，也是「機櫃日」的基準（第 2 章）</td>
+</tr>
+<tr>
+<td><strong>NVL16／NVL72</strong></td>
+<td>高密度機櫃。NVL16 插 HGX B300 模組，40,000 TFLOPS、4,608 GB；NVL72 插 18 片 GB300 運算托盤，180,000 TFLOPS、20,736 GB、滿載 100,000 W（第 6、16 章）</td>
+</tr>
+<tr>
+<td><strong>浸沒式運算槽</strong></td>
+<td>把卡泡在絕緣冷卻液裡的機櫃：只留 5% 熱在房間、撐到 60 °C 才降頻、完全無聲（第 5、14 章）</td>
+</tr>
+<tr>
+<td><strong>CXL 記憶體擴充櫃</strong></td>
+<td>只加記憶體、不加算力的櫃子：8 槽插 CXL 記憶體模組，容量加進區網記憶體（第 6 章）</td>
+</tr>
+<tr>
+<td><strong>槽位配置</strong></td>
+<td>替機櫃每個槽指定要插什麼卡（任何相容／留空／指定型號），搬運工照配置補卡；蜂群發射器的「彈艙配置」、無人機控制器的「機庫配置」是同一個概念（第 2、12 章）</td>
+</tr>
+<tr>
+<td><strong>運轉時間（卡齡）</strong></td>
+<td>每張卡實際運算過的天數，待機、關機不算，拔下來也跟著卡走。故障率只看它：0～120 天穩定，之後越來越容易壞（第 6 章）</td>
+</tr>
+<tr>
+<td><strong>故障率／環境倍率</strong></td>
+<td>卡壞掉的機率。液冷、浸沒、機房維運、值班、Tier IV 會乘上小於 1 的倍率；過熱、房間髒、韌體過期會讓它變高（第 6 章）</td>
+</tr>
+<tr>
+<td><strong>韌體</strong></td>
+<td>約每 8 天推出一版。整個區網刷完 +5% 算力；推出 4 天還沒裝 −5% 且故障率 ×1.25。一座一座輪流刷，正在刷的那座短暫離線（第 18 章）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="散熱與電力">❄️ 散熱與電力</h3>
+<table>
+<thead>
+<tr>
+<th>名詞</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>熱/秒</strong></td>
+<td>冷卻的計價單位，跟電的「瓦」一樣：機櫃放多少熱、冷卻設備處理多少熱都用它算</td>
+</tr>
+<tr>
+<td><strong>熱節流（降頻）</strong></td>
+<td>太熱時卡自動變慢保護自己：風冷 30 °C 起、液冷 45 °C 起，線性降到 20%（第 5 章）</td>
+</tr>
+<tr>
+<td><strong>燒卡（過熱燒毀）</strong></td>
+<td>超過臨界溫度（風冷 70 °C／液冷 85 °C）連續 2 小時就燒掉一張卡，Tier IV 撐 4 小時（第 5、6 章）</td>
+</tr>
+<tr>
+<td><strong>自然冷卻</strong></td>
+<td>室溫低於 0 °C 時效能 105%（現實中機房蓋在寒帶就是為了這個）</td>
+</tr>
+<tr>
+<td><strong>風冷／液冷（冷板）</strong></td>
+<td>風冷靠房間空氣散熱（原版冷氣）；液冷用冷卻管把熱直接帶走：機櫃只留 20% 熱在房間、降頻門檻 +15 °C、故障率 ×0.6（第 5 章）</td>
+</tr>
+<tr>
+<td><strong>冷卻迴路</strong></td>
+<td>冷側（供水管）＋熱側（回水管）兩條冷卻管連成的一圈；機器要<strong>同時碰到兩條</strong>才算在迴路上</td>
+</tr>
+<tr>
+<td><strong>泵送／排熱</strong></td>
+<td>迴路的兩個容量：泵送是 CDU 能搬多少熱，排熱是乾冷器、冷卻塔能丟掉多少熱；迴路容量取兩者較小的（第 5 章）</td>
+</tr>
+<tr>
+<td><strong>CDU（液冷分配機組）</strong></td>
+<td>迴路的泵，300 熱/秒；列間液冷機組是放大版，1,500 熱/秒</td>
+</tr>
+<tr>
+<td><strong>乾式冷卻器／冷卻塔／冰水主機</strong></td>
+<td>迴路的排熱終點：乾冷器 600（要放室外）、蒸發冷卻塔 1,400（要臨水）、冰水主機 3,000（不看氣溫但很吃電）、大型冷卻塔 5,000（第 5、6 章）</td>
+</tr>
+<tr>
+<td><strong>冷熱交換器（空調箱）／背門熱交換器</strong></td>
+<td>把房間裡的熱抽進迴路：冷熱交換器最多 45 熱/秒；背門熱交換器貼著機櫃，收那座機櫃 90% 的房間熱</td>
+</tr>
+<tr>
+<td><strong>廢熱回收管線</strong></td>
+<td>把迴路的熱倒進你指定的房間（拿來暖房），優先於乾冷器</td>
+</tr>
+<tr>
+<td><strong>介電冷卻液</strong></td>
+<td>液冷設備的建材（不導電的冷卻液）；冷卻液洩漏事件也用它補管</td>
+</tr>
+<tr>
+<td><strong>散熱規劃</strong></td>
+<td>機櫃或 CDU 上的按鈕，把房間、迴路、排熱三層一起算完，直接告訴你缺幾台什麼</td>
+</tr>
+<tr>
+<td><strong>PUE（電力使用效率）</strong></td>
+<td>機房總耗電 ÷ 運算設備耗電，越接近 1 越省。風冷約 1.31、液冷約 1.05</td>
+</tr>
+<tr>
+<td><strong>湧浪</strong></td>
+<td>機櫃從閒置轉入運算的瞬間，功耗 ×2.5、持續約 8 秒；電網撐不住就跳電（第 18 章）</td>
+</tr>
+<tr>
+<td><strong>UPS（不斷電系統）</strong></td>
+<td>平時是電池；同電網的 UPS 一起吸收湧浪，每台 9,000 W。有 UPS 或備援發電機就是 Tier II</td>
+</tr>
+<tr>
+<td><strong>備援發電機／燃氣渦輪發電機</strong></td>
+<td>待機一滴油都不燒、缺電才自動起動的發電機，用來達成 Tier 分級；燒化學燃料，會拉低碳排等級</td>
+</tr>
+<tr>
+<td><strong>電池儲能站</strong></td>
+<td>24,000 Wd 的大電池；分級評估裡每座算 5,000 W 備援發電，綠電也能升 Tier III</td>
+</tr>
+<tr>
+<td><strong>SMR（小型模組化反應爐）</strong></td>
+<td>20,000 W 的低碳主電源，吃鈾；SMR-300 是 100,000 W 的大型版。被摧毀會爆炸，也會讓鄰避反彈變大</td>
+</tr>
+<tr>
+<td><strong>變電站</strong></td>
+<td>把主電源多出來的輸出登記成分級用的備援發電</td>
+</tr>
+<tr>
+<td><strong>功率封頂</strong></td>
+<td>讓機櫃少吃電：功耗 70% 只掉 13.3% 效能，熱也跟著降；冷卻不夠時先用它（第 6 章）</td>
+</tr>
+<tr>
+<td><strong>彩色電纜／交叉接頭</strong></td>
+<td>8 色電纜，不同色不相連，用來把各機房分成獨立電網；交叉接頭讓兩色在同一格穿過去但不相通</td>
+</tr>
+<tr>
+<td><strong>碳排等級（A～E）／低碳佔比／RE100</strong></td>
+<td>過去 30 天低碳發電佔多少：A（≥ 95%，RE100 是業界「100% 再生能源」的說法）到 E（&lt; 10%）；影響合約結算、鄰避反彈與外交（第 6 章）</td>
+</tr>
+<tr>
+<td><strong>綠電專案</strong></td>
+<td>約兩成合約報價要求接單區網碳排 B 級以上，達標結算 ×1.3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="網路與機房管理">🌐 網路與機房管理</h3>
+<table>
+<thead>
+<tr>
+<th>名詞</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>區網（LAN）</strong></td>
+<td>一段同色網路線＋交換器＝一座獨立機房，有自己的訓練佇列、資料、檢查點、合約、辨識算力。網路線 16 色、要鋪在機器底下（第 7 章）</td>
+</tr>
+<tr>
+<td><strong>NOC 監控牆／受管區網</strong></td>
+<td>NOC＝網路營運中心。有監控牆的區網叫「受管」；<strong>未受管的機櫃只能做研究</strong>。一個區網有好幾面牆時，編號最小的那面是控制者</td>
+</tr>
+<tr>
+<td><strong>營運控制台</strong></td>
+<td>選 NOC 監控牆打開的管理視窗：本區網／機櫃／推論／模型庫／設施與設備／全部區網／市場等分頁（第 7、10 章）。跟建築「值班操作台」是兩回事</td>
+</tr>
+<tr>
+<td><strong>下一步</strong></td>
+<td>營運控制台「本區網」最上面那一塊：這個區網最該處理的 1～3 件事</td>
+</tr>
+<tr>
+<td><strong>機房總覽</strong></td>
+<td>下方工具列的地圖層：溫度／負載／故障風險／區網，沒有監控牆時也能用</td>
+</tr>
+<tr>
+<td><strong>叢集／叢集係數</strong></td>
+<td>同一個區網的機櫃合起來算，每多一座 +6%（上限 +50%），再扣通訊成本（第 2 章 Step 8）</td>
+</tr>
+<tr>
+<td><strong>通訊成本</strong></td>
+<td>機櫃之間互傳資料的損耗：只有叢集交換器時每櫃 2%；脊交換器壓到 0.7%（研究「光纖互連」後 0.4%）</td>
+</tr>
+<tr>
+<td><strong>叢集交換器／脊交換器</strong></td>
+<td>只有交換器能把網路線段橋接起來；脊交換器（spine）是上一層的骨幹交換器，一台撐 8 座機櫃（光纖互連後 12 座）</td>
+</tr>
+<tr>
+<td><strong>機櫃模式</strong></td>
+<td>研究／訓練／合約（出租）／推論／目標辨識，決定算力拿去做什麼。模式由你指定，機櫃不會自己換</td>
+</tr>
+<tr>
+<td><strong>值班</strong></td>
+<td>有人在值班操作台值班：全叢集故障率 ×0.7、算力 +3%，並自動套用新韌體</td>
+</tr>
+<tr>
+<td><strong>機房維運</strong></td>
+<td>工作分頁裡獨立的一欄（建造技能）：殖民者替機櫃保養，那座機櫃 5 天內故障率 ×0.5</td>
+</tr>
+<tr>
+<td><strong>Tier I～IV（資料中心分級）</strong></td>
+<td>照現實的機房分級：依「斷電、故障時會怎樣」自動評等 —— I 沒備援、II 有備援元件、III 可並行維護、IV 容錯。越高合約價碼越高（100%～160%）（第 6 章）</td>
+</tr>
+<tr>
+<td><strong>認證分級／實測可用性</strong></td>
+<td>認證分級看你蓋的設備夠不夠格；實測可用性是過去 30 天機櫃真的在線的比例。接單看兩者較低的</td>
+</tr>
+<tr>
+<td><strong>SLA（服務等級協議）</strong></td>
+<td>合約對可用度的承諾；「SLA 稽核」事件會在合約進行中遠端驗你的 Tier</td>
+</tr>
+<tr>
+<td><strong>檢查點／檢查點儲存陣列</strong></td>
+<td>訓練進度的存檔。有儲存陣列時叢集停擺只退回檢查點，沒有就進度歸零；Tier II 以上停擺只暫停、不倒退</td>
+</tr>
+<tr>
+<td><strong>自動滅火</strong></td>
+<td>機房氣體滅火系統或原版消防泡沫彈；Tier III 要求每間有機櫃的房間都有</td>
+</tr>
+</tbody>
+</table>
+<h3 id="模型與訓練">🧠 模型與訓練</h3>
+<table>
+<thead>
+<tr>
+<th>名詞</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>模型／權重</strong></td>
+<td>模型就是訓練出來的一大堆數字（權重）。遊戲裡模型給殖民者增益、給機器人技能、替無人機辨識目標</td>
+</tr>
+<tr>
+<td><strong>權重儲存匣（權重匣）</strong></td>
+<td>裝著模型的實體物品，訓練完掉在機櫃旁。它「就是」模型：會被搶、會燒掉、可以賣、可以複製（第 8 章）</td>
+</tr>
+<tr>
+<td><strong>實體化</strong></td>
+<td>卡、匣、資料、彈體都是會掉在地上、被搬、被搶的物品，不是帳面上的數字</td>
+</tr>
+<tr>
+<td><strong>模型匣讀取機</strong></td>
+<td>插權重匣的地方。機櫃沒有匣槽：匣插在同區網的讀取機上，推論機櫃自動提供它，一顆匣供整個區網</td>
+</tr>
+<tr>
+<td><strong>機櫃日</strong></td>
+<td>算力 × 時間的單位：1 機櫃日＝一座標準機櫃（1,600 TFLOPS）滿載跑一天。訓練、從匣做的工具、算力出租都用它計價</td>
+</tr>
+<tr>
+<td><strong>規模（小／中／大／超大）</strong></td>
+<td>模型大小。訓練 1／4／12／40 機櫃日、記憶體 200／600／1,600／5,000 GB，越大效果越強（第 8 章）</td>
+</tr>
+<tr>
+<td><strong>有效規模</strong></td>
+<td>匣現在真正算的規模：過時退化、量化都會讓它低一階</td>
+</tr>
+<tr>
+<td><strong>訓練任務／訓練佇列</strong></td>
+<td>訓練模式的機櫃在做的工作。每個區網一條訓練線，可以排 8 筆，做完自動接下一筆（第 18 章）</td>
+</tr>
+<tr>
+<td><strong>資料集／領域</strong></td>
+<td>訓練的第二個輸入。資料分七個領域（醫療、生物、農業、工業、戰鬥、語言、地理），每個模型只吃自己領域的資料（第 8 章）</td>
+</tr>
+<tr>
+<td><strong>標註／授權／原始／合成資料</strong></td>
+<td>四種資料：標註＝資料標註台做的；授權＝向商人買的；原始＝從襲擊者身上撿的，要先「清洗」成標註資料；合成＝模型生成的，一次訓練最多用一半（研究模型對齊後 70%）</td>
+</tr>
+<tr>
+<td><strong>清洗／資料追討</strong></td>
+<td>清洗＝把原始資料在標註台整理成能訓練的資料。原始資料是別人的：每清洗 20 份會有派系上門追討（付 600 銀或好感 −15）</td>
+</tr>
+<tr>
+<td><strong>自有資料</strong></td>
+<td>機器人工作時產生的原始資料，標「自有」，清洗時不算未授權、不會引來追討</td>
+</tr>
+<tr>
+<td><strong>資料語料庫</strong></td>
+<td>機房裡的資料櫃，每座 40 份。<strong>訓練只用同區網語料庫裡的資料</strong>，倉庫裡的不算</td>
+</tr>
+<tr>
+<td><strong>基礎模型</strong></td>
+<td>練完所有一般模型才解鎖的大模型：一個服務池就涵蓋全部能力，也是策略微調與 AGI 專案的底</td>
+</tr>
+<tr>
+<td><strong>策略／策略匣</strong></td>
+<td>給機器人與蜂群發射器用的「技能模型」（14 種），插上就會做那件事，拔掉就忘記</td>
+</tr>
+<tr>
+<td><strong>策略微調</strong></td>
+<td>拿已評估的基礎模型當底，便宜地寫出一顆策略匣（2 機櫃日＋8 份資料）</td>
+</tr>
+<tr>
+<td><strong>匯出</strong></td>
+<td>把一顆匣位元對位元複製一份（備份、拿去賣、給另一個區網）</td>
+</tr>
+<tr>
+<td><strong>蒸餾</strong></td>
+<td>把大模型的能力壓進較小的模型：效果不掉階，服務人數 ×2；蒸餾過的匣不能重新對齊</td>
+</tr>
+<tr>
+<td><strong>量化</strong></td>
+<td>把權重改成 8 位元：效果掉一階，但推論時查小一階的表，服務人數多一大截</td>
+</tr>
+<tr>
+<td><strong>推理後訓練／深度推理</strong></td>
+<td>推理後訓練寫出「推理模型」的匣；推論時開「深度推理」讓它多想：效果強一階，但服務人數減半、機櫃滿載</td>
+</tr>
+<tr>
+<td><strong>繼續預訓練</strong></td>
+<td>用從頭練的一半算力、四分之一資料，替舊模型補上新知識：過時計時歸零</td>
+</tr>
+<tr>
+<td><strong>加長訓練</strong></td>
+<td>算力與資料 ×2，練出來的匣 60 天才過時一階（一般 30 天）</td>
+</tr>
+<tr>
+<td><strong>過時</strong></td>
+<td>模型每 30 天退化一階（世界在進步，舊模型變得不夠好），最低停在小型</td>
+</tr>
+<tr>
+<td><strong>對齊／未對齊</strong></td>
+<td>對齊＝模型照你的本意做事。未對齊＝它過度優化你給的指標：效果更強，但部署時整個叢集被抽 15% 算力、揭露後殖民者有「被監視」心情（第 8 章）</td>
+</tr>
+<tr>
+<td><strong>未評估／評估／揭露</strong></td>
+<td>新練出的匣都是「未評估」：有沒有未對齊先藏著。跑「評估」任務（16 位·天）或服務滿期才會揭露</td>
+</tr>
+<tr>
+<td><strong>重新對齊／降階回滾／報廢</strong></td>
+<td>處理未對齊匣的三條路：花算力重練（55%，有對齊研究 75%）／免費退一階／整顆刪除</td>
+</tr>
+<tr>
+<td><strong>被下毒的訓練</strong></td>
+<td>資安入侵期間有進度入帳的訓練，練完未對齊機率 +20 個百分點</td>
+</tr>
+<tr>
+<td><strong>訓練損失尖峰</strong></td>
+<td>訓練中的隨機事件：回退兩成進度、硬跑（可能練出壞模型）或砍掉</td>
+</tr>
+<tr>
+<td><strong>AGI 專案／奇點危機</strong></td>
+<td>終局訓練：要 Tier IV、20,000 GB、4,000 機櫃日；分 4 段，每段一場奇點危機。成功得到原版的 <strong>AI 人格核心</strong>（造飛船用），失敗是失控 AGI 襲擊（第 8 章）</td>
+</tr>
+<tr>
+<td><strong>紅隊演練</strong></td>
+<td>故意攻擊自己的模型找漏洞：紅隊演練台可以直接揭露未評估的匣，或提高 AGI 對齊成功率</td>
+</tr>
+<tr>
+<td><strong>隔離沙盒櫃</strong></td>
+<td>關已揭露未對齊匣的櫃子：照樣提供推論，不抽算力、不被監視，但增益減半</td>
+</tr>
+</tbody>
+</table>
+<h3 id="推論">🎯 推論</h3>
+<table>
+<thead>
+<tr>
+<th>名詞</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>推論</strong></td>
+<td>用練好的模型回答問題、做事。推論模式的機櫃提供讀取機上的模型，殖民者得到被動增益；只跑 40% 負載（第 9 章）</td>
+</tr>
+<tr>
+<td><strong>服務池</strong></td>
+<td>同一個區網裡、推論同一個模型的機櫃合成一池，記憶體與容量相加</td>
+</tr>
+<tr>
+<td><strong>位／位·天</strong></td>
+<td>推論容量的單位：1 位＝同時服務一個人（殖民者、助理終端使用者、推論合約客戶各 1 位，遠端的人 2 位）。評估的工作量用「位·天」</td>
+</tr>
+<tr>
+<td><strong>容量三上限</strong></td>
+<td>服務人數取最小的那個：① 算力 ② 記憶體 ③ 頻寬。面板會寫卡在哪一個、該加什麼</td>
+</tr>
+<tr>
+<td><strong>KV（KV 快取）</strong></td>
+<td>推論時每個人要另外佔的一份記憶體（模型記住對話用的），模型越大每人佔越多</td>
+</tr>
+<tr>
+<td><strong>推論任務</strong></td>
+<td>按下去當場生效的一次性動作（戰場預判、AI 談判、全員健檢……），代價是整池暫停被動加成 6 小時</td>
+</tr>
+<tr>
+<td><strong>邊緣推論中繼</strong></td>
+<td>把推論增益延伸到其他地圖與遠征隊（遠端的人每人佔 2 位）</td>
+</tr>
+<tr>
+<td><strong>AI 助理終端</strong></td>
+<td>殖民者娛樂時來「諮詢」的終端：心情 +4、學習 +10%；要同區網有語言模型在推論，每位使用者佔 1 位</td>
+</tr>
+<tr>
+<td><strong>AI 依賴</strong></td>
+<td>連續 5 天都諮詢就會依賴，之後哪天沒聊心情 −5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="合約與市場">💰 合約與市場</h3>
+<table>
+<thead>
+<tr>
+<th>名詞</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>算力合約（出租）</strong></td>
+<td>把算力租給外面的客戶換報酬。合約模式的機櫃每天交付機櫃日，期限內交滿就結算（第 10 章）</td>
+</tr>
+<tr>
+<td><strong>承攬終端</strong></td>
+<td>接合約、掛牌授權、開放權重的建築，要接在受管區網上</td>
+</tr>
+<tr>
+<td><strong>報價／Tier 門檻</strong></td>
+<td>每 4 天刷新 3 份報價；每份有最低 Tier，分級不夠接不了</td>
+</tr>
+<tr>
+<td><strong>規模 ×N</strong></td>
+<td>報價依你各區網的算力放大，機櫃日、報酬、違約金一起放大</td>
+</tr>
+<tr>
+<td><strong>談判桌</strong></td>
+<td>接單前談條件：加價／延期／承諾可用度。失敗會消耗客戶的<strong>耐性</strong>，歸零對方就走人</td>
+</tr>
+<tr>
+<td><strong>客戶聲譽</strong></td>
+<td>準時 +1、違約 −2，影響加價成功率</td>
+</tr>
+<tr>
+<td><strong>履約保證金／違約金</strong></td>
+<td>接單時先押一筆等於違約金的白銀，準時交貨全額退回；逾期或放棄就沒收（違約金＝報酬的 25%）</td>
+</tr>
+<tr>
+<td><strong>欠款</strong></td>
+<td>罰款收不齊時記成欠款，之後的合約入帳先拿去還；還清前欠款的客戶不給新報價</td>
+</tr>
+<tr>
+<td><strong>算力行情／模型行情</strong></td>
+<td>市場價格倍率：算力 ×0.6～×1.8（影響合約單價），模型 ×0.6～×1.6（影響匣市價、授權金、開放權重好感）</td>
+</tr>
+<tr>
+<td><strong>現貨／鎖單／緊急單</strong></td>
+<td>現貨＝1～3 天的短單，掛 1 天就下架、不能談；鎖單＝付 10% 訂金保留 2 天；緊急單＝對手當機時出現的 1 天、單價兩倍的現貨</td>
+</tr>
+<tr>
+<td><strong>長約</strong></td>
+<td>30 天的長期合約，單價 ×0.85 但簽約時鎖定行情，每 5 天付一期</td>
+</tr>
+<tr>
+<td><strong>對手／盯上</strong></td>
+<td>三家對手機房會搶單：被盯上的報價 2 天內沒接就被搶走</td>
+</tr>
+<tr>
+<td><strong>推論合約（MaaS）</strong></td>
+<td>「模型即服務」：替客戶保留服務池的位子，期滿一次結清；上線 ≥ 90% 才算完成</td>
+</tr>
+<tr>
+<td><strong>授權</strong></td>
+<td>把匣鎖在讀取機裡租給買家，每 5 天收一次授權金；鎖住期間不能推論、不能當訓練來源</td>
+</tr>
+<tr>
+<td><strong>開放權重</strong></td>
+<td>把模型免費公開：消耗那顆匣，換所有非敵對派系好感；有機會收到派系回送的<strong>社群微調版</strong></td>
+</tr>
+<tr>
+<td><strong>AI 公司／採購船／挖角</strong></td>
+<td>螺旋智能與北風 AI 是主要客戶；採購船收匣出價 ×1.2；做完 5 張合約後它們可能來挖你最聰明的殖民者</td>
+</tr>
+<tr>
+<td><strong>未對齊黑市</strong></td>
+<td>已揭露未對齊的匣，海盜商人出價 ×1.5，但之後 30 天稽查機率 ×2</td>
+</tr>
+<tr>
+<td><strong>出口管制稽查</strong></td>
+<td>管制卡太多時的事件：交出一半／拒絕賠名聲／花錢擺平</td>
+</tr>
+<tr>
+<td><strong>晶片短缺</strong></td>
+<td>5～10 天商人的新卡被搶光、市價 ×1.5</td>
+</tr>
+<tr>
+<td><strong>鄰避（NIMBY）</strong></td>
+<td>「別蓋在我家後院」：殖民地算力跨過門檻時鄰近派系反彈、好感 −8（第 14 章）</td>
+</tr>
+<tr>
+<td><strong>社區回饋／綠色聲譽</strong></td>
+<td>社區回饋＝捐白銀給地方，30 天內鄰避門檻 ×1.5；綠色聲譽＝每 15 天依碳排等級加減派系好感</td>
+</tr>
+</tbody>
+</table>
+<h3 id="機器人與無人機">🤖 機器人與無人機</h3>
+<table>
+<thead>
+<tr>
+<th>名詞</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>機器人</strong></td>
+<td>機器人組裝台做的人形勞工：有技能與工作分頁、沒有心情、不會在工作中學習，技能完全由插的策略匣決定（第 11 章）</td>
+</tr>
+<tr>
+<td><strong>策略等級</strong></td>
+<td>策略匣給的技能等級：小 4／中 8／大 12／超大 16</td>
+</tr>
+<tr>
+<td><strong>戰術策略門檻</strong></td>
+<td>機器人沒裝射擊或格鬥策略就不能徵召</td>
+</tr>
+<tr>
+<td><strong>保養</strong></td>
+<td>每 30 天一次、工業零件 1；逾期越久做事越慢，最多 −30%</td>
+</tr>
+<tr>
+<td><strong>改裝模組</strong></td>
+<td>裝甲、加大電池、工具臂、感測器組、散熱模組、貨架六種，在組裝台由人裝上</td>
+</tr>
+<tr>
+<td><strong>人格匣／數位分身</strong></td>
+<td>殖民者死後從遺體上傳意識做成人格匣；插進機器人就成了「〈本人〉的分身」，保留死亡當下的技能</td>
+</tr>
+<tr>
+<td><strong>無人機控制器／操作員</strong></td>
+<td>腰帶欄位的裝備，穿上、徵召就能放無人機；穿著的人叫操作員（第 12 章）</td>
+</tr>
+<tr>
+<td><strong>機庫（背架）</strong></td>
+<td>控制器上放機體的 3 格；「機庫配置」逐格指定要帶什麼</td>
+</tr>
+<tr>
+<td><strong>自主等級</strong></td>
+<td>無人機自己判斷的能力，決定命中；玩家的控制器固定 16</td>
+</tr>
+<tr>
+<td><strong>機體／彈體</strong></td>
+<td>無人機在天上叫機體，折疊收起來的物品叫彈體。四類：偵察、攻擊、電子干擾、遊蕩彈藥</td>
+</tr>
+<tr>
+<td><strong>遊蕩彈藥（巡飛彈）</strong></td>
+<td>會在空中盤旋找目標、撞上去自爆的無人機（FPV、彈簧刀、柳葉刀、見證者-136 等）</td>
+</tr>
+<tr>
+<td><strong>可回收／單程</strong></td>
+<td>可回收型號沒用上時能飛回來折疊收回；單程型號（柳葉刀-3、彈簧刀 600、見證者-136）放出去就不回來</td>
+</tr>
+<tr>
+<td><strong>FPV／光纖 FPV</strong></td>
+<td>FPV＝第一人稱視角的小型自殺無人機。光纖 FPV 拖著光纖飛，干擾打不下來，但只打操作員 40 格內</td>
+</tr>
+<tr>
+<td><strong>蜂群發射器／管</strong></td>
+<td>3×2 的發射器，48 管、射程 90；沒插策略匣一發都射不出去。大型彈體一架佔 2～4 管</td>
+</tr>
+<tr>
+<td><strong>射控（人工／自主）</strong></td>
+<td>誰決定打誰：人工＝徵召殖民者站操作位，誤標 0%；自主＝同區網「目標辨識」模式機櫃的算力 ≥ 15,000 TFLOPS</td>
+</tr>
+<tr>
+<td><strong>目標辨識模式</strong></td>
+<td>機櫃把算力拿去替蜂群發射器辨識敵我</td>
+</tr>
+<tr>
+<td><strong>誤標率／導引頭</strong></td>
+<td>無人機認錯目標的機率＝策略匣 × 導引頭（彈體上找目標的感測器）倍率</td>
+</tr>
+<tr>
+<td><strong>感測器中繼站</strong></td>
+<td>延伸發射器射程（每座 60 格）的桅杆，也加自主辨識算力；可以被敵人打掉致盲</td>
+</tr>
+<tr>
+<td><strong>編隊（包圍／飽和／誘餌）</strong></td>
+<td>蜂群指揮中心解鎖的齊射方式：三路包抄／集結後同時抵達／先放便宜的吸引火力</td>
+</tr>
+<tr>
+<td><strong>干擾塔／欺騙</strong></td>
+<td>範圍內無人機敵我不分墜毀；欺騙模式把有 GPS 的巡飛彈騙下來，變成可撿的彈體</td>
+</tr>
+<tr>
+<td><strong>反無人機砲塔／手持干擾器</strong></td>
+<td>砲塔只打敵方無人機；手持干擾器是腰帶裝備，開 30 秒、半徑 9 格（自己的也會掉）</td>
+</tr>
+<tr>
+<td><strong>補給四軸</strong></td>
+<td>不攻擊的無人機，從倉庫幫操作員空投一趟 15 公斤以內的物資</td>
+</tr>
+</tbody>
+</table>
+<h3 id="遊戲單位與通用詞">⏱️ 遊戲單位與通用詞</h3>
+<table>
+<thead>
+<tr>
+<th>名詞</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>tick</strong></td>
+<td>RimWorld 的最小時間單位：一般速度 1 秒 60 tick；1 小時＝2,500 tick、1 天＝60,000 tick</td>
+</tr>
+<tr>
+<td><strong>rare tick</strong></td>
+<td>每 250 tick 一次的慢速更新；機櫃的故障擲骰、可用性抽樣都照它跑</td>
+</tr>
+<tr>
+<td><strong>c/s（格/秒）</strong></td>
+<td>移動速度：每秒走幾格。無人機都比殖民者的最快速度（12.4 c/s）更快</td>
+</tr>
+<tr>
+<td><strong>W／Wd</strong></td>
+<td>瓦（功率）／瓦日（儲電量）：1 Wd＝1 W 用一整天</td>
+</tr>
+<tr>
+<td><strong>gizmo</strong></td>
+<td>選取建築或角色時下方出現的按鈕</td>
+</tr>
+<tr>
+<td><strong>好感</strong></td>
+<td>派系對你的態度（−100～100），合約、事件、開放權重都會加減</td>
+</tr>
+<tr>
+<td><strong>威脅點數（襲擊點數）</strong></td>
+<td>說書人依財富、人數、難度決定襲擊多大；敵方無人機的數量與型號都照它算</td>
+</tr>
+<tr>
+<td><strong>多重分析儀</strong></td>
+<td>原版的研究設備；研究表標 ⁽ᵃ⁾ 的研究要它</td>
+</tr>
+<tr>
+<td><strong>CE（Combat Extended）</strong></td>
+<td>熱門的寫實戰鬥模組；有裝時本模組自動換成 CE 數值（第 12 章）</td>
+</tr>
+<tr>
+<td><strong>非同步時間</strong></td>
+<td>多人連線的設定，每張地圖各有自己的時鐘；本模組的計時照你自己家園地圖的時間（第 18 章）</td>
+</tr>
+</tbody>
+</table>
 <p align="right"><a href="#toc">↑ 回到目錄</a></p>
 
 <hr>
@@ -4836,7 +5558,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </ul>
 <div class="alert alert-note">
 <p class="alert-head"><span class="alert-icon">📘</span><span>Note</span></p>
-<p>本手冊的數字取自模組 Defs 與 README，對應 v45.0。遊戲數值若因版本調整而變動，以遊戲內面板為準。</p>
+<p>本手冊的數字取自模組 Defs 與 README，對應 v46.0。遊戲數值若因版本調整而變動，以遊戲內面板為準。</p>
 </div>
 </article>
     <article data-lang="en" hidden>
@@ -4860,7 +5582,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td><strong>Multiplayer</strong></td>
-<td>Supported</td>
+<td>Supported (RimWorld Together, Multiplayer)</td>
 </tr>
 <tr>
 <td><strong>Combat Extended</strong></td>
@@ -4872,7 +5594,7 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 </tr>
 <tr>
 <td><strong>Documented version</strong></td>
-<td>v45.0</td>
+<td>v46.0</td>
 </tr>
 </tbody>
 </table>
@@ -4987,6 +5709,10 @@ footer.docfoot{max-width:1000px;margin:0 auto;padding:0 20px 60px;color:var(--mu
 <td><a href="#18-other-mechanics-and-rules">18</a></td>
 <td>Other mechanics and rules (training window, firmware and intrusions, surges, obsolescence, chip sources, settings, multiplayer)</td>
 </tr>
+<tr>
+<td><a href="#19-glossary">19</a></td>
+<td>Glossary (every common term in plain words)</td>
+</tr>
 </tbody>
 </table>
 <p align="right"><a href="#toc">↑ Back to contents</a></p>
@@ -5079,6 +5805,9 @@ and drones need an operator wearing a controller.</p>
 </tr>
 </tbody>
 </table>
+<blockquote class="quote">
+<p>📖 Stuck on a word (CDU, PUE, distil, quantise, serving pool, performance deposit…)? → <strong><a href="#19-glossary">§19 Glossary</a></strong> has the full list.</p>
+</blockquote>
 <p align="right"><a href="#toc">↑ Back to contents</a></p>
 
 <hr>
@@ -6761,8 +7490,8 @@ The threshold only counts racks on <strong>one network</strong> (cabled together
 So a <strong>colossal run needs one NVL16 plus two standard racks</strong> just to be selectable.</p>
 </div>
 <ul>
-<li><strong>Only one training run colony-wide at a time</strong>; every rack in training mode contributes to it —
-  that is what distributed training looks like.</li>
+<li><strong>Each LAN runs one training job at a time</strong>; every rack in training mode on that LAN contributes to it —
+  that is what distributed training looks like. Separate LANs train separately.</li>
 <li><strong>Jobs queue up to 8 deep</strong> and start automatically.</li>
 </ul>
 <h3 id="datasets-the-second-input">📚 Datasets (the second input)</h3>
@@ -7419,7 +8148,7 @@ quality, is the bottleneck</strong>.</p>
 <h2 id="9-inference-and-inference-tasks">9. Inference and inference tasks</h2>
 <ul>
 <li>First put the weight cartridge into a <strong>model cartridge reader</strong> ("Insert cartridge" on the reader; a hauler slots it in; the reader must be on a LAN with a NOC monitoring wall).</li>
-<li>Switch a compute rack to <strong>Inference</strong> mode (its mode button, or the whole LAN from the operations console) → it <strong>automatically</strong> serves the largest cartridge in this LAN's readers → a <strong>passive buff for your colonists</strong>.</li>
+<li>Switch a compute rack to <strong>Inference</strong> mode (its mode button, or the whole LAN from the operations console) → it <strong>automatically</strong> serves a cartridge from this LAN's readers → a <strong>passive buff for your colonists</strong>. When the readers hold several models, <strong>a LAN with enough hardware serves several models at once</strong>: cartridges get racks from largest to smallest, each model just enough to hold its weights and serve every colonist (plus inference contracts and assistant terminals), then the next model; a model that no longer fits in the remaining racks is skipped, and any racks left over go to the largest model.</li>
 <li>To pin a specific cartridge: <strong>Served model ▾</strong> on the operations console's <strong>Inference</strong> tab sets the whole LAN, or <strong>Select model</strong> on a single rack; "Automatic" in the menu switches back. <strong>Racks have no cartridge slot</strong>, so one cartridge can serve any number of racks on that LAN.</li>
 <li>If a pinned cartridge cannot be read (the reader loses power, is switched off, breaks down or is cut off, or the cartridge is pulled), the racks <strong>pause</strong> and resume once it is back; racks on automatic switch to another readable cartridge. Cartridges that were slotted in racks in an old save are ejected beside them on load, with a letter explaining the change.</li>
 <li>Inference needs no extra building — it runs on the cards already in the rack. The old "inference server" is retired: on load its cartridge is ejected beside it, and deconstructing it refunds all of its materials.</li>
@@ -7903,6 +8632,10 @@ capacity; open weights turn an old model into diplomacy — license it until it 
 <td><strong>It never learns on the job</strong> — every rare tick each skill is overwritten with the weights' level</td>
 </tr>
 <tr>
+<td>Wreckage</td>
+<td>A destroyed robot leaves machine wreckage: it <strong>never rots and can't be eaten</strong></td>
+</tr>
+<tr>
 <td>Charge</td>
 <td>About <strong>2.5 days</strong>; walks to a charging dock on its own</td>
 </tr>
@@ -8158,7 +8891,7 @@ It is <strong>your own data</strong> (labelled "own"): cleaning it is <strong>no
 </tr>
 <tr>
 <td>Shot down</td>
-<td>Leaves a corpse worth 15 steel + 1 component; a detonation leaves no corpse, only 2–5 steel of scrap</td>
+<td>Leaves a corpse (machine wreckage: <strong>never rots, can't be eaten</strong>) worth 15 steel + 1 component; a detonation leaves no corpse, only 2–5 steel of scrap</td>
 </tr>
 </tbody>
 </table>
@@ -9331,11 +10064,700 @@ The cartridge panel says "state of the art · drops a tier in X" or "obsolete".<
 </tbody>
 </table>
 <h3 id="multiplayer">🌐 Multiplayer</h3>
-<p>Supports <strong>RimWorld Multiplayer</strong> (zetrith's): works fine without it; with it, load this mod <strong>after</strong> Multiplayer. Every button, right-click option and dialog action is synced to all players.
+<p>Supports <strong>RimWorld Together</strong>: works fine without it, any load order. Every player runs their own colony, and this mod's things can be traded, listed on the market, sent as aid and raided as usual:
+- <strong>A weights cartridge keeps its age when it reaches another player</strong> (even though the two games run on different clocks): a cartridge trained 10 days ago is still 10 days old on arrival, not brand new and not instantly obsolete.
+- <strong>This mod's events sent by another player</strong> (datacenter raids, cyber intrusions, coolant leaks, audits and so on) follow the normal rules: if you have no datacenter or the conditions are not met, nothing happens and a message says it was skipped; events that only come from your own actions (data reclamation claims, deployed-model raids) cannot be sent at all.
+- When you raid or visit someone, their datacenter buildings on that temporary map never count toward your research, contracts or market; their drone controllers launch drones to defend.</p>
+<p>Also supports <strong>RimWorld Multiplayer</strong> (zetrith's): works fine without it; with it, load this mod <strong>after</strong> Multiplayer. Every button, right-click option and dialog action is synced to all players.
 In multiplayer, notifications always use their default mode (settings are per computer, and showing a letter on one side only would desync).
 With <strong>multifaction</strong> on, each faction only sees and controls <strong>its own networks</strong> (cabling into someone else's NOC wall does not put your machines under it); compute and inference contracts belong to <strong>the faction that accepted them</strong> - rewards, deposits, penalties, debts and goodwill all go to it, and the deposit only comes out of its own storage; <strong>each faction has its own contract board</strong>: normal, long, spot and inference offers, refresh timers, completed count and client reputation are all kept apart, so another faction taking a contract never touches your offers (yours are sized by your own datacenter and models). Everything else is per faction too: the AGI project, firmware updates (applying one only takes that one LAN of yours offline), intrusions and network lockdowns, surveillance, cluster-optimizer models, carbon grade and the community fund, local backlash, the guaranteed drone raid, stolen-model recovery and revenge raids, model licensing and open weights, poaching, the black-market audit, and the coolant-leak, export-audit and data-reclamation decisions (each event is answered by the faction it happened to); this mod's random events (datacenter raids, intrusions, coolant leaks, audits and so on) are only fired by <strong>the map owner's own storyteller</strong>, so another faction's events never land on your map and adding a faction does not double how often you see them (also without MP Desync Fixes); drone controllers and handheld jammers work for every faction's colonists (including on caravan attacks against NPC bases), and AI assistant terminals take their seats in their own network's language-model pool; market prices, rival companies and chip shortages are shared by the whole world.</p>
 <p><strong>How time is kept</strong>: with <strong>async time</strong> on, every map has its own clock and the world has another, often days apart. Everything that belongs to your faction - contract deadlines, spot locks, long-contract instalments, inference contracts, licence payments, AGI pauses, the community fund, the guaranteed drone raid, surveillance days, cartridge obsolescence, firmware and intrusions - runs on <strong>your own home map's time</strong>: pause and they pause, speed up and they speed up. With nobody on a home map (everyone out in caravans) they fall back to world time. Market prices, rival companies and chip shortages run on world time. Single-player has no such difference.</p>
 <p align="right"><a href="#toc">↑ back to contents</a></p>
+
+<hr>
+<h2 id="19-glossary">19. Glossary</h2>
+<p>The mod borrows a lot of vocabulary from real datacenters and the AI industry. This chapter collects it by topic: each term says what it is and what it means in the game, with the chapter that has the full rules in brackets. The in-game guide (bottom toolbar, <strong>AI compute guide</strong>) can search for any of these words.</p>
+<h3 id="compute-and-hardware">🧮 Compute and hardware</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Compute / TFLOPS</strong></td>
+<td>Trillions of floating-point operations per second. All compute comes from the cards slotted into racks — the rack itself has no specs; one general-purpose card is 400 TFLOPS (§1, §16)</td>
+</tr>
+<tr>
+<td><strong>Compute card (accelerator)</strong></td>
+<td>The part that actually computes (a real-world GPU, TPU and so on). Real models come in five grades: legacy / consumer / datacenter PCIe / datacenter module / controlled flagship; the info card lists each one's compute, memory, bandwidth, precision, power draw and where to get it (§2 Step 2)</td>
+</tr>
+<tr>
+<td><strong>Used card / refurbished card</strong></td>
+<td>Used accelerators from traders cannot go into a rack directly; 3 used + 1 component at a machining table make 2 good cards whose age starts at 120 days (§6, §18)</td>
+</tr>
+<tr>
+<td><strong>Controlled item (export-controlled chip)</strong></td>
+<td>Datacenter modules and controlled flagships cannot be made at home and only certain traders sell them; holding too many invites an export control audit (§2, §13)</td>
+</tr>
+<tr>
+<td><strong>HBM (memory)</strong></td>
+<td>High-bandwidth memory on the card. Training and inference both have a hard memory threshold that only adds up racks on <strong>one LAN</strong>; not enough and that size cannot be picked (§8)</td>
+</tr>
+<tr>
+<td><strong>Bandwidth (TB/s)</strong></td>
+<td>How much memory a card can read per second. Inference reads the weights once for every word it produces, so low bandwidth caps how many people it can serve (§9)</td>
+</tr>
+<tr>
+<td><strong>Precision (FP8 / FP4)</strong></td>
+<td>The number formats a card supports; fewer bits run faster. After <strong>Eight-bit numerics</strong> cards with FP8 get +40%, after <strong>Four-bit microscaling</strong> cards with FP4 get +80% (§3)</td>
+</tr>
+<tr>
+<td><strong>Compute rack (standard rack)</strong></td>
+<td>The basic 2×2 machine with 4 card slots. Fully slotted with general-purpose cards: 1,600 TFLOPS, 320 GB, 2,600 W at full load — and the baseline of the rack-day (§2)</td>
+</tr>
+<tr>
+<td><strong>NVL16 / NVL72</strong></td>
+<td>High-density racks. The NVL16 takes HGX B300 modules: 40,000 TFLOPS, 4,608 GB; the NVL72 takes 18 GB300 compute trays: 180,000 TFLOPS, 20,736 GB, 100,000 W at full load (§6, §16)</td>
+</tr>
+<tr>
+<td><strong>Immersion compute vat</strong></td>
+<td>A rack with the cards sunk in dielectric coolant: only 5% of its heat stays in the room, it does not throttle until 60 °C and it is completely silent (§5, §14)</td>
+</tr>
+<tr>
+<td><strong>CXL memory cabinet</strong></td>
+<td>A cabinet that adds memory but no compute: 8 slots of CXL memory modules whose capacity joins the LAN's memory (§6)</td>
+</tr>
+<tr>
+<td><strong>Slot layout</strong></td>
+<td>Tells each slot of a rack what card to take (any compatible / empty / a specific model) and haulers fill it to match; the swarm launcher's <strong>Magazine loadout</strong> and the drone controller's <strong>Hangar layout</strong> are the same idea (§2, §12)</td>
+</tr>
+<tr>
+<td><strong>Time in service (card age)</strong></td>
+<td>How many days a card has actually computed; idle and switched-off time does not count, and the age travels with the card. Failures depend only on it: stable for 0–120 days, then increasingly likely to fail (§6)</td>
+</tr>
+<tr>
+<td><strong>Failure rate / environment multipliers</strong></td>
+<td>The chance a card dies. Liquid cooling, immersion, rack servicing, a staffed console and Tier IV multiply it by less than 1; overheating, a dirty room and stale firmware raise it (§6)</td>
+</tr>
+<tr>
+<td><strong>Firmware</strong></td>
+<td>A new version about every 8 days. A fully updated LAN gets +5% compute; not installed 4 days after release means −5% and failures ×1.25. Racks update one at a time and only the one being flashed goes offline (§18)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cooling-and-power">❄️ Cooling and power</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Heat/sec</strong></td>
+<td>The unit of cooling, just like watts for power: how much heat a rack gives off and how much a cooling device handles are both counted in it</td>
+</tr>
+<tr>
+<td><strong>Throttling</strong></td>
+<td>Cards slow themselves down when too hot: from 30 °C on air or 45 °C on liquid, falling linearly to 20% (§5)</td>
+</tr>
+<tr>
+<td><strong>Overheat burnout</strong></td>
+<td>Above the critical temperature (70 °C air / 85 °C liquid) for 2 hours in a row, one card burns out; Tier IV lasts 4 hours (§5, §6)</td>
+</tr>
+<tr>
+<td><strong>Free cooling</strong></td>
+<td>Below 0 °C room temperature performance is 105% (the real reason datacenters get built in cold places)</td>
+</tr>
+<tr>
+<td><strong>Air / liquid (cold-plate) cooling</strong></td>
+<td>Air cooling relies on room air (vanilla coolers); liquid cooling carries the heat away through coolant pipes: the rack keeps only 20% of its heat in the room, throttles 15 °C later and fails ×0.6 as often (§5)</td>
+</tr>
+<tr>
+<td><strong>Cooling loop</strong></td>
+<td>The ring formed by a cold-side (supply) and a hot-side (return) coolant pipe; a machine has to touch <strong>both pipes</strong> to be on the loop</td>
+</tr>
+<tr>
+<td><strong>Pumping / heat rejection</strong></td>
+<td>The two capacities of a loop: pumping is how much heat the CDUs can move, rejection is how much the dry coolers and towers can dump; the loop's capacity is the smaller one (§5)</td>
+</tr>
+<tr>
+<td><strong>CDU (coolant distribution unit)</strong></td>
+<td>The loop's pump, 300 heat/sec; the in-row coolant distribution unit is the big version at 1,500 heat/sec</td>
+</tr>
+<tr>
+<td><strong>Dry cooler / cooling tower / chiller</strong></td>
+<td>Where the loop dumps its heat: dry cooler 600 (keep it outdoors), evaporative cooling tower 1,400 (next to water), chiller 3,000 (ignores the weather but eats power), large cooling tower 5,000 (§5, §6)</td>
+</tr>
+<tr>
+<td><strong>Coolant air handler / rear-door heat exchanger</strong></td>
+<td>Pull room heat into the loop: the air handler up to 45 heat/sec; the rear-door heat exchanger sits against one rack and takes 90% of that rack's room heat</td>
+</tr>
+<tr>
+<td><strong>Heat recovery vent</strong></td>
+<td>Dumps loop heat into a room you choose (to heat it), ahead of the dry coolers</td>
+</tr>
+<tr>
+<td><strong>Dielectric coolant</strong></td>
+<td>The building material of liquid-cooling equipment (a coolant that does not conduct electricity); coolant leaks are patched with it too</td>
+</tr>
+<tr>
+<td><strong>Cooling plan</strong></td>
+<td>A button on racks and CDUs that works out the room, the loop and heat rejection together and tells you exactly what is missing</td>
+</tr>
+<tr>
+<td><strong>PUE (power usage effectiveness)</strong></td>
+<td>Total datacenter power ÷ compute power; the closer to 1, the better. About 1.31 on air, 1.05 on liquid</td>
+</tr>
+<tr>
+<td><strong>Inrush</strong></td>
+<td>The moment a rack goes from idle to computing, its draw jumps ×2.5 for about 8 seconds; a grid that cannot take it browns out (§18)</td>
+</tr>
+<tr>
+<td><strong>UPS (uninterruptible power supply)</strong></td>
+<td>A battery in normal use; all UPS units on a grid absorb the inrush together, 9,000 W each. A UPS or a backup generator gives Tier II</td>
+</tr>
+<tr>
+<td><strong>Backup generator / gas turbine generator</strong></td>
+<td>Generators that burn nothing on standby and start by themselves when power runs short; they are how you reach the tiers. They burn chemfuel and pull the carbon grade down</td>
+</tr>
+<tr>
+<td><strong>Battery station</strong></td>
+<td>A 24,000 Wd battery; each one counts as 5,000 W of backup generation in the tier rating, so a green grid can reach Tier III too</td>
+</tr>
+<tr>
+<td><strong>SMR (small modular reactor)</strong></td>
+<td>20,000 W of low-carbon main power that burns uranium; the SMR-300 is the 100,000 W big brother. It explodes when destroyed and makes NIMBY backlash worse</td>
+</tr>
+<tr>
+<td><strong>Substation</strong></td>
+<td>Registers the spare output of your main power as backup generation for the tier rating</td>
+</tr>
+<tr>
+<td><strong>Power cap</strong></td>
+<td>Makes racks draw less: at 70% power you lose only 13.3% performance, and heat drops with it — the first thing to reach for when cooling falls short (§6)</td>
+</tr>
+<tr>
+<td><strong>Colored power cables / cable crossing</strong></td>
+<td>Eight cable colours that do not connect to each other, so each datacenter can have its own grid; a crossing lets two colours pass through one cell without joining</td>
+</tr>
+<tr>
+<td><strong>Carbon grade (A–E) / low-carbon share / RE100</strong></td>
+<td>How much of the last 30 days' generation was low-carbon: A (≥ 95%; RE100 is the industry term for 100% renewable) down to E (&lt; 10%). It changes contract settlement, NIMBY backlash and diplomacy (§6)</td>
+</tr>
+<tr>
+<td><strong>Green projects</strong></td>
+<td>About a fifth of contract offers require grade B or better on the accepting LAN and pay ×1.3 if met</td>
+</tr>
+</tbody>
+</table>
+<h3 id="network-and-datacenter-management">🌐 Network and datacenter management</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LAN / subnet</strong></td>
+<td>One run of same-coloured network cable plus a switch = one independent datacenter with its own training queue, data, checkpoints, contracts and recognition compute. Cable comes in 16 colours and must run under the machines (§7)</td>
+</tr>
+<tr>
+<td><strong>NOC monitoring wall / managed LAN</strong></td>
+<td>NOC = network operations centre. A LAN with a wall is "managed"; <strong>unmanaged racks only do research</strong>. With several walls on one LAN, the one with the lowest ID is in control</td>
+</tr>
+<tr>
+<td><strong>Operations console (window)</strong></td>
+<td>The management window opened from the NOC wall: This LAN / Racks / Inference / Model library / Facilities and equipment / All LANs / Market tabs (§7, §10). Not the same thing as the <strong>operations console</strong> building where a colonist stands shift</td>
+</tr>
+<tr>
+<td><strong>Next steps</strong></td>
+<td>The block at the top of the console's This LAN tab: the 1–3 things this LAN most needs</td>
+</tr>
+<tr>
+<td><strong>Datacenter overview</strong></td>
+<td>A map layer on the bottom toolbar: temperature / load / failure risk / LAN; works without a NOC wall</td>
+</tr>
+<tr>
+<td><strong>Cluster / cluster factor</strong></td>
+<td>Racks on one LAN count together: +6% per extra rack (up to +50%), minus the communication cost (§2 Step 8)</td>
+</tr>
+<tr>
+<td><strong>Communication cost</strong></td>
+<td>The loss from racks passing data to each other: 2% per rack with cluster switches only, 0.7% with spine switches (0.4% after <strong>Fiber interconnect</strong>)</td>
+</tr>
+<tr>
+<td><strong>Cluster switch / spine switch</strong></td>
+<td>Only switches bridge network cable runs; the spine switch is the backbone layer above them, carrying 8 racks each (12 after fiber interconnect)</td>
+</tr>
+<tr>
+<td><strong>Rack modes</strong></td>
+<td>Research / Training / Contract (renting) / Inference / Target recognition — what the compute is spent on. You pick the mode; racks never switch by themselves</td>
+</tr>
+<tr>
+<td><strong>On shift</strong></td>
+<td>A colonist standing shift at the operations console building: cluster-wide failures ×0.7, compute +3%, and new firmware applied automatically</td>
+</tr>
+<tr>
+<td><strong>Rack servicing</strong></td>
+<td>Its own column in the Work tab (Construction skill): a colonist services a rack and its failure rate is ×0.5 for 5 days</td>
+</tr>
+<tr>
+<td><strong>Tier I–IV (datacenter tiers)</strong></td>
+<td>Modelled on real datacenter tiers and rated automatically from "what happens when something fails": I no redundancy, II redundant components, III concurrently maintainable, IV fault tolerant. Higher tiers raise contract prices (100%–160%) (§6)</td>
+</tr>
+<tr>
+<td><strong>Certified tier / measured availability</strong></td>
+<td>The certified tier says whether your equipment qualifies; measured availability is the share of the last 30 days your racks were really online. Contracts use the lower of the two</td>
+</tr>
+<tr>
+<td><strong>SLA (service level agreement)</strong></td>
+<td>A contract's availability promise; the <strong>SLA audit</strong> event checks your tier remotely while a contract runs</td>
+</tr>
+<tr>
+<td><strong>Checkpoint / checkpoint storage array</strong></td>
+<td>A save of training progress. With a storage array a cluster outage only falls back to the last checkpoint; without one progress resets. From Tier II on, an outage only pauses</td>
+</tr>
+<tr>
+<td><strong>Automatic fire suppression</strong></td>
+<td>The datacenter gas suppression system or vanilla firefoam poppers; Tier III needs one in every room with racks</td>
+</tr>
+</tbody>
+</table>
+<h3 id="models-and-training">🧠 Models and training</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Model / weights</strong></td>
+<td>A model is the huge pile of numbers (weights) training produces. In the game models give colonists buffs, give robots their skills and recognise targets for drones</td>
+</tr>
+<tr>
+<td><strong>Weight cartridge</strong></td>
+<td>The physical item holding a model, dropped beside the rack when training ends. It <strong>is</strong> the model: it can be stolen, burned, sold and copied (§8)</td>
+</tr>
+<tr>
+<td><strong>Physicalisation</strong></td>
+<td>Cards, cartridges, data and airframes are items on the floor that can be hauled and stolen, not numbers on a ledger</td>
+</tr>
+<tr>
+<td><strong>Model cartridge reader</strong></td>
+<td>Where cartridges are slotted. Racks have no cartridge slot: the cartridge sits in a reader on the same LAN and inference racks serve it automatically — one cartridge feeds the whole LAN</td>
+</tr>
+<tr>
+<td><strong>Rack-day</strong></td>
+<td>Compute × time: 1 rack-day = one standard rack (1,600 TFLOPS) at full load for a day. Training, cartridge jobs and compute rental are all priced in it</td>
+</tr>
+<tr>
+<td><strong>Size (small / medium / large / colossal)</strong></td>
+<td>How big a model is. Training costs 1 / 4 / 12 / 40 rack-days and needs 200 / 600 / 1,600 / 5,000 GB; bigger is stronger (§8)</td>
+</tr>
+<tr>
+<td><strong>Effective size</strong></td>
+<td>The size a cartridge counts as right now: obsolescence and quantisation each knock it down a size</td>
+</tr>
+<tr>
+<td><strong>Training job / training queue</strong></td>
+<td>What racks in training mode are working on. Each LAN has its own training lane with a queue of up to 8 jobs that start one after another (§18)</td>
+</tr>
+<tr>
+<td><strong>Dataset / domain</strong></td>
+<td>The second input of training. Data comes in seven domains (medical, biology, agriculture, industry, combat, language, geography) and each model only eats data from its own domain (§8)</td>
+</tr>
+<tr>
+<td><strong>Labelled / licensed / raw / synthetic data</strong></td>
+<td>The four kinds: labelled comes from the data annotation bench; licensed is bought from traders; raw is looted from raiders and must be <strong>cleaned</strong> into labelled data first; synthetic is generated by a model, and at most half of a run can be synthetic (70% after model alignment)</td>
+</tr>
+<tr>
+<td><strong>Cleaning / data reclamation claim</strong></td>
+<td>Cleaning turns raw data into trainable data at the annotation bench. Raw data belongs to somebody: every 20 cleaned brings a faction asking for payment (600 silver, or −15 goodwill)</td>
+</tr>
+<tr>
+<td><strong>Own data</strong></td>
+<td>Raw data robots produce while working, tagged "own": cleaning it is not unlicensed and never triggers a claim</td>
+</tr>
+<tr>
+<td><strong>Data corpus</strong></td>
+<td>The data cabinet of a datacenter, 40 units each. <strong>Training only uses data in corpora on the same LAN</strong>; data in storage does not count</td>
+</tr>
+<tr>
+<td><strong>Foundation model</strong></td>
+<td>The big model unlocked after training every ordinary model: one serving pool covers all of its abilities, and it is the base for policy fine-tuning and the AGI project</td>
+</tr>
+<tr>
+<td><strong>Policy / policy cartridge</strong></td>
+<td>The "skill models" for robots and swarm launchers (14 of them): slot one and the machine can do that job, pull it and the skill is gone</td>
+</tr>
+<tr>
+<td><strong>Fine-tune policy</strong></td>
+<td>Cheaply writes a policy cartridge from an evaluated foundation model (2 rack-days + 8 data)</td>
+</tr>
+<tr>
+<td><strong>Export</strong></td>
+<td>Makes a bit-for-bit copy of a cartridge (a backup, one to sell, one for another LAN)</td>
+</tr>
+<tr>
+<td><strong>Distil</strong></td>
+<td>Packs a big model's ability into a smaller one: no loss of size, ×2 people served; a distilled cartridge cannot be realigned</td>
+</tr>
+<tr>
+<td><strong>Quantise</strong></td>
+<td>Rewrites the weights in 8 bits: one size weaker, but inference uses the row one size down, so it serves a lot more people</td>
+</tr>
+<tr>
+<td><strong>Reasoning post-training / deep reasoning</strong></td>
+<td>Post-training writes a "reasoning model" cartridge; switching on <strong>Deep reasoning</strong> in inference lets it think longer: one size stronger, half the people served, racks at full load</td>
+</tr>
+<tr>
+<td><strong>Continued pre-training</strong></td>
+<td>Brings an old model up to date for half the compute and a quarter of the data of training from scratch: its obsolescence timer resets</td>
+</tr>
+<tr>
+<td><strong>Extended training</strong></td>
+<td>Compute and data ×2; the cartridge only goes stale one size every 60 days instead of 30</td>
+</tr>
+<tr>
+<td><strong>Obsolescence</strong></td>
+<td>A model drops one size every 30 days (the world moves on and old models stop being good enough), stopping at small</td>
+</tr>
+<tr>
+<td><strong>Aligned / misaligned</strong></td>
+<td>Aligned = the model does what you meant. Misaligned = it over-optimises the metric you gave it: stronger effects, but while deployed the whole cluster loses 15% compute, and once revealed colonists get the "watched" mood (§8)</td>
+</tr>
+<tr>
+<td><strong>Unevaluated / evaluate / reveal</strong></td>
+<td>Every freshly trained cartridge is <strong>unevaluated</strong>: whether it is misaligned stays hidden. An <strong>Evaluate</strong> job (16 seat-days) or enough time in service reveals it</td>
+</tr>
+<tr>
+<td><strong>Retrain for alignment / roll back / scrap</strong></td>
+<td>The three fixes for a misaligned cartridge: spend compute to retrain (55%, 75% with alignment research) / drop a size for free / delete it</td>
+</tr>
+<tr>
+<td><strong>Poisoned run</strong></td>
+<td>Training that gained progress during a cyber intrusion: +20 percentage points of misalignment chance when it finishes</td>
+</tr>
+<tr>
+<td><strong>Training loss spike</strong></td>
+<td>A random event mid-training: roll back 20% of progress, push through (risking a bad model) or kill the run</td>
+</tr>
+<tr>
+<td><strong>AGI project / singularity crisis</strong></td>
+<td>The endgame run: Tier IV, 20,000 GB and 4,000 rack-days, split into 4 stages with a singularity crisis at the start of each. Success yields vanilla's <strong>AI persona core</strong> (for the ship); failure brings a rogue AGI raid (§8)</td>
+</tr>
+<tr>
+<td><strong>Red teaming</strong></td>
+<td>Attacking your own model on purpose to find its flaws: the red-team bench can reveal an unevaluated cartridge directly or raise the AGI alignment chance</td>
+</tr>
+<tr>
+<td><strong>Isolation sandbox</strong></td>
+<td>A cabinet for revealed misaligned cartridges: inference still serves them, with no compute siphoned and no "watched" mood, but the buff is halved</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inference">🎯 Inference</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inference</strong></td>
+<td>Running a trained model to answer and act. Racks in inference mode serve the model in the reader and colonists get passive buffs; it runs at 40% load (§9)</td>
+</tr>
+<tr>
+<td><strong>Serving pool</strong></td>
+<td>Racks on one LAN serving the same model form one pool whose memory and capacity add up</td>
+</tr>
+<tr>
+<td><strong>Seat / seat-day</strong></td>
+<td>The unit of inference capacity: 1 seat = one person served at a time (a colonist, an assistant terminal user or an inference contract client takes 1, a remote colonist 2). Evaluation work is counted in seat-days</td>
+</tr>
+<tr>
+<td><strong>The three capacity limits</strong></td>
+<td>People served is the smallest of ① compute ② memory ③ bandwidth; the panel says which one binds and what to add</td>
+</tr>
+<tr>
+<td><strong>KV (KV cache)</strong></td>
+<td>The extra memory each person served needs (the model's memory of the conversation); bigger models need more per person</td>
+</tr>
+<tr>
+<td><strong>Inference task</strong></td>
+<td>A one-off action that fires the moment you press it (battle forecast, AI negotiation, full check-up…); the price is 6 hours without the pool's passive buffs</td>
+</tr>
+<tr>
+<td><strong>Edge inference relay</strong></td>
+<td>Extends inference buffs to other maps and caravans (remote colonists take 2 seats each)</td>
+</tr>
+<tr>
+<td><strong>AI assistant terminal</strong></td>
+<td>A terminal colonists come to "consult" in their recreation time: mood +4, learning +10%; it needs a language model being served on the same LAN, and each user takes 1 seat</td>
+</tr>
+<tr>
+<td><strong>AI dependence</strong></td>
+<td>Consulting 5 days in a row makes a colonist dependent: any day without it is −5 mood</td>
+</tr>
+</tbody>
+</table>
+<h3 id="contracts-and-the-market">💰 Contracts and the market</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Compute contract (renting)</strong></td>
+<td>Renting your compute to outside clients. Racks in contract mode deliver rack-days every day, and the contract pays once the total is delivered in time (§10)</td>
+</tr>
+<tr>
+<td><strong>Contract terminal</strong></td>
+<td>The building for taking contracts, licensing models and releasing open weights; it must be on a managed LAN</td>
+</tr>
+<tr>
+<td><strong>Offer / tier requirement</strong></td>
+<td>3 offers every 4 days; each has a minimum tier, and a datacenter below it cannot take the offer</td>
+</tr>
+<tr>
+<td><strong>Size ×N</strong></td>
+<td>Offers grow with each of your LANs' compute; rack-days, pay and penalty all grow together</td>
+</tr>
+<tr>
+<td><strong>Negotiation table</strong></td>
+<td>Haggle before signing: ask for more / ask for an extension / promise availability. A failed push costs the client's <strong>patience</strong>; at zero they walk</td>
+</tr>
+<tr>
+<td><strong>Client reputation</strong></td>
+<td>+1 on time, −2 on default; it moves your chance of getting a higher price</td>
+</tr>
+<tr>
+<td><strong>Performance deposit / penalty</strong></td>
+<td>Taking a contract escrows silver equal to its penalty, refunded in full on time; late or abandoned, it is forfeit (penalty = 25% of the pay)</td>
+</tr>
+<tr>
+<td><strong>Debt</strong></td>
+<td>Penalties that cannot be collected become debt, paid first out of later contract income; until it is cleared, the clients you owe stop sending offers</td>
+</tr>
+<tr>
+<td><strong>Compute market / model market</strong></td>
+<td>Price multipliers: compute ×0.6–×1.8 (contract rates), models ×0.6–×1.6 (cartridge prices, licence fees, open-weights goodwill)</td>
+</tr>
+<tr>
+<td><strong>Spot / lock / emergency spot order</strong></td>
+<td>Spot = a 1–3 day short contract, up for only 1 day and not negotiable; lock = a 10% deposit holds it for 2 days; emergency order = a 1-day, double-price spot offer that appears when a rival's datacenter goes down</td>
+</tr>
+<tr>
+<td><strong>Long-term contract</strong></td>
+<td>A 30-day contract at ×0.85 but with the market price locked at signing, paid every 5 days</td>
+</tr>
+<tr>
+<td><strong>Rivals / claimed</strong></td>
+<td>Three rival datacenters compete for offers: an offer a rival has its eye on is taken if you have not signed it within 2 days</td>
+</tr>
+<tr>
+<td><strong>Inference contract (MaaS)</strong></td>
+<td>"Model as a service": reserve seats in a serving pool for a client and get paid at the end; it counts as done at ≥ 90% uptime</td>
+</tr>
+<tr>
+<td><strong>Licensing</strong></td>
+<td>Lock a cartridge in its reader and rent it to a buyer for a fee every 5 days; while locked it cannot serve inference or be a training source</td>
+</tr>
+<tr>
+<td><strong>Open weights</strong></td>
+<td>Release a model for free: the cartridge is consumed for goodwill with every non-hostile faction, with a chance of a <strong>community fine-tune</strong> sent back</td>
+</tr>
+<tr>
+<td><strong>AI companies / purchasing ship / poaching</strong></td>
+<td>Helix Intelligence and Northwind AI are the main clients; their purchasing ships pay ×1.2 for cartridges; after 5 contracts they may try to poach your smartest colonist</td>
+</tr>
+<tr>
+<td><strong>Misaligned black market</strong></td>
+<td>Pirate traders pay ×1.5 for a revealed misaligned cartridge, but audits are twice as likely for 30 days afterwards</td>
+</tr>
+<tr>
+<td><strong>Export control audit</strong></td>
+<td>The event for holding too many controlled cards: hand over half / refuse and lose standing / pay to make it go away</td>
+</tr>
+<tr>
+<td><strong>Chip shortage</strong></td>
+<td>For 5–10 days traders have no new cards and card prices are ×1.5</td>
+</tr>
+<tr>
+<td><strong>NIMBY</strong></td>
+<td>"Not in my back yard": when the colony's compute crosses a threshold, neighbouring factions push back with −8 goodwill (§14)</td>
+</tr>
+<tr>
+<td><strong>Community fund / green reputation</strong></td>
+<td>Community fund = donate silver locally, raising NIMBY thresholds ×1.5 for 30 days; green reputation = goodwill up or down every 15 days by carbon grade</td>
+</tr>
+</tbody>
+</table>
+<h3 id="robots-and-drones">🤖 Robots and drones</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Robot</strong></td>
+<td>A humanlike worker built at the robot assembly bay: it has skills and a Work tab but no mood and never learns on the job — its skills come entirely from its policy cartridges (§11)</td>
+</tr>
+<tr>
+<td><strong>Policy level</strong></td>
+<td>The skill level a policy cartridge gives: small 4 / medium 8 / large 12 / colossal 16</td>
+</tr>
+<tr>
+<td><strong>Combat policy gate</strong></td>
+<td>A robot without a shooting or melee policy cannot be drafted</td>
+</tr>
+<tr>
+<td><strong>Maintenance</strong></td>
+<td>Every 30 days, 1 industrial component; the longer it is overdue the slower the robot works, down to −30%</td>
+</tr>
+<tr>
+<td><strong>Upgrade modules</strong></td>
+<td>Six kinds — armour, bigger battery, tool arm, sensor suite, cooling module, cargo rack — fitted by a colonist at the assembly bay</td>
+</tr>
+<tr>
+<td><strong>Persona cartridge / digital twin</strong></td>
+<td>A dead colonist's mind uploaded from the body; slotted into a robot it becomes "〈name〉's twin" with the skills the colonist had at death</td>
+</tr>
+<tr>
+<td><strong>Drone controller / operator</strong></td>
+<td>Belt gear: put it on, draft and launch drones; the wearer is the operator (§12)</td>
+</tr>
+<tr>
+<td><strong>Hangar (back rack)</strong></td>
+<td>The controller's 3 airframe slots; <strong>Hangar layout</strong> picks what each slot carries</td>
+</tr>
+<tr>
+<td><strong>Autonomy level</strong></td>
+<td>How well a drone decides for itself, which sets its accuracy; player controllers are fixed at 16</td>
+</tr>
+<tr>
+<td><strong>Airframe / munition item</strong></td>
+<td>In the air it is an airframe; folded up on the ground it is an item. Four classes: recon, attack, electronic warfare and loitering munition</td>
+</tr>
+<tr>
+<td><strong>Loitering munition</strong></td>
+<td>A drone that circles looking for a target and then dives into it and explodes (FPV, Switchblade, Lancet, Shahed-136 and so on)</td>
+</tr>
+<tr>
+<td><strong>Recoverable / one-way</strong></td>
+<td>Recoverable models fly back and fold up if unused; one-way models (Lancet-3, Switchblade 600, Shahed-136) never come back once launched</td>
+</tr>
+<tr>
+<td><strong>FPV / fibre-optic FPV</strong></td>
+<td>FPV = first-person-view, a small suicide drone. The fibre-optic FPV trails an optical fibre, so jamming cannot bring it down, but it only strikes within 40 cells of its operator</td>
+</tr>
+<tr>
+<td><strong>Swarm launcher / tube</strong></td>
+<td>A 3×2 launcher with 48 tubes and range 90; with no policy cartridge it cannot fire at all. Big airframes take 2–4 tubes each</td>
+</tr>
+<tr>
+<td><strong>Fire control (manual / autonomous)</strong></td>
+<td>Who decides what to hit: manual = a drafted colonist standing at the station, 0% misidentification; autonomous = racks in target recognition mode on the same LAN with ≥ 15,000 TFLOPS</td>
+</tr>
+<tr>
+<td><strong>Target recognition mode</strong></td>
+<td>A rack mode that spends compute telling friend from foe for swarm launchers</td>
+</tr>
+<tr>
+<td><strong>Misidentification / seeker</strong></td>
+<td>The chance a drone picks the wrong target = policy cartridge × seeker (the airframe's targeting sensor) multiplier</td>
+</tr>
+<tr>
+<td><strong>Sensor relay</strong></td>
+<td>A mast that extends launcher range (60 cells each) and adds autonomous recognition compute; enemies can blind you by shooting it down</td>
+</tr>
+<tr>
+<td><strong>Formations (encircle / saturate / decoy)</strong></td>
+<td>Salvo patterns unlocked by the swarm command centre: three-way pincer / gather then arrive together / send cheap ones first to draw fire</td>
+</tr>
+<tr>
+<td><strong>Jammer tower / spoof</strong></td>
+<td>Drones in range crash, friend or foe; spoof mode talks GPS-guided munitions down into airframes you can pick up</td>
+</tr>
+<tr>
+<td><strong>Counter-drone turret / handheld drone jammer</strong></td>
+<td>The turret only shoots enemy drones; the handheld jammer is belt gear that fires for 30 seconds in a 9-cell radius (your own drones fall too)</td>
+</tr>
+<tr>
+<td><strong>Supply quad</strong></td>
+<td>A non-combat drone that flies up to 15 kg of goods from storage to wherever the operator points</td>
+</tr>
+</tbody>
+</table>
+<h3 id="game-units-and-general-terms">⏱️ Game units and general terms</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tick</strong></td>
+<td>RimWorld's smallest unit of time: 60 ticks a second at normal speed; 1 hour = 2,500 ticks, 1 day = 60,000 ticks</td>
+</tr>
+<tr>
+<td><strong>Rare tick</strong></td>
+<td>A slow update every 250 ticks; rack failure rolls and availability sampling run on it</td>
+</tr>
+<tr>
+<td><strong>c/s (cells per second)</strong></td>
+<td>Movement speed. Every drone is faster than a colonist's top speed (12.4 c/s)</td>
+</tr>
+<tr>
+<td><strong>W / Wd</strong></td>
+<td>Watts (power) / watt-days (stored energy): 1 Wd = 1 W for a whole day</td>
+</tr>
+<tr>
+<td><strong>Gizmo</strong></td>
+<td>The buttons that appear at the bottom when you select a building or pawn</td>
+</tr>
+<tr>
+<td><strong>Goodwill</strong></td>
+<td>A faction's attitude to you (−100 to 100); contracts, events and open weights all move it</td>
+</tr>
+<tr>
+<td><strong>Threat points (raid points)</strong></td>
+<td>How big the storyteller makes a raid from wealth, population and difficulty; enemy drone numbers and models are bought from it</td>
+</tr>
+<tr>
+<td><strong>Multi-analyzer</strong></td>
+<td>The vanilla research building; projects marked ᴹ in the research table need it</td>
+</tr>
+<tr>
+<td><strong>CE (Combat Extended)</strong></td>
+<td>A popular realistic-combat mod; with it loaded this mod switches to CE values automatically (§12)</td>
+</tr>
+<tr>
+<td><strong>Async time</strong></td>
+<td>A multiplayer setting where every map keeps its own clock; this mod's timers follow your own home map's time (§18)</td>
+</tr>
+</tbody>
+</table>
+<p align="right"><a href="#toc">↑ Back to contents</a></p>
 
 <hr>
 <h3 id="related-documents">📎 Related documents</h3>
@@ -9347,7 +10769,7 @@ With <strong>multifaction</strong> on, each faction only sees and controls <stro
 </ul>
 <div class="alert alert-note">
 <p class="alert-head"><span class="alert-icon">📘</span><span>Note</span></p>
-<p>All numbers in this guide come from the mod's Defs and README, matching v45.0. If a later version
+<p>All numbers in this guide come from the mod's Defs and README, matching v46.0. If a later version
 changes a value, the in-game panel wins.</p>
 </div>
 </article>
