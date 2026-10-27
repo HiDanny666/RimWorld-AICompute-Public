@@ -5,7 +5,7 @@
 對外介紹文案看 `宣傳介紹文.md`；Steam 工作坊描述看 `Steam工作坊說明.md`；玩家手冊看 `教學手冊.md`。
      這段是 HTML 註解，GitHub 上看不到，整份複製過去也不會露出來。 -->
 
-**RimWorld 1.6／1.7 模組｜不需 DLC｜支援 RimWorld Together 與 Multiplayer｜相容 Combat Extended｜完整繁體中文**
+**RimWorld 1.6／1.7 模組｜不需 DLC｜支援 Multiplayer｜相容 Combat Extended｜完整繁體中文**
 
 在邊緣世界蓋一座真正的資料中心。
 
@@ -21,7 +21,7 @@ autonomous drones. Every card draws watts and dumps heat: run hot and it throttl
 ## 📖 完整攻略手冊 · Full guide
 
 從第一張二手礦卡到 Tier IV 機房：開局 10 步、研究樹、建築成本、散熱三層、模型訓練與未對齊、
-合約談判、市場、機器人、無人機與反無人機、AGI 終局，以及韌體、入侵、湧浪、通知設定等所有規則 —— 附 **46 張建築圖鑑**與 **29 張物品圖鑑**，中英雙語、深／淺主題。
+合約談判、市場、機器人、無人機與反無人機、AGI 終局，以及韌體、入侵、湧浪、通知設定等所有規則 —— 附 **45 張建築圖鑑**與 **25 張物品圖鑑**，中英雙語、深／淺主題。
 
 **➡️ [開啟攻略手冊](https://hidanny666.github.io/RimWorld-AICompute-Public/)**
 
@@ -31,6 +31,20 @@ autonomous drones. Every card draws watts and dumps heat: run hot and it throttl
 costs, cooling, model training, contracts, the market, robots, drones and counter-drone, the AGI endgame and every
 other rule (firmware, intrusions, surges, settings). It works offline too —
 download [`index.html`](index.html) and open it in any browser.*
+
+---
+
+## v47.0 更新內容 · What's new in v47.0
+
+| | |
+|---|---|
+| **移除 CXL 記憶體** | CXL 記憶體擴充櫃與三種記憶體模組移除，區網記憶體（訓練規模、AGI 門檻、推論池）只算機櫃 HBM。舊存檔照常可讀：已蓋的擴充櫃不能再蓋、拆除全額退料；記憶體模組讀檔時換回製作材料並寄信；研究「記憶體池化」移除 |
+| **訓練** | 教科書、小說、圖紙每次產 1 本，成本小／中／大／超大 10／12／14／16 機櫃日；機器人與無人機策略匣可以評估（評估排定或進行中時，在推論機櫃手動選「只跑評估」） |
+| **機器人** | 不再得疾病、傷口感染、慢性病或食物中毒，也不吃東西、不喝酒、不用藥；已經得病的讀檔後自動痊癒 |
+| **介面** | 權重匣在組旅隊、交易、運輸艙與贈禮清單一顆一列，可以各別選 |
+| **多人連線** | 用舊地圖時間排的合約板、對手報價、市場、鄰避與 ESG 檢查會自我修復，不再卡好幾個月；併線時書籍與訓練任務不再無聲消失 |
+
+*CXL memory cabinets and modules are removed (old saves refund them); book jobs make one book per run at 10 / 12 / 14 / 16 rack-days; robot and drone policy cartridges can be evaluated; robots no longer get sick, eat, drink or take drugs; weight cartridges get one row each in caravan and trade lists; multiplayer schedules that stalled on an old map clock heal themselves, and training and book jobs no longer vanish. Full notes are on the [Releases](../../releases) page.*
 
 ---
 
@@ -166,7 +180,7 @@ download [`index.html`](index.html) and open it in any browser.*
 
 | | |
 |---|---|
-| **機房** | 運算機櫃、NVL16 機櫃、浸沒式運算槽，後期的 NVL72 機櫃（18 片 GB300 托盤、180,000 TFLOPS）與 CXL 記憶體擴充櫃。機櫃只是鐵殼，耗電來自插進去的卡 |
+| **機房** | 運算機櫃、NVL16 機櫃、浸沒式運算槽，後期的 NVL72 機櫃（18 片 GB300 托盤、180,000 TFLOPS）。機櫃只是鐵殼，耗電來自插進去的卡 |
 | **運算卡** | 28 款真實型號（NVIDIA、AMD Instinct、Intel Gaudi、Google TPU、HGX B300、GB300 托盤），真實 FP16 規格、功耗與記憶體；千瓦級的卡需要液冷 |
 | **散熱** | 冷熱分管液冷、冷卻液分配單元、空調箱、乾式冷卻器、冷卻塔、餘熱回收；後期有背門熱交換器、列間液冷機組、不看天氣的冰水主機與大型冷卻塔 |
 | **網路** | 16 色網路線、叢集與骨幹交換器。每個區網是一座獨立機房，有自己的訓練佇列 |
